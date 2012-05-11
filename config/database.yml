@@ -4,12 +4,15 @@ development:
   username: root
   password: root
   host: localhost
+  port: 5432
 
 test:
   adapter: postgresql
   database: considerit_test
+  username: root
   password: root
   host: localhost
+  port: 5432
 
 production:
   adapter: postgresql

@@ -104,8 +104,6 @@ GEM
     mime-types (1.18)
     multi_json (1.2.0)
     multipart-post (1.1.5)
-    mysql2 (0.3.11)
-    mysql2 (0.3.11-x86-mingw32)
     oauth (0.4.5)
     oauth2 (0.5.2)
       faraday (~> 0.7)
@@ -136,6 +134,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.13.2)
+    pg (0.13.2-x86-mingw32)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -223,7 +223,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   meta_search (>= 1.1.0.pre)
-  pg
   omniauth
   omniauth-facebook
   omniauth-oauth
@@ -231,6 +230,7 @@ DEPENDENCIES
   omniauth-twitter
   paper_trail
   paperclip
+  pg
   rails (~> 3.2)
   rmagick
   sass-rails (~> 3.2.3)
