@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20120510151005) do
     t.integer  "commentable_id",    :default => 0
     t.string   "commentable_type",  :default => ""
     t.string   "title",             :default => ""
-    t.text     "body"
+    t.text     "body",              :default => ""
     t.string   "subject",           :default => ""
     t.integer  "user_id",           :default => 0,  :null => false
     t.integer  "parent_id"
@@ -288,12 +288,17 @@ ActiveRecord::Schema.define(:version => 20120510151005) do
     t.text     "description"
     t.string   "image"
     t.string   "url"
+<<<<<<< HEAD
     t.datetime "created_at"
     t.datetime "updated_at"
+=======
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+>>>>>>> GlobalHealthIt
     t.string   "domain"
     t.string   "domain_short"
-    t.text     "long_description",           :limit => 2147483647
-    t.text     "additional_details",         :limit => 2147483647
+    t.text     "long_description"
+    t.text     "additional_details"
     t.string   "slider_prompt"
     t.string   "considerations_prompt"
     t.string   "statement_prompt"
@@ -303,8 +308,8 @@ ActiveRecord::Schema.define(:version => 20120510151005) do
     t.boolean  "enable_position_statement"
     t.integer  "account_id"
     t.string   "session_id"
-    t.boolean  "require_login",                                    :default => false
-    t.boolean  "email_creator_per_position",                       :default => false
+    t.boolean  "require_login",              :default => false
+    t.boolean  "email_creator_per_position", :default => false
     t.string   "long_id"
     t.string   "admin_id"
     t.integer  "user_id"
