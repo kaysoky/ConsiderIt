@@ -1,20 +1,19 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
 
 
 #TODO: replace these values with settings
 admin = User.create!(
-  :username => 'ConsiderIt Admin',
-  :email => 'info@deployment.org',
-  :password   => 'password',
-  :password_confirmation => 'password'
+   :username => 'ConsiderIt Admin',
+   :email => 'info@deployment.org',
+   :password   => 'password',
+   :password_confirmation => 'password'
 )
 
 # Confirm the user for Devise
-# admin.confirm! 
+admin.confirm! 
 
-o1 = Option.create!(
+o1 = Proposal.create!(
   :name => 'liquor (beer, wine and spirits)',
   :short_name => 'liquor',
   :description => 'This measure would direct the liquor control board to close all state liquor stores; terminate contracts with private stores selling liquor; and authorize the state to issue licenses that allow spirits (hard liquor) to be sold, distributed, and imported by private parties.\nIt would repeal uniform pricing and certain other requirements governing business operations for distributors and producers of beer and wine.\nStores that held contracts to sell spirits could convert to liquor retailer licenses.',
@@ -26,7 +25,7 @@ o1 = Option.create!(
 )
 
 Point.create!(
-  :option => o1,
+  :proposal => o1,
   :user => admin,
   :is_pro => true,
   :nutshell => 'Government shouldn\'t be involved in the sales of liquor',
@@ -34,7 +33,7 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o1,
+  :proposal => o1,
   :user => admin,
   :is_pro => false,
   :nutshell => 'This could inadvertently result in more advertising to minors about liquor because we will now see liquor ads in more places.',
@@ -43,7 +42,7 @@ Point.create!(
 
 
 
-o2 = Option.create!(
+o2 = Proposal.create!(
   :name => 'liquor (beer, wine and spirits)',
   :short_name => 'liquor',
   :description => 'This measure would direct the liquor control board to close all state liquor stores and to license qualified private parties as spirits (hard liquor) retailers or distributors.\\nIt would require licensees to pay the state a percentage of their first five years of gross spirits sales; repeal certain taxes on retail spirits sales; direct the board to recommend to the legislature a tax to be paid by spirits distributors; and revise other laws concerning spirits.',
@@ -55,7 +54,7 @@ o2 = Option.create!(
 )
 
 Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => true,
   :nutshell => 'Government shouldn\'t be involved in the sales of liquor',
@@ -63,7 +62,7 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => false,
   :nutshell => 'There may be a larger regulation burden on small business than anticipated.',
@@ -71,7 +70,7 @@ Point.create!(
 )
 
 
-o3 = Option.create!(
+o3 = Proposal.create!(
   :name => 'reversing certain 2010 amendments to state tax laws',
   :short_name => 'state tax laws',
   :description => 'This measure would reverse certain 2010 amendments to state tax laws, thereby ending the sales tax on candy and the temporary sales tax on some bottled water; and ending temporary excise taxes on the activity of selling certain carbonated beverages, not including alcoholic beverages or carbonated bottled water.\nIt would also reinstate a reduced business and occupation tax rate for processors of certain foods.',
@@ -83,7 +82,7 @@ o3 = Option.create!(
 )
 
 Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => true,
   :nutshell => 'Sin taxes and other forms of government interference with behavior never work well.',
@@ -91,14 +90,14 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => false,
   :nutshell => 'Our state is in desperate need of additional revenue and these sorts of optional taxes are a great way to get it.',
   :text => ''
 )
 
-o4 = Option.create!(
+o4 = Proposal.create!(
   :name => 'tax and fee increases imposed by state government',
   :short_name => 'tax increases',
   :description => 'This measure would restate the existing statutory requirement that any action or combination of actions by the legislature that raises taxes must be approved by a two-thirds vote in both houses of the legislature or approved in a referendum to the people, and it would restate the existing statutory definition of "raises taxes."\nIt would also restate that new or increased fees must be approved by a majority vote in both houses of the legislature.',
@@ -110,7 +109,7 @@ o4 = Option.create!(
 )
 
 Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => true,
   :nutshell => 'This sets a higher threshold for the legislature to meet before increasing taxes on citizens that already pay enough as it is.',
@@ -118,14 +117,14 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => false,
   :nutshell => 'This further limits the legislatures ability to control the state budget process, which is part of why we are having so many funding issues already.',
   :text => ''
 )
 
-o5 = Option.create!(
+o5 = Proposal.create!(
   :name => 'industrial insurance',
   :short_name => 'industrial insurance',
   :description => 'This measure would permit certification of private insurers as industrial insurance insurers, and authorize employers to purchase state-mandated industrial insurance coverage through an \"industrial insurance insurer\" beginning July 1, 2012.\\nIt would establish a joint legislative task force to propose legislation conforming current statutes to this measure\xE2\x80\x99s provisions, and would direct the legislature to enact such supplemental conforming legislation as necessary by March 1, 2012.\\nIt would also eliminate the worker-paid share of medical-benefit premiums.',
@@ -137,7 +136,7 @@ o5 = Option.create!(
 )
 
 Point.create!(
-  :option => o5,
+  :proposal => o5,
   :user => admin,
   :is_pro => true,
   :nutshell => 'This will create more competition in the market, hopefully leading to lower costs.',
@@ -145,7 +144,7 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o5,
+  :proposal => o5,
   :user => admin,
   :is_pro => false,
   :nutshell => 'With the entire burden of paying for them on the state, there is a potential that some workers could lose certain benefits.',
@@ -153,7 +152,7 @@ Point.create!(
 )
 
 
-o6 = Option.create!(
+o6 = Proposal.create!(
   :name => 'establishing a state income tax and reducing other taxes',
   :short_name => 'state income tax',
   :description => 'This measure would establish a tax on \"adjusted gross income\" (as determined under the federal internal revenue code) above $200,000 for individuals and $400,000 for married couples or domestic partners filing jointly; reduce the limit on statewide property taxes by 20%; and increase the business and occupation tax credit to $4,800. \\nThe tax revenues would replace revenues lost from the reduced levy and increased credit; remaining revenues would be directed to education and health services.',
@@ -165,7 +164,7 @@ o6 = Option.create!(
 )
 
 Point.create!(
-  :option => o6,
+  :proposal => o6,
   :user => admin,
   :is_pro => true,
   :nutshell => 'This will guarantee much needed funding for basic health and education in our state.',
@@ -173,14 +172,14 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o6,
+  :proposal => o6,
   :user => admin,
   :is_pro => false,
   :nutshell => 'This is just the first step to a state income tax for all Washingtonians.',
   :text => ''
 )
 
-o7 = Option.create!(
+o7 = Proposal.create!(
   :name => 'funding bonds for energy efficiency projects in schools',
   :short_name => 'bond bill',
   :description => 'The legislature has passed Engrossed House Bill No. 2561, concerning authorizing and funding bonds for energy efficiency projects in schools.\\nThis bill would authorize bonds to finance construction and repair projects increasing energy efficiency in public schools and higher education buildings, and continue the sales tax on bottled water otherwise expiring in 2013.',
@@ -192,7 +191,7 @@ o7 = Option.create!(
 )
 
 Point.create!(
-  :option => o7,
+  :proposal => o7,
   :user => admin,
   :is_pro => true,
   :nutshell => 'We need more funding for our state schools.',
@@ -200,14 +199,14 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o7,
+  :proposal => o7,
   :user => admin,
   :is_pro => false,
   :nutshell => 'We already pay enough in taxes and schools need to learn to be more efficient in spending their existing funding.',
   :text => ''
 )
 
-o8 = Option.create!(
+o8 = Proposal.create!(
   :name => 'limiting state debt',
   :short_name => 'debt limit',
   :description => 'The legislature has proposed a constitutional amendment concerning the limitation on state debt.\\nThis amendment would require the state to reduce the interest accounted for in calculating the constitutional debt limit, by the amount of federal payments scheduled to be received to offset that interest.',
@@ -219,7 +218,7 @@ o8 = Option.create!(
 )
 
 Point.create!(
-  :option => o8,
+  :proposal => o8,
   :user => admin,
   :is_pro => true,
   :nutshell => 'This will reduce the cost to state taxpayers by reducing the net interest rate paid on General Obligation Bonds issued by the State.',
@@ -227,7 +226,7 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o8,
+  :proposal => o8,
   :user => admin,
   :is_pro => false,
   :nutshell => 'This will allow the state to take on more debt than it can reasonably afford to pay back at a time when we are already in fiscal trouble.',
@@ -235,7 +234,7 @@ Point.create!(
 )
 
 
-o9 = Option.create!(
+o9 = Proposal.create!(
   :name => 'denying bail for persons charged with certain crimes',
   :short_name => 'bail denial',
   :description => 'The legislature has proposed a constitutional amendment on denying bail for persons charged with certain criminal offenses.\\nThis amendment would authorize courts to deny bail for offenses punishable by the possibility of life in prison, on clear and convincing evidence of a propensity for violence that would likely endanger persons.',
@@ -247,7 +246,7 @@ o9 = Option.create!(
 )
 
 Point.create!(
-  :option => o9,
+  :proposal => o9,
   :user => admin,
   :is_pro => true,
   :nutshell => 'This reduces judicial discretion in setting bail, making sure no violent offenders are on the streets.',
@@ -255,7 +254,7 @@ Point.create!(
 )
 
 Point.create!(
-  :option => o9,
+  :proposal => o9,
   :user => admin,
   :is_pro => false,
   :nutshell => 'This reduces judicial discretion in setting bail, taking away too much freedom from judges.',

@@ -25,6 +25,10 @@ ConsiderIt::Application.routes.draw do
   } do 
     match "users/check_login_info" => "users/registrations#check_login_info", :via => :post
   end
+  
+  # devise_scope :users do
+  #   match "users/check_login_info" => "users/registrations#check_login_info", :via => :post
+  # end
 
   themes_for_rails # themes_for_rails gem routes 
 
