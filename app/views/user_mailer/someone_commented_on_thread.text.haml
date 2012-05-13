@@ -6,14 +6,15 @@ Hi #{@user.name},
 
 
   "#{@point.nutshell}"
-
-
-  Visit the "#{@point.proposal.title}" page [#{proposal_url(@point.proposal)}] to read the details, comment on this point and/or include it in your pro/con list. 
+  
+  Respond at
+  = succeed '.' do
+    = proposal_point_url(@point.proposal.long_id, @point, :host => @host)
 
 - elsif @position
   #{@comment.user.name} also commented on #{@position.user.name}'s review.
 
-  Go to #{proposal_url(@position.proposal)}" } to read and respond. 
+  Go to #{proposal_url(@position.proposal, :host => @host)}" } to read and respond. 
 
 
 Thanks!
