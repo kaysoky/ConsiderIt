@@ -5,7 +5,7 @@
 #TODO: replace these values with settings
 admin = User.create!(
    :username => 'ConsiderItAdmin',
-   :email => 'kaysoky88@gmail.com',
+   :email => 'ghconsiderit@gmail.com',
    :password   => 'EqualityInEquity',
    :password_confirmation => 'EqualityInEquity'
 )
@@ -120,7 +120,7 @@ Point.create!(
   :proposal => o4,
   :user => admin,
   :is_pro => false,
-  :nutshell => 'This further limits the legislatures ability to control the state budget process, which is part of why we are having so many funding issues already.',
+  :nutshell => 'This further limits the legislatures ability to control the state budget process, part of why we are having so many funding issues already.',
   :text => ''
 )
 

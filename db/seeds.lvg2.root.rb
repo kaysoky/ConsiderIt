@@ -3664,7 +3664,7 @@ admin = User.new(
 admin.skip_confirmation!
 admin.save
 
-o0 = Option.create!(
+o0 = Proposal.create!(
   :name => 'Concerning the length of time a voter must reside in Washington to vote for president and vice president.',
   :short_name => 'Pres/VP Voting',
   :description => 'The legislature has proposed a constitutional
@@ -3726,7 +3726,7 @@ o0 = Option.create!(
     before the election.<p>',
   :additional_details => 'Not required by law' )
 
-o1 = Option.create!(
+o1 = Proposal.create!(
   :name => 'Concerning the budget stabilization account maintained in the state treasury.',
   :short_name => 'Budget Acct.',
   :description => 'The legislature has proposed a constitutional
@@ -3800,7 +3800,7 @@ o1 = Option.create!(
 )
 
 p0 = Point.create!(
-  :option => o1,
+  :proposal => o1,
   :user => admin,
   :is_pro => true,
   :nutshell => 'Saving more $ in good economic times will help us be better prepared for bad times, evening out the boom/bust budget cycle we\'ve been on.',
@@ -3808,14 +3808,14 @@ p0 = Point.create!(
 )
 
 p1 = Point.create!(
-  :option => o1,
+  :proposal => o1,
   :user => admin,
   :is_pro => false,
   :nutshell => 'Saving more than we can afford will mean money is sitting in the bank while people go without basic goods and services they need.',
 :text => '', :published => true
 )
 
-o2 = Option.create!(
+o2 = Proposal.create!(
   :name => 'Concerning state expenditures on transportation.',
   :short_name => 'Transportation Exp.',
   :description => 'Initiative Measure No. 1125 concerns state
@@ -3851,7 +3851,7 @@ o2 = Option.create!(
     roads, and city streets; and the construction, reconstruction,
     maintenance, repair, and betterment of public highways, county
     roads, bridges, and city streets.<br> &nbsp;<br> Since well before
-    the adoption of the Eighteenth Amendment, the legislature has
+    the adproposal of the Eighteenth Amendment, the legislature has
     authorized the use of tolls as one means of paying for the
     acquisition, construction, and operation of bridges, ferries,
     tunnels, roads, and related facilities. That authority includes
@@ -4114,7 +4114,7 @@ o2 = Option.create!(
     tool for these bridges and highways.'  )
  
 p2 = Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => true,
   :nutshell => '1125 creates more accountability to the people by requiring a majority vote of the legislature to set toll rates.',
@@ -4122,7 +4122,7 @@ p2 = Point.create!(
 )
 
 p3 = Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => true,
   :nutshell => '1125 ensures that all toll revenue can only be used for transportation projects, nothing else.',
@@ -4131,7 +4131,7 @@ p3 = Point.create!(
 
 
 p4 = Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => false,
   :nutshell => 'Right now, an independent commission of experts set tolls. 1125 endangers transportation funding by requiring the legislature to set tolls.',
@@ -4140,7 +4140,7 @@ p4 = Point.create!(
 )
 
 p5 = Point.create!(
-  :option => o2,
+  :proposal => o2,
   :user => admin,
   :is_pro => false,
   :nutshell => 'We cannot afford the inevitable legal battles that will result from this initiative, forcing even more cuts to basic health and education.',
@@ -4148,7 +4148,7 @@ p5 = Point.create!(
 )
 
 
-o3 = Option.create!(
+o3 = Proposal.create!(
   :name => 'Concerning long-term care workers and services for elderly and disabled people.',
   :short_name => 'LT Care workers',
   :description => 'Initiative Measure No. 1163 concerns long-term care
@@ -4427,7 +4427,7 @@ o3 = Option.create!(
  
 
 p6 = Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => true,
   :nutshell => '1163 would require care workers to pass a fed background check beyond the currently mandated a local check, catching out of state crimes.',
@@ -4435,7 +4435,7 @@ p6 = Point.create!(
 )
 
 p7 = Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => true,
   :nutshell => '1163 restores training and background check requirements passed by voters in 2008 and delayed by the legislature.',
@@ -4443,7 +4443,7 @@ p7 = Point.create!(
 )
 
 p8 = Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => false,
   :nutshell => 'Moves up requirements that are planned to go into effect in 2014 to 2012, putting financial burden on WA at a time when we can\'t afford one.',
@@ -4451,7 +4451,7 @@ p8 = Point.create!(
 )
 
 p9 = Point.create!(
-  :option => o3,
+  :proposal => o3,
   :user => admin,
   :is_pro => false,
   :nutshell => 'To comply with 1163, the state would need to hire three additional auditors and five additional fraud investigators that it can\'t afford.',
@@ -4460,7 +4460,7 @@ p9 = Point.create!(
 
 
 
-o4 = Option.create!(
+o4 = Proposal.create!(
   :name => 'Concerning liquor: beer, wine, and spirits (hard liquor).',
   :short_name => 'Liquor',
   :description => 'Initiative Measure No. 1183 concerns liquor: beer,
@@ -4948,7 +4948,7 @@ o4 = Option.create!(
     2014.</p> ' )
 
 p10 = Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => true,
   :nutshell => '1183 gets the state out of the liquor business, allowing consumers to purchase liquor at licensed retailers as they do in most other states.',
@@ -4956,7 +4956,7 @@ p10 = Point.create!(
 )
 
 p11 = Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => true,
   :nutshell => '1183 will increase state revenue at a time when it is desperately needed.',
@@ -4964,7 +4964,7 @@ p11 = Point.create!(
 )
 
 p12 = Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => false,
   :nutshell => '1183 will result in many more liquor stores, meaning more access for minors and more enforcement work for an overburdened police force.',
@@ -4972,7 +4972,7 @@ p12 = Point.create!(
 )
 
 p13 = Point.create!(
-  :option => o4,
+  :proposal => o4,
   :user => admin,
   :is_pro => false,
   :nutshell => '1183 increases state revenue by increasing taxes on retailers, who pass it on in higher liquor prices for consumers.',
@@ -4981,7 +4981,7 @@ p13 = Point.create!(
 
 
 
-o5 = Option.create!(
+o5 = Proposal.create!(
   :name => 'Levy for Parks and Recreation Operations and Capital Improvements',
   :short_name => 'Parks Levy',
   :description => 'The City of Connell Council adopted Ordinance
@@ -5002,10 +5002,10 @@ o5 = Option.create!(
 
     z0 = DomainMap.create!(
       :domain => z99326,
-      :option => o5
+      :proposal => o5
     )
 
-o6 = Option.create!(
+o6 = Proposal.create!(
   :name => 'EMS District 1 City of Asotin',
   :short_name => 'EMS Levy',
   :description => 'Shall a special levy be collected in 2012 of
@@ -5023,10 +5023,10 @@ o6 = Option.create!(
 
     z1 = DomainMap.create!(
       :domain => z99402,
-      :option => o6
+      :proposal => o6
     )
 
-o7 = Option.create!(
+o7 = Proposal.create!(
   :name => 'EMS District 2 City of Clarkston',
   :short_name => 'EMS Levy',
   :description => 'City of Clarkston, Washington emergency medical
@@ -5049,10 +5049,10 @@ o7 = Option.create!(
 
     z2 = DomainMap.create!(
       :domain => z99403,
-      :option => o7
+      :proposal => o7
     )
 
-o8 = Option.create!(
+o8 = Proposal.create!(
   :name => 'Asotin County Fire Protection District No. 1 Emergency Medical Services Property Tax Levy',
   :short_name => 'EMS Levy',
   :description => 'Asotin County Fire Protection District No. 1 -
@@ -5075,20 +5075,20 @@ o8 = Option.create!(
 
     z3 = DomainMap.create!(
       :domain => z99401,
-      :option => o8
+      :proposal => o8
     )
 
     z4 = DomainMap.create!(
       :domain => z99402,
-      :option => o8
+      :proposal => o8
     )
 
     z5 = DomainMap.create!(
       :domain => z99403,
-      :option => o8
+      :proposal => o8
     )
 
-o9 = Option.create!(
+o9 = Proposal.create!(
   :name => 'City of Palouse Street Improvements and Street Oiling',
   :short_name => 'Street Levy',
   :description => 'For the purpose of funding street improvements and
@@ -5109,10 +5109,10 @@ o9 = Option.create!(
 
     z6 = DomainMap.create!(
       :domain => z99161,
-      :option => o9
+      :proposal => o9
     )
 
-o10 = Option.create!(
+o10 = Proposal.create!(
   :name => 'City of Palouse Swimming Pool Levy',
   :short_name => 'Swimming Pool Levy',
   :description => 'For the purpose of funding the operation and
@@ -5133,10 +5133,10 @@ o10 = Option.create!(
 
     z7 = DomainMap.create!(
       :domain => z99161,
-      :option => o10
+      :proposal => o10
     )
 
-o11 = Option.create!(
+o11 = Proposal.create!(
   :name => 'City of Palouse EMS Levy',
   :short_name => 'EMS Levy',
   :description => 'Shall the City of Palouse be authorized to impose
@@ -5154,10 +5154,10 @@ o11 = Option.create!(
 
     z8 = DomainMap.create!(
       :domain => z99161,
-      :option => o11
+      :proposal => o11
     )
 
-o12 = Option.create!(
+o12 = Proposal.create!(
   :name => 'City of Newport Property Tax Levy Lid Lift Dedicated to Street Preservation and Repair',
   :short_name => 'Street Levy',
   :description => 'The Newport City Council adopted Resolution
@@ -5180,10 +5180,10 @@ o12 = Option.create!(
 
     z9 = DomainMap.create!(
       :domain => z99156,
-      :option => o12
+      :proposal => o12
     )
 
-o13 = Option.create!(
+o13 = Proposal.create!(
   :name => 'Sacheen Lake Sewer and Water District One Year Excess Levy for Maintenance and Operation',
   :short_name => 'Water/Sewer Levy',
   :description => 'Shall the following taxes, in excess of regular,
@@ -5205,35 +5205,35 @@ o13 = Option.create!(
 
     z10 = DomainMap.create!(
       :domain => z99119,
-      :option => o13
+      :proposal => o13
     )
 
     z11 = DomainMap.create!(
       :domain => z99139,
-      :option => o13
+      :proposal => o13
     )
 
     z12 = DomainMap.create!(
       :domain => z99152,
-      :option => o13
+      :proposal => o13
     )
 
     z13 = DomainMap.create!(
       :domain => z99153,
-      :option => o13
+      :proposal => o13
     )
 
     z14 = DomainMap.create!(
       :domain => z99156,
-      :option => o13
+      :proposal => o13
     )
 
     z15 = DomainMap.create!(
       :domain => z99180,
-      :option => o13
+      :proposal => o13
     )
 
-o14 = Option.create!(
+o14 = Proposal.create!(
   :name => 'Selkirk School District No. 70 Capital Levy for School Expansion and Consolidation',
   :short_name => 'School Levy',
   :description => 'The Board of Directors of Selkirk School District
@@ -5258,35 +5258,35 @@ o14 = Option.create!(
 
     z16 = DomainMap.create!(
       :domain => z99119,
-      :option => o14
+      :proposal => o14
     )
 
     z17 = DomainMap.create!(
       :domain => z99139,
-      :option => o14
+      :proposal => o14
     )
 
     z18 = DomainMap.create!(
       :domain => z99152,
-      :option => o14
+      :proposal => o14
     )
 
     z19 = DomainMap.create!(
       :domain => z99153,
-      :option => o14
+      :proposal => o14
     )
 
     z20 = DomainMap.create!(
       :domain => z99156,
-      :option => o14
+      :proposal => o14
     )
 
     z21 = DomainMap.create!(
       :domain => z99180,
-      :option => o14
+      :proposal => o14
     )
 
-o15 = Option.create!(
+o15 = Proposal.create!(
   :name => 'Proposition Whether or Not the District Should Be Disincorporated',
   :short_name => 'Dissolve Water Dist.',
   :description => 'Resolution No. 11-04  Proposition No. 2  Should the Sacheen Lake Water and Sewer District be dissolved?',
@@ -5301,35 +5301,35 @@ o15 = Option.create!(
 
     z22 = DomainMap.create!(
       :domain => z99119,
-      :option => o15
+      :proposal => o15
     )
 
     z23 = DomainMap.create!(
       :domain => z99139,
-      :option => o15
+      :proposal => o15
     )
 
     z24 = DomainMap.create!(
       :domain => z99152,
-      :option => o15
+      :proposal => o15
     )
 
     z25 = DomainMap.create!(
       :domain => z99153,
-      :option => o15
+      :proposal => o15
     )
 
     z26 = DomainMap.create!(
       :domain => z99156,
-      :option => o15
+      :proposal => o15
     )
 
     z27 = DomainMap.create!(
       :domain => z99180,
-      :option => o15
+      :proposal => o15
     )
 
-o16 = Option.create!(
+o16 = Proposal.create!(
   :name => 'Douglas County Hospital District One Year Excess Levy',
   :short_name => 'Hospital Levy',
   :description => 'The Douglas County Hospital District No. 2
@@ -5351,40 +5351,40 @@ o16 = Option.create!(
 
     z28 = DomainMap.create!(
       :domain => z98813,
-      :option => o16
+      :proposal => o16
     )
 
     z29 = DomainMap.create!(
       :domain => z98858,
-      :option => o16
+      :proposal => o16
     )
 
     z30 = DomainMap.create!(
       :domain => z98802,
-      :option => o16
+      :proposal => o16
     )
 
     z31 = DomainMap.create!(
       :domain => z98830,
-      :option => o16
+      :proposal => o16
     )
 
     z32 = DomainMap.create!(
       :domain => z98843,
-      :option => o16
+      :proposal => o16
     )
 
     z33 = DomainMap.create!(
       :domain => z98845,
-      :option => o16
+      :proposal => o16
     )
 
     z34 = DomainMap.create!(
       :domain => z98850,
-      :option => o16
+      :proposal => o16
     )
 
-o17 = Option.create!(
+o17 = Proposal.create!(
   :name => 'Douglas County Cemetery District No. 2 One Year Maintenance and Operations Excess Tax Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'The Douglas County Cemetery District No. 2 Board of
@@ -5405,40 +5405,40 @@ o17 = Option.create!(
 
     z35 = DomainMap.create!(
       :domain => z98813,
-      :option => o17
+      :proposal => o17
     )
 
     z36 = DomainMap.create!(
       :domain => z98858,
-      :option => o17
+      :proposal => o17
     )
 
     z37 = DomainMap.create!(
       :domain => z98802,
-      :option => o17
+      :proposal => o17
     )
 
     z38 = DomainMap.create!(
       :domain => z98830,
-      :option => o17
+      :proposal => o17
     )
 
     z39 = DomainMap.create!(
       :domain => z98843,
-      :option => o17
+      :proposal => o17
     )
 
     z40 = DomainMap.create!(
       :domain => z98845,
-      :option => o17
+      :proposal => o17
     )
 
     z41 = DomainMap.create!(
       :domain => z98850,
-      :option => o17
+      :proposal => o17
     )
 
-o18 = Option.create!(
+o18 = Proposal.create!(
   :name => 'Town of Farmington Current Expense Fund Levy',
   :short_name => 'Current Expense Levy',
   :description => 'Shall the Town of Farmington levy a special tax of
@@ -5456,15 +5456,15 @@ o18 = Option.create!(
 
     z42 = DomainMap.create!(
       :domain => z99104,
-      :option => o18
+      :proposal => o18
     )
 
     z43 = DomainMap.create!(
       :domain => z99128,
-      :option => o18
+      :proposal => o18
     )
 
-o19 = Option.create!(
+o19 = Proposal.create!(
   :name => 'Town of Farmington Special Equipment Levy',
   :short_name => 'Special Eqpt Levy',
   :description => 'Shall the Town of Farmington levy a special tax of
@@ -5482,15 +5482,15 @@ o19 = Option.create!(
 
     z44 = DomainMap.create!(
       :domain => z99104,
-      :option => o19
+      :proposal => o19
     )
 
     z45 = DomainMap.create!(
       :domain => z99128,
-      :option => o19
+      :proposal => o19
     )
 
-o20 = Option.create!(
+o20 = Proposal.create!(
   :name => 'Town of Farmington Street Levy',
   :short_name => 'Street Levy',
   :description => 'Shall the Town of Farmington levy a special tax of $12,000, an estimated $2.24, per $1,000.00 dollars of the 2011 assessed valuation, for City Street Maintenance Fund, for collection in 2012, be approved?',
@@ -5505,15 +5505,15 @@ o20 = Option.create!(
 
     z46 = DomainMap.create!(
       :domain => z99104,
-      :option => o20
+      :proposal => o20
     )
 
     z47 = DomainMap.create!(
       :domain => z99128,
-      :option => o20
+      :proposal => o20
     )
 
-o21 = Option.create!(
+o21 = Proposal.create!(
   :name => 'Franklin County and Cities Criminal Justice and Public Purposes Sales and Use Tax',
   :short_name => 'Criminal Justice Levy',
   :description => 'The Board of Franklin County Commissioners adopted
@@ -5535,35 +5535,35 @@ o21 = Option.create!(
 
     z48 = DomainMap.create!(
       :domain => z99343,
-      :option => o21
+      :proposal => o21
     )
 
     z49 = DomainMap.create!(
       :domain => z99326,
-      :option => o21
+      :proposal => o21
     )
 
     z50 = DomainMap.create!(
       :domain => z99330,
-      :option => o21
+      :proposal => o21
     )
 
     z51 = DomainMap.create!(
       :domain => z99335,
-      :option => o21
+      :proposal => o21
     )
 
     z52 = DomainMap.create!(
       :domain => z99301,
-      :option => o21
+      :proposal => o21
     )
 
     z53 = DomainMap.create!(
       :domain => z99302,
-      :option => o21
+      :proposal => o21
     )
 
-o22 = Option.create!(
+o22 = Proposal.create!(
   :name => 'Mosquito Control District Formation',
   :short_name => 'Mosquito District',
   :description => 'Shall a mosquito control district be established for the area 
@@ -5580,10 +5580,10 @@ o22 = Option.create!(
 
     z54 = DomainMap.create!(
       :domain => z98858,
-      :option => o22
+      :proposal => o22
     )
 
-o23 = Option.create!(
+o23 = Proposal.create!(
   :name => 'Mosquito Control District One Year Levy',
   :short_name => 'Mosquito Levy',
   :description => 'Shall the mosquito control district, if formed, levy a general tax 
@@ -5601,10 +5601,10 @@ o23 = Option.create!(
 
     z55 = DomainMap.create!(
       :domain => z98858,
-      :option => o23
+      :proposal => o23
     )
 
-o24 = Option.create!(
+o24 = Proposal.create!(
   :name => 'Waterville Permanent Regular Levy Lid Lift',
   :short_name => 'Levy Lid Lift',
   :description => 'The Waterville Town Council adopted Resolution No. 2011-05 
@@ -5624,10 +5624,10 @@ o24 = Option.create!(
 
     z56 = DomainMap.create!(
       :domain => z98858,
-      :option => o24
+      :proposal => o24
     )
 
-o25 = Option.create!(
+o25 = Proposal.create!(
   :name => 'City of Tekoa Street Levy',
   :short_name => 'Street Levy',
   :description => 'Shall the City of Tekoa levy a special tax in the amount 
@@ -5644,13 +5644,13 @@ o25 = Option.create!(
 
     z57 = DomainMap.create!(
       :domain => z99033,
-      :option => o25
+      :proposal => o25
     )
 
 #o26 (Tekoa Park and Recreation District Levy) moved to end of file so
-# that the first 50 options are the same with the old and new measures
+# that the first 50 proposals are the same with the old and new measures
 
-o27 = Option.create!(
+o27 = Proposal.create!(
   :name => 'Town of Albion EMS Levy',
   :short_name => 'EMS Levy',
   :description => 'Shall the Town of Albion levy a special tax levy of $1,000, 
@@ -5667,10 +5667,10 @@ o27 = Option.create!(
 
     z59 = DomainMap.create!(
       :domain => z99102,
-      :option => o27
+      :proposal => o27
     )
 
-o28 = Option.create!(
+o28 = Proposal.create!(
   :name => 'Town of Colton Levy',
   :short_name => 'Street/Water Levy',
   :description => 'Shall the Town of Colton be authorized to levy additional taxes 
@@ -5688,10 +5688,10 @@ o28 = Option.create!(
 
     z60 = DomainMap.create!(
       :domain => z99113,
-      :option => o28
+      :proposal => o28
     )
 
-o29 = Option.create!(
+o29 = Proposal.create!(
   :name => 'Town of Endicott Street Levy',
   :short_name => 'Street Levy',
   :description => 'Shall the Town of Endicott be authorized to impose a special
@@ -5707,10 +5707,10 @@ o29 = Option.create!(
 
     z61 = DomainMap.create!(
       :domain => z99125,
-      :option => o29
+      :proposal => o29
     )
 
-o30 = Option.create!(
+o30 = Proposal.create!(
   :name => 'Town of Endicott City Park Levy',
   :short_name => 'City Park Levy',
   :description => 'Shall the Town of Endicott be authorized to impose a special
@@ -5726,13 +5726,13 @@ o30 = Option.create!(
 
     z62 = DomainMap.create!(
       :domain => z99125,
-      :option => o30
+      :proposal => o30
     )
 
 #o31 (Endicott Cemetery District #4 Levy) moved to end of file so
-# that the first 50 options are the same with the old and new measures
+# that the first 50 proposals are the same with the old and new measures
 
-o32 = Option.create!(
+o32 = Proposal.create!(
   :name => 'Veterans and Human Services Levy',
   :short_name => 'Veterans Svcs.',
   :description => 'The Kitsap County Board of Commissioners approved Resolution 
@@ -5756,135 +5756,135 @@ o32 = Option.create!(
 
     z64 = DomainMap.create!(
       :domain => z98061,
-      :option => o32
+      :proposal => o32
     )
 
     z65 = DomainMap.create!(
       :domain => z98110,
-      :option => o32
+      :proposal => o32
     )
 
     z66 = DomainMap.create!(
       :domain => z98310,
-      :option => o32
+      :proposal => o32
     )
 
     z67 = DomainMap.create!(
       :domain => z98311,
-      :option => o32
+      :proposal => o32
     )
 
     z68 = DomainMap.create!(
       :domain => z98312,
-      :option => o32
+      :proposal => o32
     )
 
     z69 = DomainMap.create!(
       :domain => z98314,
-      :option => o32
+      :proposal => o32
     )
 
     z70 = DomainMap.create!(
       :domain => z98315,
-      :option => o32
+      :proposal => o32
     )
 
     z71 = DomainMap.create!(
       :domain => z98322,
-      :option => o32
+      :proposal => o32
     )
 
     z72 = DomainMap.create!(
       :domain => z98337,
-      :option => o32
+      :proposal => o32
     )
 
     z73 = DomainMap.create!(
       :domain => z98340,
-      :option => o32
+      :proposal => o32
     )
 
     z74 = DomainMap.create!(
       :domain => z98342,
-      :option => o32
+      :proposal => o32
     )
 
     z75 = DomainMap.create!(
       :domain => z98345,
-      :option => o32
+      :proposal => o32
     )
 
     z76 = DomainMap.create!(
       :domain => z98346,
-      :option => o32
+      :proposal => o32
     )
 
     z77 = DomainMap.create!(
       :domain => z98353,
-      :option => o32
+      :proposal => o32
     )
 
     z78 = DomainMap.create!(
       :domain => z98359,
-      :option => o32
+      :proposal => o32
     )
 
     z79 = DomainMap.create!(
       :domain => z98364,
-      :option => o32
+      :proposal => o32
     )
 
     z80 = DomainMap.create!(
       :domain => z98366,
-      :option => o32
+      :proposal => o32
     )
 
     z81 = DomainMap.create!(
       :domain => z98367,
-      :option => o32
+      :proposal => o32
     )
 
     z82 = DomainMap.create!(
       :domain => z98370,
-      :option => o32
+      :proposal => o32
     )
 
     z83 = DomainMap.create!(
       :domain => z98378,
-      :option => o32
+      :proposal => o32
     )
 
     z84 = DomainMap.create!(
       :domain => z98380,
-      :option => o32
+      :proposal => o32
     )
 
     z85 = DomainMap.create!(
       :domain => z98383,
-      :option => o32
+      :proposal => o32
     )
 
     z86 = DomainMap.create!(
       :domain => z98384,
-      :option => o32
+      :proposal => o32
     )
 
     z87 = DomainMap.create!(
       :domain => z98386,
-      :option => o32
+      :proposal => o32
     )
 
     z88 = DomainMap.create!(
       :domain => z98392,
-      :option => o32
+      :proposal => o32
     )
 
     z89 = DomainMap.create!(
       :domain => z98393,
-      :option => o32
+      :proposal => o32
     )
 
-o33 = Option.create!(
+o33 = Proposal.create!(
   :name => 'Formation of Port of Bainbridge Island',
   :short_name => 'Port Formation',
   :description => 'The Kitsap County Board of Commissioners adopted
@@ -5906,135 +5906,135 @@ o33 = Option.create!(
 
     z90 = DomainMap.create!(
       :domain => z98061,
-      :option => o33
+      :proposal => o33
     )
 
     z91 = DomainMap.create!(
       :domain => z98110,
-      :option => o33
+      :proposal => o33
     )
 
     z92 = DomainMap.create!(
       :domain => z98310,
-      :option => o33
+      :proposal => o33
     )
 
     z93 = DomainMap.create!(
       :domain => z98311,
-      :option => o33
+      :proposal => o33
     )
 
     z94 = DomainMap.create!(
       :domain => z98312,
-      :option => o33
+      :proposal => o33
     )
 
     z95 = DomainMap.create!(
       :domain => z98314,
-      :option => o33
+      :proposal => o33
     )
 
     z96 = DomainMap.create!(
       :domain => z98315,
-      :option => o33
+      :proposal => o33
     )
 
     z97 = DomainMap.create!(
       :domain => z98322,
-      :option => o33
+      :proposal => o33
     )
 
     z98 = DomainMap.create!(
       :domain => z98337,
-      :option => o33
+      :proposal => o33
     )
 
     z99 = DomainMap.create!(
       :domain => z98340,
-      :option => o33
+      :proposal => o33
     )
 
     z100 = DomainMap.create!(
       :domain => z98342,
-      :option => o33
+      :proposal => o33
     )
 
     z101 = DomainMap.create!(
       :domain => z98345,
-      :option => o33
+      :proposal => o33
     )
 
     z102 = DomainMap.create!(
       :domain => z98346,
-      :option => o33
+      :proposal => o33
     )
 
     z103 = DomainMap.create!(
       :domain => z98353,
-      :option => o33
+      :proposal => o33
     )
 
     z104 = DomainMap.create!(
       :domain => z98359,
-      :option => o33
+      :proposal => o33
     )
 
     z105 = DomainMap.create!(
       :domain => z98364,
-      :option => o33
+      :proposal => o33
     )
 
     z106 = DomainMap.create!(
       :domain => z98366,
-      :option => o33
+      :proposal => o33
     )
 
     z107 = DomainMap.create!(
       :domain => z98367,
-      :option => o33
+      :proposal => o33
     )
 
     z108 = DomainMap.create!(
       :domain => z98370,
-      :option => o33
+      :proposal => o33
     )
 
     z109 = DomainMap.create!(
       :domain => z98378,
-      :option => o33
+      :proposal => o33
     )
 
     z110 = DomainMap.create!(
       :domain => z98380,
-      :option => o33
+      :proposal => o33
     )
 
     z111 = DomainMap.create!(
       :domain => z98383,
-      :option => o33
+      :proposal => o33
     )
 
     z112 = DomainMap.create!(
       :domain => z98384,
-      :option => o33
+      :proposal => o33
     )
 
     z113 = DomainMap.create!(
       :domain => z98386,
-      :option => o33
+      :proposal => o33
     )
 
     z114 = DomainMap.create!(
       :domain => z98392,
-      :option => o33
+      :proposal => o33
     )
 
     z115 = DomainMap.create!(
       :domain => z98393,
-      :option => o33
+      :proposal => o33
     )
 
-o34 = Option.create!(
+o34 = Proposal.create!(
   :name => 'Proposed Charter Amendment to Reduce the Size of City Council',
   :short_name => 'Council Size Red.',
   :description => 'The Bremerton City Council adopted Resolution
@@ -6059,30 +6059,30 @@ o34 = Option.create!(
 
     z116 = DomainMap.create!(
       :domain => z98310,
-      :option => o34
+      :proposal => o34
     )
 
     z117 = DomainMap.create!(
       :domain => z98311,
-      :option => o34
+      :proposal => o34
     )
 
     z118 = DomainMap.create!(
       :domain => z98312,
-      :option => o34
+      :proposal => o34
     )
 
     z119 = DomainMap.create!(
       :domain => z98314,
-      :option => o34
+      :proposal => o34
     )
 
     z120 = DomainMap.create!(
       :domain => z98337,
-      :option => o34
+      :proposal => o34
     )
 
-o35 = Option.create!(
+o35 = Proposal.create!(
   :name => 'Enlargement of Port of Tracyton',
   :short_name => 'Port Enlargement',
   :description => 'This proposition concerns the enlargement of the
@@ -6103,10 +6103,10 @@ o35 = Option.create!(
 
     z121 = DomainMap.create!(
       :domain => z98393,
-      :option => o35
+      :proposal => o35
     )
 
-o36 = Option.create!(
+o36 = Proposal.create!(
   :name => 'EMS Levy Authorization',
   :short_name => 'EMS Levy',
   :description => 'The Board of Yakima County Commissioners adopted
@@ -6129,130 +6129,130 @@ o36 = Option.create!(
 
     z122 = DomainMap.create!(
       :domain => z98901,
-      :option => o36
+      :proposal => o36
     )
 
     z123 = DomainMap.create!(
       :domain => z98902,
-      :option => o36
+      :proposal => o36
     )
 
     z124 = DomainMap.create!(
       :domain => z98903,
-      :option => o36
+      :proposal => o36
     )
 
     z125 = DomainMap.create!(
       :domain => z98904,
-      :option => o36
+      :proposal => o36
     )
 
     z126 = DomainMap.create!(
       :domain => z98907,
-      :option => o36
+      :proposal => o36
     )
 
     z127 = DomainMap.create!(
       :domain => z98908,
-      :option => o36
+      :proposal => o36
     )
 
     z128 = DomainMap.create!(
       :domain => z98909,
-      :option => o36
+      :proposal => o36
     )
 
     z129 = DomainMap.create!(
       :domain => z98920,
-      :option => o36
+      :proposal => o36
     )
 
     z130 = DomainMap.create!(
       :domain => z98921,
-      :option => o36
+      :proposal => o36
     )
 
     z131 = DomainMap.create!(
       :domain => z98923,
-      :option => o36
+      :proposal => o36
     )
 
     z132 = DomainMap.create!(
       :domain => z98930,
-      :option => o36
+      :proposal => o36
     )
 
     z133 = DomainMap.create!(
       :domain => z98932,
-      :option => o36
+      :proposal => o36
     )
 
     z134 = DomainMap.create!(
       :domain => z98933,
-      :option => o36
+      :proposal => o36
     )
 
     z135 = DomainMap.create!(
       :domain => z98935,
-      :option => o36
+      :proposal => o36
     )
 
     z136 = DomainMap.create!(
       :domain => z98936,
-      :option => o36
+      :proposal => o36
     )
 
     z137 = DomainMap.create!(
       :domain => z98937,
-      :option => o36
+      :proposal => o36
     )
 
     z138 = DomainMap.create!(
       :domain => z98938,
-      :option => o36
+      :proposal => o36
     )
 
     z139 = DomainMap.create!(
       :domain => z98939,
-      :option => o36
+      :proposal => o36
     )
 
     z140 = DomainMap.create!(
       :domain => z98942,
-      :option => o36
+      :proposal => o36
     )
 
     z141 = DomainMap.create!(
       :domain => z98944,
-      :option => o36
+      :proposal => o36
     )
 
     z142 = DomainMap.create!(
       :domain => z98947,
-      :option => o36
+      :proposal => o36
     )
 
     z143 = DomainMap.create!(
       :domain => z98948,
-      :option => o36
+      :proposal => o36
     )
 
     z144 = DomainMap.create!(
       :domain => z98951,
-      :option => o36
+      :proposal => o36
     )
 
     z145 = DomainMap.create!(
       :domain => z98952,
-      :option => o36
+      :proposal => o36
     )
 
     z146 = DomainMap.create!(
       :domain => z98953,
-      :option => o36
+      :proposal => o36
     )
 
-o37 = Option.create!(
+o37 = Proposal.create!(
   :name => 'Yakima County Home Rule',
   :short_name => 'Home Rule Charter',
   :description => 'Proposition No. 1 concerns a proposal to frame a
@@ -6272,130 +6272,130 @@ o37 = Option.create!(
 
     z147 = DomainMap.create!(
       :domain => z98901,
-      :option => o37
+      :proposal => o37
     )
 
     z148 = DomainMap.create!(
       :domain => z98902,
-      :option => o37
+      :proposal => o37
     )
 
     z149 = DomainMap.create!(
       :domain => z98903,
-      :option => o37
+      :proposal => o37
     )
 
     z150 = DomainMap.create!(
       :domain => z98904,
-      :option => o37
+      :proposal => o37
     )
 
     z151 = DomainMap.create!(
       :domain => z98907,
-      :option => o37
+      :proposal => o37
     )
 
     z152 = DomainMap.create!(
       :domain => z98908,
-      :option => o37
+      :proposal => o37
     )
 
     z153 = DomainMap.create!(
       :domain => z98909,
-      :option => o37
+      :proposal => o37
     )
 
     z154 = DomainMap.create!(
       :domain => z98920,
-      :option => o37
+      :proposal => o37
     )
 
     z155 = DomainMap.create!(
       :domain => z98921,
-      :option => o37
+      :proposal => o37
     )
 
     z156 = DomainMap.create!(
       :domain => z98923,
-      :option => o37
+      :proposal => o37
     )
 
     z157 = DomainMap.create!(
       :domain => z98930,
-      :option => o37
+      :proposal => o37
     )
 
     z158 = DomainMap.create!(
       :domain => z98932,
-      :option => o37
+      :proposal => o37
     )
 
     z159 = DomainMap.create!(
       :domain => z98933,
-      :option => o37
+      :proposal => o37
     )
 
     z160 = DomainMap.create!(
       :domain => z98935,
-      :option => o37
+      :proposal => o37
     )
 
     z161 = DomainMap.create!(
       :domain => z98936,
-      :option => o37
+      :proposal => o37
     )
 
     z162 = DomainMap.create!(
       :domain => z98937,
-      :option => o37
+      :proposal => o37
     )
 
     z163 = DomainMap.create!(
       :domain => z98938,
-      :option => o37
+      :proposal => o37
     )
 
     z164 = DomainMap.create!(
       :domain => z98939,
-      :option => o37
+      :proposal => o37
     )
 
     z165 = DomainMap.create!(
       :domain => z98942,
-      :option => o37
+      :proposal => o37
     )
 
     z166 = DomainMap.create!(
       :domain => z98944,
-      :option => o37
+      :proposal => o37
     )
 
     z167 = DomainMap.create!(
       :domain => z98947,
-      :option => o37
+      :proposal => o37
     )
 
     z168 = DomainMap.create!(
       :domain => z98948,
-      :option => o37
+      :proposal => o37
     )
 
     z169 = DomainMap.create!(
       :domain => z98951,
-      :option => o37
+      :proposal => o37
     )
 
     z170 = DomainMap.create!(
       :domain => z98952,
-      :option => o37
+      :proposal => o37
     )
 
     z171 = DomainMap.create!(
       :domain => z98953,
-      :option => o37
+      :proposal => o37
     )
 
-o38 = Option.create!(
+o38 = Proposal.create!(
   :name => 'Naches Park & Recreation District Special Levy',
   :short_name => 'Parks Levy',
   :description => 'The Commissioners of the Naches Park and Recreation
@@ -6416,10 +6416,10 @@ o38 = Option.create!(
 
     z172 = DomainMap.create!(
       :domain => z98937,
-      :option => o38
+      :proposal => o38
     )
 
-o39 = Option.create!(
+o39 = Proposal.create!(
   :name => 'Levy for Criminal Justice Services and Cash Reserve Stabilization',
   :short_name => 'Criminal Justice Levy',
   :description => 'The Carnation City Council has passed Resolution
@@ -6468,10 +6468,10 @@ o39 = Option.create!(
 
     z173 = DomainMap.create!(
       :domain => z98014,
-      :option => o39
+      :proposal => o39
     )
 
-o40 = Option.create!(
+o40 = Proposal.create!(
   :name => 'Utility Occupation Tax for Des Moines Beach Park and Streets',
   :short_name => 'Historic Bldgs, Streets',
   :description => 'The Des Moines City Council adopted Resolution
@@ -6522,15 +6522,15 @@ o40 = Option.create!(
 
     z174 = DomainMap.create!(
       :domain => z98148,
-      :option => o40
+      :proposal => o40
     )
 
     z175 = DomainMap.create!(
       :domain => z98198,
-      :option => o40
+      :proposal => o40
     )
 
-o41 = Option.create!(
+o41 = Proposal.create!(
   :name => 'Levy Lid Lift for Street Improvements',
   :short_name => 'Street Levy',
   :description => 'The City Council of the City of Pacific, adopted
@@ -6563,10 +6563,10 @@ o41 = Option.create!(
 
     z176 = DomainMap.create!(
       :domain => z98047,
-      :option => o41
+      :proposal => o41
     )
 
-o42 = Option.create!(
+o42 = Proposal.create!(
   :name => 'Change in Plan of Government',
   :short_name => 'Mayor/Council?',
   :description => 'Shall the City of SeaTac abandon its present
@@ -6608,30 +6608,30 @@ o42 = Option.create!(
 
     z177 = DomainMap.create!(
       :domain => z98148,
-      :option => o42
+      :proposal => o42
     )
 
     z178 = DomainMap.create!(
       :domain => z98158,
-      :option => o42
+      :proposal => o42
     )
 
     z179 = DomainMap.create!(
       :domain => z98168,
-      :option => o42
+      :proposal => o42
     )
 
     z180 = DomainMap.create!(
       :domain => z98188,
-      :option => o42
+      :proposal => o42
     )
 
     z181 = DomainMap.create!(
       :domain => z98198,
-      :option => o42
+      :proposal => o42
     )
 
-o43 = Option.create!(
+o43 = Proposal.create!(
   :name => 'Regular Tax Levy Including Families and Education',
   :short_name => 'Families & Educ.',
   :description => 'The City of Seattle&rsquo;s Proposition concerns
@@ -6730,305 +6730,305 @@ o43 = Option.create!(
 
     z182 = DomainMap.create!(
       :domain => z98101,
-      :option => o43
+      :proposal => o43
     )
 
     z183 = DomainMap.create!(
       :domain => z98102,
-      :option => o43
+      :proposal => o43
     )
 
     z184 = DomainMap.create!(
       :domain => z98103,
-      :option => o43
+      :proposal => o43
     )
 
     z185 = DomainMap.create!(
       :domain => z98104,
-      :option => o43
+      :proposal => o43
     )
 
     z186 = DomainMap.create!(
       :domain => z98105,
-      :option => o43
+      :proposal => o43
     )
 
     z187 = DomainMap.create!(
       :domain => z98106,
-      :option => o43
+      :proposal => o43
     )
 
     z188 = DomainMap.create!(
       :domain => z98107,
-      :option => o43
+      :proposal => o43
     )
 
     z189 = DomainMap.create!(
       :domain => z98108,
-      :option => o43
+      :proposal => o43
     )
 
     z190 = DomainMap.create!(
       :domain => z98109,
-      :option => o43
+      :proposal => o43
     )
 
     z191 = DomainMap.create!(
       :domain => z98111,
-      :option => o43
+      :proposal => o43
     )
 
     z192 = DomainMap.create!(
       :domain => z98112,
-      :option => o43
+      :proposal => o43
     )
 
     z193 = DomainMap.create!(
       :domain => z98113,
-      :option => o43
+      :proposal => o43
     )
 
     z194 = DomainMap.create!(
       :domain => z98114,
-      :option => o43
+      :proposal => o43
     )
 
     z195 = DomainMap.create!(
       :domain => z98115,
-      :option => o43
+      :proposal => o43
     )
 
     z196 = DomainMap.create!(
       :domain => z98116,
-      :option => o43
+      :proposal => o43
     )
 
     z197 = DomainMap.create!(
       :domain => z98117,
-      :option => o43
+      :proposal => o43
     )
 
     z198 = DomainMap.create!(
       :domain => z98118,
-      :option => o43
+      :proposal => o43
     )
 
     z199 = DomainMap.create!(
       :domain => z98119,
-      :option => o43
+      :proposal => o43
     )
 
     z200 = DomainMap.create!(
       :domain => z98121,
-      :option => o43
+      :proposal => o43
     )
 
     z201 = DomainMap.create!(
       :domain => z98122,
-      :option => o43
+      :proposal => o43
     )
 
     z202 = DomainMap.create!(
       :domain => z98124,
-      :option => o43
+      :proposal => o43
     )
 
     z203 = DomainMap.create!(
       :domain => z98125,
-      :option => o43
+      :proposal => o43
     )
 
     z204 = DomainMap.create!(
       :domain => z98126,
-      :option => o43
+      :proposal => o43
     )
 
     z205 = DomainMap.create!(
       :domain => z98127,
-      :option => o43
+      :proposal => o43
     )
 
     z206 = DomainMap.create!(
       :domain => z98129,
-      :option => o43
+      :proposal => o43
     )
 
     z207 = DomainMap.create!(
       :domain => z98131,
-      :option => o43
+      :proposal => o43
     )
 
     z208 = DomainMap.create!(
       :domain => z98132,
-      :option => o43
+      :proposal => o43
     )
 
     z209 = DomainMap.create!(
       :domain => z98133,
-      :option => o43
+      :proposal => o43
     )
 
     z210 = DomainMap.create!(
       :domain => z98134,
-      :option => o43
+      :proposal => o43
     )
 
     z211 = DomainMap.create!(
       :domain => z98136,
-      :option => o43
+      :proposal => o43
     )
 
     z212 = DomainMap.create!(
       :domain => z98138,
-      :option => o43
+      :proposal => o43
     )
 
     z213 = DomainMap.create!(
       :domain => z98139,
-      :option => o43
+      :proposal => o43
     )
 
     z214 = DomainMap.create!(
       :domain => z98141,
-      :option => o43
+      :proposal => o43
     )
 
     z215 = DomainMap.create!(
       :domain => z98144,
-      :option => o43
+      :proposal => o43
     )
 
     z216 = DomainMap.create!(
       :domain => z98145,
-      :option => o43
+      :proposal => o43
     )
 
     z217 = DomainMap.create!(
       :domain => z98146,
-      :option => o43
+      :proposal => o43
     )
 
     z218 = DomainMap.create!(
       :domain => z98148,
-      :option => o43
+      :proposal => o43
     )
 
     z219 = DomainMap.create!(
       :domain => z98154,
-      :option => o43
+      :proposal => o43
     )
 
     z220 = DomainMap.create!(
       :domain => z98155,
-      :option => o43
+      :proposal => o43
     )
 
     z221 = DomainMap.create!(
       :domain => z98158,
-      :option => o43
+      :proposal => o43
     )
 
     z222 = DomainMap.create!(
       :domain => z98160,
-      :option => o43
+      :proposal => o43
     )
 
     z223 = DomainMap.create!(
       :domain => z98161,
-      :option => o43
+      :proposal => o43
     )
 
     z224 = DomainMap.create!(
       :domain => z98164,
-      :option => o43
+      :proposal => o43
     )
 
     z225 = DomainMap.create!(
       :domain => z98165,
-      :option => o43
+      :proposal => o43
     )
 
     z226 = DomainMap.create!(
       :domain => z98166,
-      :option => o43
+      :proposal => o43
     )
 
     z227 = DomainMap.create!(
       :domain => z98168,
-      :option => o43
+      :proposal => o43
     )
 
     z228 = DomainMap.create!(
       :domain => z98170,
-      :option => o43
+      :proposal => o43
     )
 
     z229 = DomainMap.create!(
       :domain => z98174,
-      :option => o43
+      :proposal => o43
     )
 
     z230 = DomainMap.create!(
       :domain => z98175,
-      :option => o43
+      :proposal => o43
     )
 
     z231 = DomainMap.create!(
       :domain => z98177,
-      :option => o43
+      :proposal => o43
     )
 
     z232 = DomainMap.create!(
       :domain => z98178,
-      :option => o43
+      :proposal => o43
     )
 
     z233 = DomainMap.create!(
       :domain => z98181,
-      :option => o43
+      :proposal => o43
     )
 
     z234 = DomainMap.create!(
       :domain => z98185,
-      :option => o43
+      :proposal => o43
     )
 
     z235 = DomainMap.create!(
       :domain => z98188,
-      :option => o43
+      :proposal => o43
     )
 
     z236 = DomainMap.create!(
       :domain => z98190,
-      :option => o43
+      :proposal => o43
     )
 
     z237 = DomainMap.create!(
       :domain => z98191,
-      :option => o43
+      :proposal => o43
     )
 
     z238 = DomainMap.create!(
       :domain => z98194,
-      :option => o43
+      :proposal => o43
     )
 
     z239 = DomainMap.create!(
       :domain => z98195,
-      :option => o43
+      :proposal => o43
     )
 
     z240 = DomainMap.create!(
       :domain => z98198,
-      :option => o43
+      :proposal => o43
     )
 
     z241 = DomainMap.create!(
       :domain => z98199,
-      :option => o43
+      :proposal => o43
     )
 
-o44 = Option.create!(
+o44 = Proposal.create!(
   :name => 'Increased Vehicle License Fee',
   :short_name => 'Transportation Improvements',
   :description => 'The Seattle Transportation Benefit District&rsquo;s
@@ -7086,305 +7086,305 @@ o44 = Option.create!(
 
     z242 = DomainMap.create!(
       :domain => z98101,
-      :option => o44
+      :proposal => o44
     )
 
     z243 = DomainMap.create!(
       :domain => z98102,
-      :option => o44
+      :proposal => o44
     )
 
     z244 = DomainMap.create!(
       :domain => z98103,
-      :option => o44
+      :proposal => o44
     )
 
     z245 = DomainMap.create!(
       :domain => z98104,
-      :option => o44
+      :proposal => o44
     )
 
     z246 = DomainMap.create!(
       :domain => z98105,
-      :option => o44
+      :proposal => o44
     )
 
     z247 = DomainMap.create!(
       :domain => z98106,
-      :option => o44
+      :proposal => o44
     )
 
     z248 = DomainMap.create!(
       :domain => z98107,
-      :option => o44
+      :proposal => o44
     )
 
     z249 = DomainMap.create!(
       :domain => z98108,
-      :option => o44
+      :proposal => o44
     )
 
     z250 = DomainMap.create!(
       :domain => z98109,
-      :option => o44
+      :proposal => o44
     )
 
     z251 = DomainMap.create!(
       :domain => z98111,
-      :option => o44
+      :proposal => o44
     )
 
     z252 = DomainMap.create!(
       :domain => z98112,
-      :option => o44
+      :proposal => o44
     )
 
     z253 = DomainMap.create!(
       :domain => z98113,
-      :option => o44
+      :proposal => o44
     )
 
     z254 = DomainMap.create!(
       :domain => z98114,
-      :option => o44
+      :proposal => o44
     )
 
     z255 = DomainMap.create!(
       :domain => z98115,
-      :option => o44
+      :proposal => o44
     )
 
     z256 = DomainMap.create!(
       :domain => z98116,
-      :option => o44
+      :proposal => o44
     )
 
     z257 = DomainMap.create!(
       :domain => z98117,
-      :option => o44
+      :proposal => o44
     )
 
     z258 = DomainMap.create!(
       :domain => z98118,
-      :option => o44
+      :proposal => o44
     )
 
     z259 = DomainMap.create!(
       :domain => z98119,
-      :option => o44
+      :proposal => o44
     )
 
     z260 = DomainMap.create!(
       :domain => z98121,
-      :option => o44
+      :proposal => o44
     )
 
     z261 = DomainMap.create!(
       :domain => z98122,
-      :option => o44
+      :proposal => o44
     )
 
     z262 = DomainMap.create!(
       :domain => z98124,
-      :option => o44
+      :proposal => o44
     )
 
     z263 = DomainMap.create!(
       :domain => z98125,
-      :option => o44
+      :proposal => o44
     )
 
     z264 = DomainMap.create!(
       :domain => z98126,
-      :option => o44
+      :proposal => o44
     )
 
     z265 = DomainMap.create!(
       :domain => z98127,
-      :option => o44
+      :proposal => o44
     )
 
     z266 = DomainMap.create!(
       :domain => z98129,
-      :option => o44
+      :proposal => o44
     )
 
     z267 = DomainMap.create!(
       :domain => z98131,
-      :option => o44
+      :proposal => o44
     )
 
     z268 = DomainMap.create!(
       :domain => z98132,
-      :option => o44
+      :proposal => o44
     )
 
     z269 = DomainMap.create!(
       :domain => z98133,
-      :option => o44
+      :proposal => o44
     )
 
     z270 = DomainMap.create!(
       :domain => z98134,
-      :option => o44
+      :proposal => o44
     )
 
     z271 = DomainMap.create!(
       :domain => z98136,
-      :option => o44
+      :proposal => o44
     )
 
     z272 = DomainMap.create!(
       :domain => z98138,
-      :option => o44
+      :proposal => o44
     )
 
     z273 = DomainMap.create!(
       :domain => z98139,
-      :option => o44
+      :proposal => o44
     )
 
     z274 = DomainMap.create!(
       :domain => z98141,
-      :option => o44
+      :proposal => o44
     )
 
     z275 = DomainMap.create!(
       :domain => z98144,
-      :option => o44
+      :proposal => o44
     )
 
     z276 = DomainMap.create!(
       :domain => z98145,
-      :option => o44
+      :proposal => o44
     )
 
     z277 = DomainMap.create!(
       :domain => z98146,
-      :option => o44
+      :proposal => o44
     )
 
     z278 = DomainMap.create!(
       :domain => z98148,
-      :option => o44
+      :proposal => o44
     )
 
     z279 = DomainMap.create!(
       :domain => z98154,
-      :option => o44
+      :proposal => o44
     )
 
     z280 = DomainMap.create!(
       :domain => z98155,
-      :option => o44
+      :proposal => o44
     )
 
     z281 = DomainMap.create!(
       :domain => z98158,
-      :option => o44
+      :proposal => o44
     )
 
     z282 = DomainMap.create!(
       :domain => z98160,
-      :option => o44
+      :proposal => o44
     )
 
     z283 = DomainMap.create!(
       :domain => z98161,
-      :option => o44
+      :proposal => o44
     )
 
     z284 = DomainMap.create!(
       :domain => z98164,
-      :option => o44
+      :proposal => o44
     )
 
     z285 = DomainMap.create!(
       :domain => z98165,
-      :option => o44
+      :proposal => o44
     )
 
     z286 = DomainMap.create!(
       :domain => z98166,
-      :option => o44
+      :proposal => o44
     )
 
     z287 = DomainMap.create!(
       :domain => z98168,
-      :option => o44
+      :proposal => o44
     )
 
     z288 = DomainMap.create!(
       :domain => z98170,
-      :option => o44
+      :proposal => o44
     )
 
     z289 = DomainMap.create!(
       :domain => z98174,
-      :option => o44
+      :proposal => o44
     )
 
     z290 = DomainMap.create!(
       :domain => z98175,
-      :option => o44
+      :proposal => o44
     )
 
     z291 = DomainMap.create!(
       :domain => z98177,
-      :option => o44
+      :proposal => o44
     )
 
     z292 = DomainMap.create!(
       :domain => z98178,
-      :option => o44
+      :proposal => o44
     )
 
     z293 = DomainMap.create!(
       :domain => z98181,
-      :option => o44
+      :proposal => o44
     )
 
     z294 = DomainMap.create!(
       :domain => z98185,
-      :option => o44
+      :proposal => o44
     )
 
     z295 = DomainMap.create!(
       :domain => z98188,
-      :option => o44
+      :proposal => o44
     )
 
     z296 = DomainMap.create!(
       :domain => z98190,
-      :option => o44
+      :proposal => o44
     )
 
     z297 = DomainMap.create!(
       :domain => z98191,
-      :option => o44
+      :proposal => o44
     )
 
     z298 = DomainMap.create!(
       :domain => z98194,
-      :option => o44
+      :proposal => o44
     )
 
     z299 = DomainMap.create!(
       :domain => z98195,
-      :option => o44
+      :proposal => o44
     )
 
     z300 = DomainMap.create!(
       :domain => z98198,
-      :option => o44
+      :proposal => o44
     )
 
     z301 = DomainMap.create!(
       :domain => z98199,
-      :option => o44
+      :proposal => o44
     )
 
-o45 = Option.create!(
+o45 = Proposal.create!(
   :name => 'Licensed Card Rooms in the City of Tukwila',
   :short_name => 'Card Rooms',
   :description => 'Tukwila Resolution No. 1745 submits the following
@@ -7421,30 +7421,30 @@ o45 = Option.create!(
 
     z302 = DomainMap.create!(
       :domain => z98108,
-      :option => o45
+      :proposal => o45
     )
 
     z303 = DomainMap.create!(
       :domain => z98138,
-      :option => o45
+      :proposal => o45
     )
 
     z304 = DomainMap.create!(
       :domain => z98168,
-      :option => o45
+      :proposal => o45
     )
 
     z305 = DomainMap.create!(
       :domain => z98178,
-      :option => o45
+      :proposal => o45
     )
 
     z306 = DomainMap.create!(
       :domain => z98188,
-      :option => o45
+      :proposal => o45
     )
 
-o46 = Option.create!(
+o46 = Proposal.create!(
   :name => 'Sales and Use Tax for Transportation Improvements',
   :short_name => 'Transportation Improvements',
   :description => 'The Board of North Bend Transportation Benefit
@@ -7487,15 +7487,15 @@ o46 = Option.create!(
 
     z307 = DomainMap.create!(
       :domain => z98045,
-      :option => o46
+      :proposal => o46
     )
 
     z308 = DomainMap.create!(
       :domain => z98068,
-      :option => o46
+      :proposal => o46
     )
 
-o47 = Option.create!(
+o47 = Proposal.create!(
   :name => 'Supplemental Levy to Support Class Size',
   :short_name => 'School Levy',
   :description => '<p>The Board of Directors of Shoreline School District
@@ -7540,20 +7540,20 @@ o47 = Option.create!(
 
     z309 = DomainMap.create!(
       :domain => z98133,
-      :option => o47
+      :proposal => o47
     )
 
     z310 = DomainMap.create!(
       :domain => z98155,
-      :option => o47
+      :proposal => o47
     )
 
     z311 = DomainMap.create!(
       :domain => z98177,
-      :option => o47
+      :proposal => o47
     )
 
-o48 = Option.create!(
+o48 = Proposal.create!(
   :name => 'Increasing Number of Commissioners',
   :short_name => 'Fire Dist Commission',
   :description => 'Shall the board of commissioners of King County Fire Protection District No. 28 be 
@@ -7589,10 +7589,10 @@ o48 = Option.create!(
 
     z312 = DomainMap.create!(
       :domain => z98022,
-      :option => o48
+      :proposal => o48
     )
 
-o49 = Option.create!(
+o49 = Proposal.create!(
   :name => 'Protection of Current Tax Levy from Prorationing',
   :short_name => 'Park Levy Allocation',
   :description => 'The Board of Directors of the Si View Metropolitan
@@ -7642,20 +7642,20 @@ o49 = Option.create!(
 
     z313 = DomainMap.create!(
       :domain => z98045,
-      :option => o49
+      :proposal => o49
     )
 
     z314 = DomainMap.create!(
       :domain => z98065,
-      :option => o49
+      :proposal => o49
     )
 
     z315 = DomainMap.create!(
       :domain => z98068,
-      :option => o49
+      :proposal => o49
     )
 
-o50 = Option.create!(
+o50 = Proposal.create!(
   :name => 'One-Year Operations and Maintenance Levy',
   :short_name => 'Parks Levy',
   :description => 'The Board of Directors of the Si View Metropolitan
@@ -7702,20 +7702,20 @@ o50 = Option.create!(
 
     z316 = DomainMap.create!(
       :domain => z98045,
-      :option => o50
+      :proposal => o50
     )
 
     z317 = DomainMap.create!(
       :domain => z98065,
-      :option => o50
+      :proposal => o50
     )
 
     z318 = DomainMap.create!(
       :domain => z98068,
-      :option => o50
+      :proposal => o50
     )
 
-o51 = Option.create!(
+o51 = Proposal.create!(
   :name => 'A City Charter Amendment Establishing a Community Bill of Rights',
   :short_name => 'Charter Amendment',
   :description => 'Initiative No. 2011-1, designated as Ordinance
@@ -7738,150 +7738,150 @@ o51 = Option.create!(
 
     z319 = DomainMap.create!(
       :domain => z99201,
-      :option => o51
+      :proposal => o51
     )
 
     z320 = DomainMap.create!(
       :domain => z99202,
-      :option => o51
+      :proposal => o51
     )
 
     z321 = DomainMap.create!(
       :domain => z99203,
-      :option => o51
+      :proposal => o51
     )
 
     z322 = DomainMap.create!(
       :domain => z99204,
-      :option => o51
+      :proposal => o51
     )
 
     z323 = DomainMap.create!(
       :domain => z99205,
-      :option => o51
+      :proposal => o51
     )
 
     z324 = DomainMap.create!(
       :domain => z99206,
-      :option => o51
+      :proposal => o51
     )
 
     z325 = DomainMap.create!(
       :domain => z99207,
-      :option => o51
+      :proposal => o51
     )
 
     z326 = DomainMap.create!(
       :domain => z99208,
-      :option => o51
+      :proposal => o51
     )
 
     z327 = DomainMap.create!(
       :domain => z99209,
-      :option => o51
+      :proposal => o51
     )
 
     z328 = DomainMap.create!(
       :domain => z99210,
-      :option => o51
+      :proposal => o51
     )
 
     z329 = DomainMap.create!(
       :domain => z99211,
-      :option => o51
+      :proposal => o51
     )
 
     z330 = DomainMap.create!(
       :domain => z99212,
-      :option => o51
+      :proposal => o51
     )
 
     z331 = DomainMap.create!(
       :domain => z99213,
-      :option => o51
+      :proposal => o51
     )
 
     z332 = DomainMap.create!(
       :domain => z99214,
-      :option => o51
+      :proposal => o51
     )
 
     z333 = DomainMap.create!(
       :domain => z99215,
-      :option => o51
+      :proposal => o51
     )
 
     z334 = DomainMap.create!(
       :domain => z99216,
-      :option => o51
+      :proposal => o51
     )
 
     z335 = DomainMap.create!(
       :domain => z99217,
-      :option => o51
+      :proposal => o51
     )
 
     z336 = DomainMap.create!(
       :domain => z99218,
-      :option => o51
+      :proposal => o51
     )
 
     z337 = DomainMap.create!(
       :domain => z99219,
-      :option => o51
+      :proposal => o51
     )
 
     z338 = DomainMap.create!(
       :domain => z99220,
-      :option => o51
+      :proposal => o51
     )
 
     z339 = DomainMap.create!(
       :domain => z99223,
-      :option => o51
+      :proposal => o51
     )
 
     z340 = DomainMap.create!(
       :domain => z99224,
-      :option => o51
+      :proposal => o51
     )
 
     z341 = DomainMap.create!(
       :domain => z99228,
-      :option => o51
+      :proposal => o51
     )
 
     z342 = DomainMap.create!(
       :domain => z99251,
-      :option => o51
+      :proposal => o51
     )
 
     z343 = DomainMap.create!(
       :domain => z99252,
-      :option => o51
+      :proposal => o51
     )
 
     z344 = DomainMap.create!(
       :domain => z99256,
-      :option => o51
+      :proposal => o51
     )
 
     z345 = DomainMap.create!(
       :domain => z99258,
-      :option => o51
+      :proposal => o51
     )
 
     z346 = DomainMap.create!(
       :domain => z99260,
-      :option => o51
+      :proposal => o51
     )
 
     z347 = DomainMap.create!(
       :domain => z99299,
-      :option => o51
+      :proposal => o51
     )
 
-o52 = Option.create!(
+o52 = Proposal.create!(
   :name => 'Manson Parks and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Will the Manson Parks and Recreation District be
@@ -7899,10 +7899,10 @@ o52 = Option.create!(
 
     z348 = DomainMap.create!(
       :domain => z98831,
-      :option => o52
+      :proposal => o52
     )
 
-o53 = Option.create!(
+o53 = Proposal.create!(
   :name => 'Chelan County Fire Protection District No. 6 Levy',
   :short_name => 'FPD Levy',
   :description => 'Shall Chelan County Fire Protection District No. 6
@@ -7922,10 +7922,10 @@ o53 = Option.create!(
 
     z349 = DomainMap.create!(
       :domain => z98847,
-      :option => o53
+      :proposal => o53
     )
 
-o54 = Option.create!(
+o54 = Proposal.create!(
   :name => ' Ambulance and Emergency Medical Services Funding',
   :short_name => 'EMS Levy',
   :description => ' Ambulance and Emergency Medical Services Funding
@@ -7948,75 +7948,75 @@ o54 = Option.create!(
 
     z350 = DomainMap.create!(
       :domain => z98527,
-      :option => o54
+      :proposal => o54
     )
 
     z351 = DomainMap.create!(
       :domain => z98554,
-      :option => o54
+      :proposal => o54
     )
 
     z352 = DomainMap.create!(
       :domain => z98561,
-      :option => o54
+      :proposal => o54
     )
 
     z353 = DomainMap.create!(
       :domain => z98577,
-      :option => o54
+      :proposal => o54
     )
 
     z354 = DomainMap.create!(
       :domain => z98586,
-      :option => o54
+      :proposal => o54
     )
 
     z355 = DomainMap.create!(
       :domain => z98590,
-      :option => o54
+      :proposal => o54
     )
 
     z356 = DomainMap.create!(
       :domain => z98614,
-      :option => o54
+      :proposal => o54
     )
 
     z357 = DomainMap.create!(
       :domain => z98624,
-      :option => o54
+      :proposal => o54
     )
 
     z358 = DomainMap.create!(
       :domain => z98631,
-      :option => o54
+      :proposal => o54
     )
 
     z359 = DomainMap.create!(
       :domain => z98637,
-      :option => o54
+      :proposal => o54
     )
 
     z360 = DomainMap.create!(
       :domain => z98638,
-      :option => o54
+      :proposal => o54
     )
 
     z361 = DomainMap.create!(
       :domain => z98640,
-      :option => o54
+      :proposal => o54
     )
 
     z362 = DomainMap.create!(
       :domain => z98641,
-      :option => o54
+      :proposal => o54
     )
 
     z363 = DomainMap.create!(
       :domain => z98644,
-      :option => o54
+      :proposal => o54
     )
 
-o55 = Option.create!(
+o55 = Proposal.create!(
   :name => 'North Whidbey Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Will the North Whidbey Park and Recreation District
@@ -8037,45 +8037,45 @@ o55 = Option.create!(
 
     z364 = DomainMap.create!(
       :domain => z98236,
-      :option => o55
+      :proposal => o55
     )
 
     z365 = DomainMap.create!(
       :domain => z98239,
-      :option => o55
+      :proposal => o55
     )
 
     z366 = DomainMap.create!(
       :domain => z98249,
-      :option => o55
+      :proposal => o55
     )
 
     z367 = DomainMap.create!(
       :domain => z98253,
-      :option => o55
+      :proposal => o55
     )
 
     z368 = DomainMap.create!(
       :domain => z98260,
-      :option => o55
+      :proposal => o55
     )
 
     z369 = DomainMap.create!(
       :domain => z98277,
-      :option => o55
+      :proposal => o55
     )
 
     z370 = DomainMap.create!(
       :domain => z98278,
-      :option => o55
+      :proposal => o55
     )
 
     z371 = DomainMap.create!(
       :domain => z98282,
-      :option => o55
+      :proposal => o55
     )
 
-o56 = Option.create!(
+o56 = Proposal.create!(
   :name => 'Port Townsend Fire and Emergency Services Levy',
   :short_name => 'EMS Levy',
   :description => 'Levy Lid Lift The City Council of the City of Port
@@ -8101,10 +8101,10 @@ o56 = Option.create!(
 
     z372 = DomainMap.create!(
       :domain => z98368,
-      :option => o56
+      :proposal => o56
     )
 
-o57 = Option.create!(
+o57 = Proposal.create!(
   :name => 'City of Bothell Annexation',
   :short_name => 'Annexation',
   :description => ' Shall the area of unincorporated Snohomish County
@@ -8122,35 +8122,35 @@ o57 = Option.create!(
 
     z373 = DomainMap.create!(
       :domain => z98011,
-      :option => o57
+      :proposal => o57
     )
 
     z374 = DomainMap.create!(
       :domain => z98012,
-      :option => o57
+      :proposal => o57
     )
 
     z375 = DomainMap.create!(
       :domain => z98021,
-      :option => o57
+      :proposal => o57
     )
 
     z376 = DomainMap.create!(
       :domain => z98028,
-      :option => o57
+      :proposal => o57
     )
 
     z377 = DomainMap.create!(
       :domain => z98041,
-      :option => o57
+      :proposal => o57
     )
 
     z378 = DomainMap.create!(
       :domain => z98082,
-      :option => o57
+      :proposal => o57
     )
 
-o58 = Option.create!(
+o58 = Proposal.create!(
   :name => 'Edmonds City Services Levy',
   :short_name => 'EMS Levy',
   :description => 'The Edmonds City Council has passed Ordinance
@@ -8175,15 +8175,15 @@ o58 = Option.create!(
 
     z379 = DomainMap.create!(
       :domain => z98020,
-      :option => o58
+      :proposal => o58
     )
 
     z380 = DomainMap.create!(
       :domain => z98026,
-      :option => o58
+      :proposal => o58
     )
 
-o59 = Option.create!(
+o59 = Proposal.create!(
   :name => 'Edmonds Street Levy',
   :short_name => 'Street Levy',
   :description => 'The Edmonds City Council has passed Ordinance
@@ -8206,15 +8206,15 @@ o59 = Option.create!(
 
     z381 = DomainMap.create!(
       :domain => z98020,
-      :option => o59
+      :proposal => o59
     )
 
     z382 = DomainMap.create!(
       :domain => z98026,
-      :option => o59
+      :proposal => o59
     )
 
-o60 = Option.create!(
+o60 = Proposal.create!(
   :name => 'Edmonds Building Maintenance and Park Improvement',
   :short_name => 'Parks Levy',
   :description => 'The Edmonds City Council has passed Ordinance
@@ -8238,20 +8238,20 @@ o60 = Option.create!(
 
     z383 = DomainMap.create!(
       :domain => z98020,
-      :option => o60
+      :proposal => o60
     )
 
     z384 = DomainMap.create!(
       :domain => z98026,
-      :option => o60
+      :proposal => o60
     )
 
-o61 = Option.create!(
+o61 = Proposal.create!(
   :name => 'Change in Plan of Government',
   :short_name => 'Council/Manager?',
   :description => ' Shall the City of Lynnwood adopt the
     Council/Manager form of government and abandon the Council/Mayor
-    form of government? The adoption of the Council/Manager form of
+    form of government? The adproposal of the Council/Manager form of
     government would not affect the City&rsquo;s eligibility to be
     governed under Title 35A of the Revised Code of Washington.',
   :domain => 'City of Lynnwood',
@@ -8265,25 +8265,25 @@ o61 = Option.create!(
 
     z385 = DomainMap.create!(
       :domain => z98036,
-      :option => o61
+      :proposal => o61
     )
 
     z386 = DomainMap.create!(
       :domain => z98037,
-      :option => o61
+      :proposal => o61
     )
 
     z387 = DomainMap.create!(
       :domain => z98046,
-      :option => o61
+      :proposal => o61
     )
 
     z388 = DomainMap.create!(
       :domain => z98087,
-      :option => o61
+      :proposal => o61
     )
 
-o62 = Option.create!(
+o62 = Proposal.create!(
   :name => 'Sales and Use Tax Increase',
   :short_name => 'Sales/Use Tax',
   :description => 'The City Council of the City of Monroe has adopted
@@ -8302,16 +8302,16 @@ o62 = Option.create!(
 
     z389 = DomainMap.create!(
       :domain => z98272,
-      :option => o62
+      :proposal => o62
     )
 
-o63 = Option.create!(
+o63 = Proposal.create!(
   :name => 'Term Limits',
   :short_name => 'Term Limits',
   :description => 'The Monroe City Council has passed Resolution
     No. 2011/018, placing the issue of term limits for local elected
     officials before the voters.  The City of Monroe is considering
-    the adoption of an ordinance establishing term limits for the
+    the adproposal of an ordinance establishing term limits for the
     positions of Mayor and Council Member. The proposed ordinance
     would generally prohibit these officials from servicing more than
     eight total years in the same office, but would allow limited
@@ -8329,10 +8329,10 @@ o63 = Option.create!(
 
     z390 = DomainMap.create!(
       :domain => z98272,
-      :option => o63
+      :proposal => o63
     )
 
-o64 = Option.create!(
+o64 = Proposal.create!(
   :name => 'Traffic Safety Cameras',
   :short_name => 'Traffic Cameras',
   :description => 'In 2007 the Monroe City Council adopted Ordinance
@@ -8352,10 +8352,10 @@ o64 = Option.create!(
 
     z391 = DomainMap.create!(
       :domain => z98272,
-      :option => o64
+      :proposal => o64
     )
 
-o65 = Option.create!(
+o65 = Proposal.create!(
   :name => 'Fire Protection District Levy',
   :short_name => 'FPD Levy',
   :description => 'The Board of Fire Commissioners of Snohomish County
@@ -8377,185 +8377,185 @@ o65 = Option.create!(
 
     z392 = DomainMap.create!(
       :domain => z98012,
-      :option => o65
+      :proposal => o65
     )
 
     z393 = DomainMap.create!(
       :domain => z98020,
-      :option => o65
+      :proposal => o65
     )
 
     z394 = DomainMap.create!(
       :domain => z98021,
-      :option => o65
+      :proposal => o65
     )
 
     z395 = DomainMap.create!(
       :domain => z98026,
-      :option => o65
+      :proposal => o65
     )
 
     z396 = DomainMap.create!(
       :domain => z98036,
-      :option => o65
+      :proposal => o65
     )
 
     z397 = DomainMap.create!(
       :domain => z98037,
-      :option => o65
+      :proposal => o65
     )
 
     z398 = DomainMap.create!(
       :domain => z98043,
-      :option => o65
+      :proposal => o65
     )
 
     z399 = DomainMap.create!(
       :domain => z98046,
-      :option => o65
+      :proposal => o65
     )
 
     z400 = DomainMap.create!(
       :domain => z98082,
-      :option => o65
+      :proposal => o65
     )
 
     z401 = DomainMap.create!(
       :domain => z98087,
-      :option => o65
+      :proposal => o65
     )
 
     z402 = DomainMap.create!(
       :domain => z98201,
-      :option => o65
+      :proposal => o65
     )
 
     z403 = DomainMap.create!(
       :domain => z98203,
-      :option => o65
+      :proposal => o65
     )
 
     z404 = DomainMap.create!(
       :domain => z98204,
-      :option => o65
+      :proposal => o65
     )
 
     z405 = DomainMap.create!(
       :domain => z98205,
-      :option => o65
+      :proposal => o65
     )
 
     z406 = DomainMap.create!(
       :domain => z98206,
-      :option => o65
+      :proposal => o65
     )
 
     z407 = DomainMap.create!(
       :domain => z98207,
-      :option => o65
+      :proposal => o65
     )
 
     z408 = DomainMap.create!(
       :domain => z98208,
-      :option => o65
+      :proposal => o65
     )
 
     z409 = DomainMap.create!(
       :domain => z98213,
-      :option => o65
+      :proposal => o65
     )
 
     z410 = DomainMap.create!(
       :domain => z98223,
-      :option => o65
+      :proposal => o65
     )
 
     z411 = DomainMap.create!(
       :domain => z98241,
-      :option => o65
+      :proposal => o65
     )
 
     z412 = DomainMap.create!(
       :domain => z98251,
-      :option => o65
+      :proposal => o65
     )
 
     z413 = DomainMap.create!(
       :domain => z98252,
-      :option => o65
+      :proposal => o65
     )
 
     z414 = DomainMap.create!(
       :domain => z98256,
-      :option => o65
+      :proposal => o65
     )
 
     z415 = DomainMap.create!(
       :domain => z98258,
-      :option => o65
+      :proposal => o65
     )
 
     z416 = DomainMap.create!(
       :domain => z98259,
-      :option => o65
+      :proposal => o65
     )
 
     z417 = DomainMap.create!(
       :domain => z98270,
-      :option => o65
+      :proposal => o65
     )
 
     z418 = DomainMap.create!(
       :domain => z98271,
-      :option => o65
+      :proposal => o65
     )
 
     z419 = DomainMap.create!(
       :domain => z98272,
-      :option => o65
+      :proposal => o65
     )
 
     z420 = DomainMap.create!(
       :domain => z98275,
-      :option => o65
+      :proposal => o65
     )
 
     z421 = DomainMap.create!(
       :domain => z98287,
-      :option => o65
+      :proposal => o65
     )
 
     z422 = DomainMap.create!(
       :domain => z98290,
-      :option => o65
+      :proposal => o65
     )
 
     z423 = DomainMap.create!(
       :domain => z98291,
-      :option => o65
+      :proposal => o65
     )
 
     z424 = DomainMap.create!(
       :domain => z98292,
-      :option => o65
+      :proposal => o65
     )
 
     z425 = DomainMap.create!(
       :domain => z98293,
-      :option => o65
+      :proposal => o65
     )
 
     z426 = DomainMap.create!(
       :domain => z98294,
-      :option => o65
+      :proposal => o65
     )
 
     z427 = DomainMap.create!(
       :domain => z98296,
-      :option => o65
+      :proposal => o65
     )
 
-o66 = Option.create!(
+o66 = Proposal.create!(
   :name => 'Increasing Number of Commissioners',
   :short_name => 'Fire Dist Commission',
   :description => 'Shall the Board of Commissioners of Snohomish
@@ -8572,185 +8572,185 @@ o66 = Option.create!(
 
     z428 = DomainMap.create!(
       :domain => z98012,
-      :option => o66
+      :proposal => o66
     )
 
     z429 = DomainMap.create!(
       :domain => z98020,
-      :option => o66
+      :proposal => o66
     )
 
     z430 = DomainMap.create!(
       :domain => z98021,
-      :option => o66
+      :proposal => o66
     )
 
     z431 = DomainMap.create!(
       :domain => z98026,
-      :option => o66
+      :proposal => o66
     )
 
     z432 = DomainMap.create!(
       :domain => z98036,
-      :option => o66
+      :proposal => o66
     )
 
     z433 = DomainMap.create!(
       :domain => z98037,
-      :option => o66
+      :proposal => o66
     )
 
     z434 = DomainMap.create!(
       :domain => z98043,
-      :option => o66
+      :proposal => o66
     )
 
     z435 = DomainMap.create!(
       :domain => z98046,
-      :option => o66
+      :proposal => o66
     )
 
     z436 = DomainMap.create!(
       :domain => z98082,
-      :option => o66
+      :proposal => o66
     )
 
     z437 = DomainMap.create!(
       :domain => z98087,
-      :option => o66
+      :proposal => o66
     )
 
     z438 = DomainMap.create!(
       :domain => z98201,
-      :option => o66
+      :proposal => o66
     )
 
     z439 = DomainMap.create!(
       :domain => z98203,
-      :option => o66
+      :proposal => o66
     )
 
     z440 = DomainMap.create!(
       :domain => z98204,
-      :option => o66
+      :proposal => o66
     )
 
     z441 = DomainMap.create!(
       :domain => z98205,
-      :option => o66
+      :proposal => o66
     )
 
     z442 = DomainMap.create!(
       :domain => z98206,
-      :option => o66
+      :proposal => o66
     )
 
     z443 = DomainMap.create!(
       :domain => z98207,
-      :option => o66
+      :proposal => o66
     )
 
     z444 = DomainMap.create!(
       :domain => z98208,
-      :option => o66
+      :proposal => o66
     )
 
     z445 = DomainMap.create!(
       :domain => z98213,
-      :option => o66
+      :proposal => o66
     )
 
     z446 = DomainMap.create!(
       :domain => z98223,
-      :option => o66
+      :proposal => o66
     )
 
     z447 = DomainMap.create!(
       :domain => z98241,
-      :option => o66
+      :proposal => o66
     )
 
     z448 = DomainMap.create!(
       :domain => z98251,
-      :option => o66
+      :proposal => o66
     )
 
     z449 = DomainMap.create!(
       :domain => z98252,
-      :option => o66
+      :proposal => o66
     )
 
     z450 = DomainMap.create!(
       :domain => z98256,
-      :option => o66
+      :proposal => o66
     )
 
     z451 = DomainMap.create!(
       :domain => z98258,
-      :option => o66
+      :proposal => o66
     )
 
     z452 = DomainMap.create!(
       :domain => z98259,
-      :option => o66
+      :proposal => o66
     )
 
     z453 = DomainMap.create!(
       :domain => z98270,
-      :option => o66
+      :proposal => o66
     )
 
     z454 = DomainMap.create!(
       :domain => z98271,
-      :option => o66
+      :proposal => o66
     )
 
     z455 = DomainMap.create!(
       :domain => z98272,
-      :option => o66
+      :proposal => o66
     )
 
     z456 = DomainMap.create!(
       :domain => z98275,
-      :option => o66
+      :proposal => o66
     )
 
     z457 = DomainMap.create!(
       :domain => z98287,
-      :option => o66
+      :proposal => o66
     )
 
     z458 = DomainMap.create!(
       :domain => z98290,
-      :option => o66
+      :proposal => o66
     )
 
     z459 = DomainMap.create!(
       :domain => z98291,
-      :option => o66
+      :proposal => o66
     )
 
     z460 = DomainMap.create!(
       :domain => z98292,
-      :option => o66
+      :proposal => o66
     )
 
     z461 = DomainMap.create!(
       :domain => z98293,
-      :option => o66
+      :proposal => o66
     )
 
     z462 = DomainMap.create!(
       :domain => z98294,
-      :option => o66
+      :proposal => o66
     )
 
     z463 = DomainMap.create!(
       :domain => z98296,
-      :option => o66
+      :proposal => o66
     )
 
-o67 = Option.create!(
+o67 = Proposal.create!(
   :name => 'Prescott Park and Recreation Levy',
   :short_name => 'Parks Levy',
   :description => 'Prescott Joint Park and Recreation District
@@ -8774,10 +8774,10 @@ o67 = Option.create!(
 
     z464 = DomainMap.create!(
       :domain => z99348,
-      :option => o67
+      :proposal => o67
     )
 
-o68 = Option.create!(
+o68 = Proposal.create!(
   :name => 'Waitsburg Flood Control Bonds',
   :short_name => 'Flood Control',
   :description => 'City of Waitsburg General Obligation Coppei Flood
@@ -8803,10 +8803,10 @@ o68 = Option.create!(
 
     z465 = DomainMap.create!(
       :domain => z99361,
-      :option => o68
+      :proposal => o68
     )
 
-o69 = Option.create!(
+o69 = Proposal.create!(
   :name => 'Whatcom County Cemetery District Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'The Board of Cemetery Commissioners of Cemetery
@@ -8830,95 +8830,95 @@ o69 = Option.create!(
 
     z466 = DomainMap.create!(
       :domain => z98220,
-      :option => o69
+      :proposal => o69
     )
 
     z467 = DomainMap.create!(
       :domain => z98225,
-      :option => o69
+      :proposal => o69
     )
 
     z468 = DomainMap.create!(
       :domain => z98226,
-      :option => o69
+      :proposal => o69
     )
 
     z469 = DomainMap.create!(
       :domain => z98227,
-      :option => o69
+      :proposal => o69
     )
 
     z470 = DomainMap.create!(
       :domain => z98228,
-      :option => o69
+      :proposal => o69
     )
 
     z471 = DomainMap.create!(
       :domain => z98229,
-      :option => o69
+      :proposal => o69
     )
 
     z472 = DomainMap.create!(
       :domain => z98230,
-      :option => o69
+      :proposal => o69
     )
 
     z473 = DomainMap.create!(
       :domain => z98231,
-      :option => o69
+      :proposal => o69
     )
 
     z474 = DomainMap.create!(
       :domain => z98240,
-      :option => o69
+      :proposal => o69
     )
 
     z475 = DomainMap.create!(
       :domain => z98244,
-      :option => o69
+      :proposal => o69
     )
 
     z476 = DomainMap.create!(
       :domain => z98247,
-      :option => o69
+      :proposal => o69
     )
 
     z477 = DomainMap.create!(
       :domain => z98248,
-      :option => o69
+      :proposal => o69
     )
 
     z478 = DomainMap.create!(
       :domain => z98262,
-      :option => o69
+      :proposal => o69
     )
 
     z479 = DomainMap.create!(
       :domain => z98264,
-      :option => o69
+      :proposal => o69
     )
 
     z480 = DomainMap.create!(
       :domain => z98266,
-      :option => o69
+      :proposal => o69
     )
 
     z481 = DomainMap.create!(
       :domain => z98276,
-      :option => o69
+      :proposal => o69
     )
 
     z482 = DomainMap.create!(
       :domain => z98281,
-      :option => o69
+      :proposal => o69
     )
 
     z483 = DomainMap.create!(
       :domain => z98295,
-      :option => o69
+      :proposal => o69
     )
 
-o70 = Option.create!(
+o70 = Proposal.create!(
   :name => 'Whatcom County Independent Salary Commission',
   :short_name => 'Salary Commission',
   :description => 'The Whatcom County Council has proposed an
@@ -8938,95 +8938,95 @@ o70 = Option.create!(
 
     z484 = DomainMap.create!(
       :domain => z98220,
-      :option => o70
+      :proposal => o70
     )
 
     z485 = DomainMap.create!(
       :domain => z98225,
-      :option => o70
+      :proposal => o70
     )
 
     z486 = DomainMap.create!(
       :domain => z98226,
-      :option => o70
+      :proposal => o70
     )
 
     z487 = DomainMap.create!(
       :domain => z98227,
-      :option => o70
+      :proposal => o70
     )
 
     z488 = DomainMap.create!(
       :domain => z98228,
-      :option => o70
+      :proposal => o70
     )
 
     z489 = DomainMap.create!(
       :domain => z98229,
-      :option => o70
+      :proposal => o70
     )
 
     z490 = DomainMap.create!(
       :domain => z98230,
-      :option => o70
+      :proposal => o70
     )
 
     z491 = DomainMap.create!(
       :domain => z98231,
-      :option => o70
+      :proposal => o70
     )
 
     z492 = DomainMap.create!(
       :domain => z98240,
-      :option => o70
+      :proposal => o70
     )
 
     z493 = DomainMap.create!(
       :domain => z98244,
-      :option => o70
+      :proposal => o70
     )
 
     z494 = DomainMap.create!(
       :domain => z98247,
-      :option => o70
+      :proposal => o70
     )
 
     z495 = DomainMap.create!(
       :domain => z98248,
-      :option => o70
+      :proposal => o70
     )
 
     z496 = DomainMap.create!(
       :domain => z98262,
-      :option => o70
+      :proposal => o70
     )
 
     z497 = DomainMap.create!(
       :domain => z98264,
-      :option => o70
+      :proposal => o70
     )
 
     z498 = DomainMap.create!(
       :domain => z98266,
-      :option => o70
+      :proposal => o70
     )
 
     z499 = DomainMap.create!(
       :domain => z98276,
-      :option => o70
+      :proposal => o70
     )
 
     z500 = DomainMap.create!(
       :domain => z98281,
-      :option => o70
+      :proposal => o70
     )
 
     z501 = DomainMap.create!(
       :domain => z98295,
-      :option => o70
+      :proposal => o70
     )
 
-o71 = Option.create!(
+o71 = Proposal.create!(
   :name => 'Northwest Park and Recreation District No. 2 Levy',
   :short_name => 'Parks Levy',
   :description => 'The Board of Commissioners of Northwest Park and
@@ -9048,95 +9048,95 @@ o71 = Option.create!(
 
     z502 = DomainMap.create!(
       :domain => z98220,
-      :option => o71
+      :proposal => o71
     )
 
     z503 = DomainMap.create!(
       :domain => z98225,
-      :option => o71
+      :proposal => o71
     )
 
     z504 = DomainMap.create!(
       :domain => z98226,
-      :option => o71
+      :proposal => o71
     )
 
     z505 = DomainMap.create!(
       :domain => z98227,
-      :option => o71
+      :proposal => o71
     )
 
     z506 = DomainMap.create!(
       :domain => z98228,
-      :option => o71
+      :proposal => o71
     )
 
     z507 = DomainMap.create!(
       :domain => z98229,
-      :option => o71
+      :proposal => o71
     )
 
     z508 = DomainMap.create!(
       :domain => z98230,
-      :option => o71
+      :proposal => o71
     )
 
     z509 = DomainMap.create!(
       :domain => z98231,
-      :option => o71
+      :proposal => o71
     )
 
     z510 = DomainMap.create!(
       :domain => z98240,
-      :option => o71
+      :proposal => o71
     )
 
     z511 = DomainMap.create!(
       :domain => z98244,
-      :option => o71
+      :proposal => o71
     )
 
     z512 = DomainMap.create!(
       :domain => z98247,
-      :option => o71
+      :proposal => o71
     )
 
     z513 = DomainMap.create!(
       :domain => z98248,
-      :option => o71
+      :proposal => o71
     )
 
     z514 = DomainMap.create!(
       :domain => z98262,
-      :option => o71
+      :proposal => o71
     )
 
     z515 = DomainMap.create!(
       :domain => z98264,
-      :option => o71
+      :proposal => o71
     )
 
     z516 = DomainMap.create!(
       :domain => z98266,
-      :option => o71
+      :proposal => o71
     )
 
     z517 = DomainMap.create!(
       :domain => z98276,
-      :option => o71
+      :proposal => o71
     )
 
     z518 = DomainMap.create!(
       :domain => z98281,
-      :option => o71
+      :proposal => o71
     )
 
     z519 = DomainMap.create!(
       :domain => z98295,
-      :option => o71
+      :proposal => o71
     )
 
-o72 = Option.create!(
+o72 = Proposal.create!(
   :name => 'Skamania County Fire District Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'Permanent Levy Lid Lift The Skamania County Fire
@@ -9159,25 +9159,25 @@ o72 = Option.create!(
 
     z520 = DomainMap.create!(
       :domain => z98610,
-      :option => o72
+      :proposal => o72
     )
 
     z521 = DomainMap.create!(
       :domain => z98639,
-      :option => o72
+      :proposal => o72
     )
 
     z522 = DomainMap.create!(
       :domain => z98648,
-      :option => o72
+      :proposal => o72
     )
 
     z523 = DomainMap.create!(
       :domain => z98651,
-      :option => o72
+      :proposal => o72
     )
 
-o73 = Option.create!(
+o73 = Proposal.create!(
   :name => 'Skamania School District Levy',
   :short_name => 'School Levy',
   :description => 'Educational Programs &amp; Operations Levy The
@@ -9200,25 +9200,25 @@ o73 = Option.create!(
 
     z524 = DomainMap.create!(
       :domain => z98610,
-      :option => o73
+      :proposal => o73
     )
 
     z525 = DomainMap.create!(
       :domain => z98639,
-      :option => o73
+      :proposal => o73
     )
 
     z526 = DomainMap.create!(
       :domain => z98648,
-      :option => o73
+      :proposal => o73
     )
 
     z527 = DomainMap.create!(
       :domain => z98651,
-      :option => o73
+      :proposal => o73
     )
 
-o74 = Option.create!(
+o74 = Proposal.create!(
   :name => 'Real Estate Excise Tax Extension',
   :short_name => 'Land Bank',
   :description => 'A Petition has been submitted regarding the time
@@ -9239,50 +9239,50 @@ o74 = Option.create!(
 
     z528 = DomainMap.create!(
       :domain => z98222,
-      :option => o74
+      :proposal => o74
     )
 
     z529 = DomainMap.create!(
       :domain => z98243,
-      :option => o74
+      :proposal => o74
     )
 
     z530 = DomainMap.create!(
       :domain => z98245,
-      :option => o74
+      :proposal => o74
     )
 
     z531 = DomainMap.create!(
       :domain => z98250,
-      :option => o74
+      :proposal => o74
     )
 
     z532 = DomainMap.create!(
       :domain => z98261,
-      :option => o74
+      :proposal => o74
     )
 
     z533 = DomainMap.create!(
       :domain => z98279,
-      :option => o74
+      :proposal => o74
     )
 
     z534 = DomainMap.create!(
       :domain => z98280,
-      :option => o74
+      :proposal => o74
     )
 
     z535 = DomainMap.create!(
       :domain => z98286,
-      :option => o74
+      :proposal => o74
     )
 
     z536 = DomainMap.create!(
       :domain => z98297,
-      :option => o74
+      :proposal => o74
     )
 
-o75 = Option.create!(
+o75 = Proposal.create!(
   :name => 'Solid Waste User Charge',
   :short_name => 'Solid Waste Charge',
   :description => 'Shall San Juan County, Washington, impose a solid
@@ -9306,50 +9306,50 @@ o75 = Option.create!(
 
     z537 = DomainMap.create!(
       :domain => z98222,
-      :option => o75
+      :proposal => o75
     )
 
     z538 = DomainMap.create!(
       :domain => z98243,
-      :option => o75
+      :proposal => o75
     )
 
     z539 = DomainMap.create!(
       :domain => z98245,
-      :option => o75
+      :proposal => o75
     )
 
     z540 = DomainMap.create!(
       :domain => z98250,
-      :option => o75
+      :proposal => o75
     )
 
     z541 = DomainMap.create!(
       :domain => z98261,
-      :option => o75
+      :proposal => o75
     )
 
     z542 = DomainMap.create!(
       :domain => z98279,
-      :option => o75
+      :proposal => o75
     )
 
     z543 = DomainMap.create!(
       :domain => z98280,
-      :option => o75
+      :proposal => o75
     )
 
     z544 = DomainMap.create!(
       :domain => z98286,
-      :option => o75
+      :proposal => o75
     )
 
     z545 = DomainMap.create!(
       :domain => z98297,
-      :option => o75
+      :proposal => o75
     )
 
-o76 = Option.create!(
+o76 = Proposal.create!(
   :name => 'Orcas Island School Levy',
   :short_name => 'School Levy',
   :description => 'The Board of Directors of Orcas Island School
@@ -9372,50 +9372,50 @@ o76 = Option.create!(
 
     z546 = DomainMap.create!(
       :domain => z98222,
-      :option => o76
+      :proposal => o76
     )
 
     z547 = DomainMap.create!(
       :domain => z98243,
-      :option => o76
+      :proposal => o76
     )
 
     z548 = DomainMap.create!(
       :domain => z98245,
-      :option => o76
+      :proposal => o76
     )
 
     z549 = DomainMap.create!(
       :domain => z98250,
-      :option => o76
+      :proposal => o76
     )
 
     z550 = DomainMap.create!(
       :domain => z98261,
-      :option => o76
+      :proposal => o76
     )
 
     z551 = DomainMap.create!(
       :domain => z98279,
-      :option => o76
+      :proposal => o76
     )
 
     z552 = DomainMap.create!(
       :domain => z98280,
-      :option => o76
+      :proposal => o76
     )
 
     z553 = DomainMap.create!(
       :domain => z98286,
-      :option => o76
+      :proposal => o76
     )
 
     z554 = DomainMap.create!(
       :domain => z98297,
-      :option => o76
+      :proposal => o76
     )
 
-o77 = Option.create!(
+o77 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 3',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire District No. 3 levy
@@ -9435,110 +9435,110 @@ o77 = Option.create!(
 
     z555 = DomainMap.create!(
       :domain => z98520,
-      :option => o77
+      :proposal => o77
     )
 
     z556 = DomainMap.create!(
       :domain => z98526,
-      :option => o77
+      :proposal => o77
     )
 
     z557 = DomainMap.create!(
       :domain => z98535,
-      :option => o77
+      :proposal => o77
     )
 
     z558 = DomainMap.create!(
       :domain => z98536,
-      :option => o77
+      :proposal => o77
     )
 
     z559 = DomainMap.create!(
       :domain => z98537,
-      :option => o77
+      :proposal => o77
     )
 
     z560 = DomainMap.create!(
       :domain => z98541,
-      :option => o77
+      :proposal => o77
     )
 
     z561 = DomainMap.create!(
       :domain => z98547,
-      :option => o77
+      :proposal => o77
     )
 
     z562 = DomainMap.create!(
       :domain => z98550,
-      :option => o77
+      :proposal => o77
     )
 
     z563 = DomainMap.create!(
       :domain => z98552,
-      :option => o77
+      :proposal => o77
     )
 
     z564 = DomainMap.create!(
       :domain => z98557,
-      :option => o77
+      :proposal => o77
     )
 
     z565 = DomainMap.create!(
       :domain => z98559,
-      :option => o77
+      :proposal => o77
     )
 
     z566 = DomainMap.create!(
       :domain => z98562,
-      :option => o77
+      :proposal => o77
     )
 
     z567 = DomainMap.create!(
       :domain => z98563,
-      :option => o77
+      :proposal => o77
     )
 
     z568 = DomainMap.create!(
       :domain => z98566,
-      :option => o77
+      :proposal => o77
     )
 
     z569 = DomainMap.create!(
       :domain => z98568,
-      :option => o77
+      :proposal => o77
     )
 
     z570 = DomainMap.create!(
       :domain => z98569,
-      :option => o77
+      :proposal => o77
     )
 
     z571 = DomainMap.create!(
       :domain => z98571,
-      :option => o77
+      :proposal => o77
     )
 
     z572 = DomainMap.create!(
       :domain => z98575,
-      :option => o77
+      :proposal => o77
     )
 
     z573 = DomainMap.create!(
       :domain => z98583,
-      :option => o77
+      :proposal => o77
     )
 
     z574 = DomainMap.create!(
       :domain => z98587,
-      :option => o77
+      :proposal => o77
     )
 
     z575 = DomainMap.create!(
       :domain => z98595,
-      :option => o77
+      :proposal => o77
     )
 
-o78 = Option.create!(
+o78 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 8',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire Protection District
@@ -9560,110 +9560,110 @@ o78 = Option.create!(
 
     z576 = DomainMap.create!(
       :domain => z98520,
-      :option => o78
+      :proposal => o78
     )
 
     z577 = DomainMap.create!(
       :domain => z98526,
-      :option => o78
+      :proposal => o78
     )
 
     z578 = DomainMap.create!(
       :domain => z98535,
-      :option => o78
+      :proposal => o78
     )
 
     z579 = DomainMap.create!(
       :domain => z98536,
-      :option => o78
+      :proposal => o78
     )
 
     z580 = DomainMap.create!(
       :domain => z98537,
-      :option => o78
+      :proposal => o78
     )
 
     z581 = DomainMap.create!(
       :domain => z98541,
-      :option => o78
+      :proposal => o78
     )
 
     z582 = DomainMap.create!(
       :domain => z98547,
-      :option => o78
+      :proposal => o78
     )
 
     z583 = DomainMap.create!(
       :domain => z98550,
-      :option => o78
+      :proposal => o78
     )
 
     z584 = DomainMap.create!(
       :domain => z98552,
-      :option => o78
+      :proposal => o78
     )
 
     z585 = DomainMap.create!(
       :domain => z98557,
-      :option => o78
+      :proposal => o78
     )
 
     z586 = DomainMap.create!(
       :domain => z98559,
-      :option => o78
+      :proposal => o78
     )
 
     z587 = DomainMap.create!(
       :domain => z98562,
-      :option => o78
+      :proposal => o78
     )
 
     z588 = DomainMap.create!(
       :domain => z98563,
-      :option => o78
+      :proposal => o78
     )
 
     z589 = DomainMap.create!(
       :domain => z98566,
-      :option => o78
+      :proposal => o78
     )
 
     z590 = DomainMap.create!(
       :domain => z98568,
-      :option => o78
+      :proposal => o78
     )
 
     z591 = DomainMap.create!(
       :domain => z98569,
-      :option => o78
+      :proposal => o78
     )
 
     z592 = DomainMap.create!(
       :domain => z98571,
-      :option => o78
+      :proposal => o78
     )
 
     z593 = DomainMap.create!(
       :domain => z98575,
-      :option => o78
+      :proposal => o78
     )
 
     z594 = DomainMap.create!(
       :domain => z98583,
-      :option => o78
+      :proposal => o78
     )
 
     z595 = DomainMap.create!(
       :domain => z98587,
-      :option => o78
+      :proposal => o78
     )
 
     z596 = DomainMap.create!(
       :domain => z98595,
-      :option => o78
+      :proposal => o78
     )
 
-o79 = Option.create!(
+o79 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 11 - Proposition 1',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire Protection District
@@ -9685,110 +9685,110 @@ o79 = Option.create!(
 
     z597 = DomainMap.create!(
       :domain => z98520,
-      :option => o79
+      :proposal => o79
     )
 
     z598 = DomainMap.create!(
       :domain => z98526,
-      :option => o79
+      :proposal => o79
     )
 
     z599 = DomainMap.create!(
       :domain => z98535,
-      :option => o79
+      :proposal => o79
     )
 
     z600 = DomainMap.create!(
       :domain => z98536,
-      :option => o79
+      :proposal => o79
     )
 
     z601 = DomainMap.create!(
       :domain => z98537,
-      :option => o79
+      :proposal => o79
     )
 
     z602 = DomainMap.create!(
       :domain => z98541,
-      :option => o79
+      :proposal => o79
     )
 
     z603 = DomainMap.create!(
       :domain => z98547,
-      :option => o79
+      :proposal => o79
     )
 
     z604 = DomainMap.create!(
       :domain => z98550,
-      :option => o79
+      :proposal => o79
     )
 
     z605 = DomainMap.create!(
       :domain => z98552,
-      :option => o79
+      :proposal => o79
     )
 
     z606 = DomainMap.create!(
       :domain => z98557,
-      :option => o79
+      :proposal => o79
     )
 
     z607 = DomainMap.create!(
       :domain => z98559,
-      :option => o79
+      :proposal => o79
     )
 
     z608 = DomainMap.create!(
       :domain => z98562,
-      :option => o79
+      :proposal => o79
     )
 
     z609 = DomainMap.create!(
       :domain => z98563,
-      :option => o79
+      :proposal => o79
     )
 
     z610 = DomainMap.create!(
       :domain => z98566,
-      :option => o79
+      :proposal => o79
     )
 
     z611 = DomainMap.create!(
       :domain => z98568,
-      :option => o79
+      :proposal => o79
     )
 
     z612 = DomainMap.create!(
       :domain => z98569,
-      :option => o79
+      :proposal => o79
     )
 
     z613 = DomainMap.create!(
       :domain => z98571,
-      :option => o79
+      :proposal => o79
     )
 
     z614 = DomainMap.create!(
       :domain => z98575,
-      :option => o79
+      :proposal => o79
     )
 
     z615 = DomainMap.create!(
       :domain => z98583,
-      :option => o79
+      :proposal => o79
     )
 
     z616 = DomainMap.create!(
       :domain => z98587,
-      :option => o79
+      :proposal => o79
     )
 
     z617 = DomainMap.create!(
       :domain => z98595,
-      :option => o79
+      :proposal => o79
     )
 
-o80 = Option.create!(
+o80 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 11 - Proposition 2',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire Protection District
@@ -9810,110 +9810,110 @@ o80 = Option.create!(
 
     z618 = DomainMap.create!(
       :domain => z98520,
-      :option => o80
+      :proposal => o80
     )
 
     z619 = DomainMap.create!(
       :domain => z98526,
-      :option => o80
+      :proposal => o80
     )
 
     z620 = DomainMap.create!(
       :domain => z98535,
-      :option => o80
+      :proposal => o80
     )
 
     z621 = DomainMap.create!(
       :domain => z98536,
-      :option => o80
+      :proposal => o80
     )
 
     z622 = DomainMap.create!(
       :domain => z98537,
-      :option => o80
+      :proposal => o80
     )
 
     z623 = DomainMap.create!(
       :domain => z98541,
-      :option => o80
+      :proposal => o80
     )
 
     z624 = DomainMap.create!(
       :domain => z98547,
-      :option => o80
+      :proposal => o80
     )
 
     z625 = DomainMap.create!(
       :domain => z98550,
-      :option => o80
+      :proposal => o80
     )
 
     z626 = DomainMap.create!(
       :domain => z98552,
-      :option => o80
+      :proposal => o80
     )
 
     z627 = DomainMap.create!(
       :domain => z98557,
-      :option => o80
+      :proposal => o80
     )
 
     z628 = DomainMap.create!(
       :domain => z98559,
-      :option => o80
+      :proposal => o80
     )
 
     z629 = DomainMap.create!(
       :domain => z98562,
-      :option => o80
+      :proposal => o80
     )
 
     z630 = DomainMap.create!(
       :domain => z98563,
-      :option => o80
+      :proposal => o80
     )
 
     z631 = DomainMap.create!(
       :domain => z98566,
-      :option => o80
+      :proposal => o80
     )
 
     z632 = DomainMap.create!(
       :domain => z98568,
-      :option => o80
+      :proposal => o80
     )
 
     z633 = DomainMap.create!(
       :domain => z98569,
-      :option => o80
+      :proposal => o80
     )
 
     z634 = DomainMap.create!(
       :domain => z98571,
-      :option => o80
+      :proposal => o80
     )
 
     z635 = DomainMap.create!(
       :domain => z98575,
-      :option => o80
+      :proposal => o80
     )
 
     z636 = DomainMap.create!(
       :domain => z98583,
-      :option => o80
+      :proposal => o80
     )
 
     z637 = DomainMap.create!(
       :domain => z98587,
-      :option => o80
+      :proposal => o80
     )
 
     z638 = DomainMap.create!(
       :domain => z98595,
-      :option => o80
+      :proposal => o80
     )
 
-o81 = Option.create!(
+o81 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 12',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire Protection District
@@ -9934,110 +9934,110 @@ o81 = Option.create!(
 
     z639 = DomainMap.create!(
       :domain => z98520,
-      :option => o81
+      :proposal => o81
     )
 
     z640 = DomainMap.create!(
       :domain => z98526,
-      :option => o81
+      :proposal => o81
     )
 
     z641 = DomainMap.create!(
       :domain => z98535,
-      :option => o81
+      :proposal => o81
     )
 
     z642 = DomainMap.create!(
       :domain => z98536,
-      :option => o81
+      :proposal => o81
     )
 
     z643 = DomainMap.create!(
       :domain => z98537,
-      :option => o81
+      :proposal => o81
     )
 
     z644 = DomainMap.create!(
       :domain => z98541,
-      :option => o81
+      :proposal => o81
     )
 
     z645 = DomainMap.create!(
       :domain => z98547,
-      :option => o81
+      :proposal => o81
     )
 
     z646 = DomainMap.create!(
       :domain => z98550,
-      :option => o81
+      :proposal => o81
     )
 
     z647 = DomainMap.create!(
       :domain => z98552,
-      :option => o81
+      :proposal => o81
     )
 
     z648 = DomainMap.create!(
       :domain => z98557,
-      :option => o81
+      :proposal => o81
     )
 
     z649 = DomainMap.create!(
       :domain => z98559,
-      :option => o81
+      :proposal => o81
     )
 
     z650 = DomainMap.create!(
       :domain => z98562,
-      :option => o81
+      :proposal => o81
     )
 
     z651 = DomainMap.create!(
       :domain => z98563,
-      :option => o81
+      :proposal => o81
     )
 
     z652 = DomainMap.create!(
       :domain => z98566,
-      :option => o81
+      :proposal => o81
     )
 
     z653 = DomainMap.create!(
       :domain => z98568,
-      :option => o81
+      :proposal => o81
     )
 
     z654 = DomainMap.create!(
       :domain => z98569,
-      :option => o81
+      :proposal => o81
     )
 
     z655 = DomainMap.create!(
       :domain => z98571,
-      :option => o81
+      :proposal => o81
     )
 
     z656 = DomainMap.create!(
       :domain => z98575,
-      :option => o81
+      :proposal => o81
     )
 
     z657 = DomainMap.create!(
       :domain => z98583,
-      :option => o81
+      :proposal => o81
     )
 
     z658 = DomainMap.create!(
       :domain => z98587,
-      :option => o81
+      :proposal => o81
     )
 
     z659 = DomainMap.create!(
       :domain => z98595,
-      :option => o81
+      :proposal => o81
     )
 
-o82 = Option.create!(
+o82 = Proposal.create!(
   :name => 'EMS Levy for Fire Protection District 14',
   :short_name => 'EMS Levy',
   :description => 'Shall Grays Harbor County Fire Protection District
@@ -10059,110 +10059,110 @@ o82 = Option.create!(
 
     z660 = DomainMap.create!(
       :domain => z98520,
-      :option => o82
+      :proposal => o82
     )
 
     z661 = DomainMap.create!(
       :domain => z98526,
-      :option => o82
+      :proposal => o82
     )
 
     z662 = DomainMap.create!(
       :domain => z98535,
-      :option => o82
+      :proposal => o82
     )
 
     z663 = DomainMap.create!(
       :domain => z98536,
-      :option => o82
+      :proposal => o82
     )
 
     z664 = DomainMap.create!(
       :domain => z98537,
-      :option => o82
+      :proposal => o82
     )
 
     z665 = DomainMap.create!(
       :domain => z98541,
-      :option => o82
+      :proposal => o82
     )
 
     z666 = DomainMap.create!(
       :domain => z98547,
-      :option => o82
+      :proposal => o82
     )
 
     z667 = DomainMap.create!(
       :domain => z98550,
-      :option => o82
+      :proposal => o82
     )
 
     z668 = DomainMap.create!(
       :domain => z98552,
-      :option => o82
+      :proposal => o82
     )
 
     z669 = DomainMap.create!(
       :domain => z98557,
-      :option => o82
+      :proposal => o82
     )
 
     z670 = DomainMap.create!(
       :domain => z98559,
-      :option => o82
+      :proposal => o82
     )
 
     z671 = DomainMap.create!(
       :domain => z98562,
-      :option => o82
+      :proposal => o82
     )
 
     z672 = DomainMap.create!(
       :domain => z98563,
-      :option => o82
+      :proposal => o82
     )
 
     z673 = DomainMap.create!(
       :domain => z98566,
-      :option => o82
+      :proposal => o82
     )
 
     z674 = DomainMap.create!(
       :domain => z98568,
-      :option => o82
+      :proposal => o82
     )
 
     z675 = DomainMap.create!(
       :domain => z98569,
-      :option => o82
+      :proposal => o82
     )
 
     z676 = DomainMap.create!(
       :domain => z98571,
-      :option => o82
+      :proposal => o82
     )
 
     z677 = DomainMap.create!(
       :domain => z98575,
-      :option => o82
+      :proposal => o82
     )
 
     z678 = DomainMap.create!(
       :domain => z98583,
-      :option => o82
+      :proposal => o82
     )
 
     z679 = DomainMap.create!(
       :domain => z98587,
-      :option => o82
+      :proposal => o82
     )
 
     z680 = DomainMap.create!(
       :domain => z98595,
-      :option => o82
+      :proposal => o82
     )
 
-o83 = Option.create!(
+o83 = Proposal.create!(
   :name => 'Timberland Regional Library District Annexation',
   :short_name => 'Library Dist',
   :description => 'Shall the City of Hoquiam be annexed to and be a
@@ -10178,10 +10178,10 @@ o83 = Option.create!(
 
     z681 = DomainMap.create!(
       :domain => z98550,
-      :option => o83
+      :proposal => o83
     )
 
-o84 = Option.create!(
+o84 = Proposal.create!(
   :name => 'Grant County Cemetery District No. 2 Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'The Board of Commissioners of Grant County Cemetery
@@ -10204,85 +10204,85 @@ o84 = Option.create!(
 
     z682 = DomainMap.create!(
       :domain => z98823,
-      :option => o84
+      :proposal => o84
     )
 
     z683 = DomainMap.create!(
       :domain => z98824,
-      :option => o84
+      :proposal => o84
     )
 
     z684 = DomainMap.create!(
       :domain => z98832,
-      :option => o84
+      :proposal => o84
     )
 
     z685 = DomainMap.create!(
       :domain => z98837,
-      :option => o84
+      :proposal => o84
     )
 
     z686 = DomainMap.create!(
       :domain => z98848,
-      :option => o84
+      :proposal => o84
     )
 
     z687 = DomainMap.create!(
       :domain => z98851,
-      :option => o84
+      :proposal => o84
     )
 
     z688 = DomainMap.create!(
       :domain => z98853,
-      :option => o84
+      :proposal => o84
     )
 
     z689 = DomainMap.create!(
       :domain => z98857,
-      :option => o84
+      :proposal => o84
     )
 
     z690 = DomainMap.create!(
       :domain => z98860,
-      :option => o84
+      :proposal => o84
     )
 
     z691 = DomainMap.create!(
       :domain => z99115,
-      :option => o84
+      :proposal => o84
     )
 
     z692 = DomainMap.create!(
       :domain => z99123,
-      :option => o84
+      :proposal => o84
     )
 
     z693 = DomainMap.create!(
       :domain => z99133,
-      :option => o84
+      :proposal => o84
     )
 
     z694 = DomainMap.create!(
       :domain => z99135,
-      :option => o84
+      :proposal => o84
     )
 
     z695 = DomainMap.create!(
       :domain => z99321,
-      :option => o84
+      :proposal => o84
     )
 
     z696 = DomainMap.create!(
       :domain => z99349,
-      :option => o84
+      :proposal => o84
     )
 
     z697 = DomainMap.create!(
       :domain => z99357,
-      :option => o84
+      :proposal => o84
     )
 
-o85 = Option.create!(
+o85 = Proposal.create!(
   :name => 'Grant County Port District Commissioner Election Procedures',
   :short_name => 'Port District',
   :description => 'Shall Grant County Port District No. 5, which is
@@ -10302,85 +10302,85 @@ o85 = Option.create!(
 
     z698 = DomainMap.create!(
       :domain => z98823,
-      :option => o85
+      :proposal => o85
     )
 
     z699 = DomainMap.create!(
       :domain => z98824,
-      :option => o85
+      :proposal => o85
     )
 
     z700 = DomainMap.create!(
       :domain => z98832,
-      :option => o85
+      :proposal => o85
     )
 
     z701 = DomainMap.create!(
       :domain => z98837,
-      :option => o85
+      :proposal => o85
     )
 
     z702 = DomainMap.create!(
       :domain => z98848,
-      :option => o85
+      :proposal => o85
     )
 
     z703 = DomainMap.create!(
       :domain => z98851,
-      :option => o85
+      :proposal => o85
     )
 
     z704 = DomainMap.create!(
       :domain => z98853,
-      :option => o85
+      :proposal => o85
     )
 
     z705 = DomainMap.create!(
       :domain => z98857,
-      :option => o85
+      :proposal => o85
     )
 
     z706 = DomainMap.create!(
       :domain => z98860,
-      :option => o85
+      :proposal => o85
     )
 
     z707 = DomainMap.create!(
       :domain => z99115,
-      :option => o85
+      :proposal => o85
     )
 
     z708 = DomainMap.create!(
       :domain => z99123,
-      :option => o85
+      :proposal => o85
     )
 
     z709 = DomainMap.create!(
       :domain => z99133,
-      :option => o85
+      :proposal => o85
     )
 
     z710 = DomainMap.create!(
       :domain => z99135,
-      :option => o85
+      :proposal => o85
     )
 
     z711 = DomainMap.create!(
       :domain => z99321,
-      :option => o85
+      :proposal => o85
     )
 
     z712 = DomainMap.create!(
       :domain => z99349,
-      :option => o85
+      :proposal => o85
     )
 
     z713 = DomainMap.create!(
       :domain => z99357,
-      :option => o85
+      :proposal => o85
     )
 
-o86 = Option.create!(
+o86 = Proposal.create!(
   :name => 'Public Safetey Sales Tax',
   :short_name => 'Sales Tax Increase',
   :description => 'The Shelton City Commission Passed Resolution
@@ -10402,10 +10402,10 @@ o86 = Option.create!(
 
     z714 = DomainMap.create!(
       :domain => z98584,
-      :option => o86
+      :proposal => o86
     )
 
-o87 = Option.create!(
+o87 = Proposal.create!(
   :name => 'Mason County Fire Protection District No. 5 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Commissioners for Mason County Fire
@@ -10427,50 +10427,50 @@ o87 = Option.create!(
 
     z715 = DomainMap.create!(
       :domain => z98524,
-      :option => o87
+      :proposal => o87
     )
 
     z716 = DomainMap.create!(
       :domain => z98528,
-      :option => o87
+      :proposal => o87
     )
 
     z717 = DomainMap.create!(
       :domain => z98546,
-      :option => o87
+      :proposal => o87
     )
 
     z718 = DomainMap.create!(
       :domain => z98548,
-      :option => o87
+      :proposal => o87
     )
 
     z719 = DomainMap.create!(
       :domain => z98555,
-      :option => o87
+      :proposal => o87
     )
 
     z720 = DomainMap.create!(
       :domain => z98560,
-      :option => o87
+      :proposal => o87
     )
 
     z721 = DomainMap.create!(
       :domain => z98584,
-      :option => o87
+      :proposal => o87
     )
 
     z722 = DomainMap.create!(
       :domain => z98588,
-      :option => o87
+      :proposal => o87
     )
 
     z723 = DomainMap.create!(
       :domain => z98592,
-      :option => o87
+      :proposal => o87
     )
 
-o88 = Option.create!(
+o88 = Proposal.create!(
   :name => 'Mason County Fire Protection District No. 16 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Commissioners for Mason County Fire
@@ -10492,50 +10492,50 @@ o88 = Option.create!(
 
     z724 = DomainMap.create!(
       :domain => z98524,
-      :option => o88
+      :proposal => o88
     )
 
     z725 = DomainMap.create!(
       :domain => z98528,
-      :option => o88
+      :proposal => o88
     )
 
     z726 = DomainMap.create!(
       :domain => z98546,
-      :option => o88
+      :proposal => o88
     )
 
     z727 = DomainMap.create!(
       :domain => z98548,
-      :option => o88
+      :proposal => o88
     )
 
     z728 = DomainMap.create!(
       :domain => z98555,
-      :option => o88
+      :proposal => o88
     )
 
     z729 = DomainMap.create!(
       :domain => z98560,
-      :option => o88
+      :proposal => o88
     )
 
     z730 = DomainMap.create!(
       :domain => z98584,
-      :option => o88
+      :proposal => o88
     )
 
     z731 = DomainMap.create!(
       :domain => z98588,
-      :option => o88
+      :proposal => o88
     )
 
     z732 = DomainMap.create!(
       :domain => z98592,
-      :option => o88
+      :proposal => o88
     )
 
-o89 = Option.create!(
+o89 = Proposal.create!(
   :name => 'Hood Canal School District Levy',
   :short_name => 'School Levy',
   :description => 'The Board of Directors of Hood Canal School
@@ -10556,50 +10556,50 @@ o89 = Option.create!(
 
     z733 = DomainMap.create!(
       :domain => z98524,
-      :option => o89
+      :proposal => o89
     )
 
     z734 = DomainMap.create!(
       :domain => z98528,
-      :option => o89
+      :proposal => o89
     )
 
     z735 = DomainMap.create!(
       :domain => z98546,
-      :option => o89
+      :proposal => o89
     )
 
     z736 = DomainMap.create!(
       :domain => z98548,
-      :option => o89
+      :proposal => o89
     )
 
     z737 = DomainMap.create!(
       :domain => z98555,
-      :option => o89
+      :proposal => o89
     )
 
     z738 = DomainMap.create!(
       :domain => z98560,
-      :option => o89
+      :proposal => o89
     )
 
     z739 = DomainMap.create!(
       :domain => z98584,
-      :option => o89
+      :proposal => o89
     )
 
     z740 = DomainMap.create!(
       :domain => z98588,
-      :option => o89
+      :proposal => o89
     )
 
     z741 = DomainMap.create!(
       :domain => z98592,
-      :option => o89
+      :proposal => o89
     )
 
-o90 = Option.create!(
+o90 = Proposal.create!(
   :name => 'Lincoln County Fire Protection District No. 6 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Commissioners of Lincoln County Fire
@@ -10620,65 +10620,65 @@ o90 = Option.create!(
 
     z742 = DomainMap.create!(
       :domain => z99008,
-      :option => o90
+      :proposal => o90
     )
 
     z743 = DomainMap.create!(
       :domain => z99029,
-      :option => o90
+      :proposal => o90
     )
 
     z744 = DomainMap.create!(
       :domain => z99032,
-      :option => o90
+      :proposal => o90
     )
 
     z745 = DomainMap.create!(
       :domain => z99103,
-      :option => o90
+      :proposal => o90
     )
 
     z746 = DomainMap.create!(
       :domain => z99117,
-      :option => o90
+      :proposal => o90
     )
 
     z747 = DomainMap.create!(
       :domain => z99122,
-      :option => o90
+      :proposal => o90
     )
 
     z748 = DomainMap.create!(
       :domain => z99134,
-      :option => o90
+      :proposal => o90
     )
 
     z749 = DomainMap.create!(
       :domain => z99144,
-      :option => o90
+      :proposal => o90
     )
 
     z750 = DomainMap.create!(
       :domain => z99147,
-      :option => o90
+      :proposal => o90
     )
 
     z751 = DomainMap.create!(
       :domain => z99154,
-      :option => o90
+      :proposal => o90
     )
 
     z752 = DomainMap.create!(
       :domain => z99159,
-      :option => o90
+      :proposal => o90
     )
 
     z753 = DomainMap.create!(
       :domain => z99185,
-      :option => o90
+      :proposal => o90
     )
 
-o91 = Option.create!(
+o91 = Proposal.create!(
   :name => 'Point Roberts Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Shall a tax, of approximately $0.084065 cents per
@@ -10700,10 +10700,10 @@ o91 = Option.create!(
 
     z754 = DomainMap.create!(
       :domain => z98281,
-      :option => o91
+      :proposal => o91
     )
 
-o92 = Option.create!(
+o92 = Proposal.create!(
   :name => 'Kittitas County Fire Protection District No. 1 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Commissioners of Kittitas County Fire
@@ -10728,55 +10728,55 @@ o92 = Option.create!(
 
     z755 = DomainMap.create!(
       :domain => z98068,
-      :option => o92
+      :proposal => o92
     )
 
     z756 = DomainMap.create!(
       :domain => z98922,
-      :option => o92
+      :proposal => o92
     )
 
     z757 = DomainMap.create!(
       :domain => z98925,
-      :option => o92
+      :proposal => o92
     )
 
     z758 = DomainMap.create!(
       :domain => z98926,
-      :option => o92
+      :proposal => o92
     )
 
     z759 = DomainMap.create!(
       :domain => z98934,
-      :option => o92
+      :proposal => o92
     )
 
     z760 = DomainMap.create!(
       :domain => z98940,
-      :option => o92
+      :proposal => o92
     )
 
     z761 = DomainMap.create!(
       :domain => z98941,
-      :option => o92
+      :proposal => o92
     )
 
     z762 = DomainMap.create!(
       :domain => z98943,
-      :option => o92
+      :proposal => o92
     )
 
     z763 = DomainMap.create!(
       :domain => z98946,
-      :option => o92
+      :proposal => o92
     )
 
     z764 = DomainMap.create!(
       :domain => z98950,
-      :option => o92
+      :proposal => o92
     )
 
-o93 = Option.create!(
+o93 = Proposal.create!(
   :name => 'Automated Traffic Safety Camera Removal',
   :short_name => 'Traffic Cameras',
   :description => 'City of Bellingham Initiative No. 2011-01 concerns
@@ -10798,30 +10798,30 @@ o93 = Option.create!(
 
     z765 = DomainMap.create!(
       :domain => z98225,
-      :option => o93
+      :proposal => o93
     )
 
     z766 = DomainMap.create!(
       :domain => z98226,
-      :option => o93
+      :proposal => o93
     )
 
     z767 = DomainMap.create!(
       :domain => z98227,
-      :option => o93
+      :proposal => o93
     )
 
     z768 = DomainMap.create!(
       :domain => z98228,
-      :option => o93
+      :proposal => o93
     )
 
     z769 = DomainMap.create!(
       :domain => z98229,
-      :option => o93
+      :proposal => o93
     )
 
-o94 = Option.create!(
+o94 = Proposal.create!(
   :name => 'Automated Traffic Safety Camera Advisory Vote',
   :short_name => 'Traffic Cameras',
   :description => 'Initiative Measure No. 1 concerns advisory votes on
@@ -10841,10 +10841,10 @@ o94 = Option.create!(
 
     z770 = DomainMap.create!(
       :domain => z98632,
-      :option => o94
+      :proposal => o94
     )
 
-o95 = Option.create!(
+o95 = Proposal.create!(
   :name => 'Automated Traffic Safety Cameras in School Zones',
   :short_name => 'Traffic Cameras',
   :description => 'The City Council of the City of Longview adopted
@@ -10868,10 +10868,10 @@ o95 = Option.create!(
 
     z771 = DomainMap.create!(
       :domain => z98632,
-      :option => o95
+      :proposal => o95
     )
 
-o96 = Option.create!(
+o96 = Proposal.create!(
   :name => 'Automated Traffic Safety Cameras - Advisory Vote',
   :short_name => 'Traffic Cameras',
   :description => 'The City Council of the City of Longview adopted
@@ -10897,10 +10897,10 @@ o96 = Option.create!(
 
     z772 = DomainMap.create!(
       :domain => z98632,
-      :option => o96
+      :proposal => o96
     )
 
-o97 = Option.create!(
+o97 = Proposal.create!(
   :name => 'Sales and Use Tax Increase for Police, Criminal Justice, and Fire Protection',
   :short_name => 'Sales/Use Tax',
   :description => 'The City Council of the City of Woodland adopted
@@ -10924,10 +10924,10 @@ o97 = Option.create!(
 
     z773 = DomainMap.create!(
       :domain => z98674,
-      :option => o97
+      :proposal => o97
     )
 
-o98 = Option.create!(
+o98 = Proposal.create!(
   :name => 'Onalaska School Levy',
   :short_name => 'School Levy',
   :description => 'The Board of Directors of Onalaska School District
@@ -10956,10 +10956,10 @@ o98 = Option.create!(
 
     z774 = DomainMap.create!(
       :domain => z98570,
-      :option => o98
+      :proposal => o98
     )
 
-o99 = Option.create!(
+o99 = Proposal.create!(
   :name => 'Formation of Port of Winlock',
   :short_name => 'Port Formation',
   :description => 'This measure proposes the formation of a port
@@ -10978,10 +10978,10 @@ o99 = Option.create!(
 
     z775 = DomainMap.create!(
       :domain => z98596,
-      :option => o99
+      :proposal => o99
     )
 
-o100 = Option.create!(
+o100 = Proposal.create!(
   :name => 'Sale and Discharge of Fireworks within the City of Olympia',
   :short_name => 'Fireworks',
   :description => 'Shall the sale and discharge of fireworks be
@@ -10999,75 +10999,75 @@ o100 = Option.create!(
 
     z776 = DomainMap.create!(
       :domain => z98501,
-      :option => o100
+      :proposal => o100
     )
 
     z777 = DomainMap.create!(
       :domain => z98502,
-      :option => o100
+      :proposal => o100
     )
 
     z778 = DomainMap.create!(
       :domain => z98503,
-      :option => o100
+      :proposal => o100
     )
 
     z779 = DomainMap.create!(
       :domain => z98504,
-      :option => o100
+      :proposal => o100
     )
 
     z780 = DomainMap.create!(
       :domain => z98505,
-      :option => o100
+      :proposal => o100
     )
 
     z781 = DomainMap.create!(
       :domain => z98506,
-      :option => o100
+      :proposal => o100
     )
 
     z782 = DomainMap.create!(
       :domain => z98507,
-      :option => o100
+      :proposal => o100
     )
 
     z783 = DomainMap.create!(
       :domain => z98508,
-      :option => o100
+      :proposal => o100
     )
 
     z784 = DomainMap.create!(
       :domain => z98509,
-      :option => o100
+      :proposal => o100
     )
 
     z785 = DomainMap.create!(
       :domain => z98511,
-      :option => o100
+      :proposal => o100
     )
 
     z786 = DomainMap.create!(
       :domain => z98512,
-      :option => o100
+      :proposal => o100
     )
 
     z787 = DomainMap.create!(
       :domain => z98513,
-      :option => o100
+      :proposal => o100
     )
 
     z788 = DomainMap.create!(
       :domain => z98516,
-      :option => o100
+      :proposal => o100
     )
 
     z789 = DomainMap.create!(
       :domain => z98599,
-      :option => o100
+      :proposal => o100
     )
 
-o101 = Option.create!(
+o101 = Proposal.create!(
   :name => 'Lacey Fire District 3 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Fire Commissioners of Fire Protection
@@ -11091,30 +11091,30 @@ o101 = Option.create!(
 
     z790 = DomainMap.create!(
       :domain => z98503,
-      :option => o101
+      :proposal => o101
     )
 
     z791 = DomainMap.create!(
       :domain => z98506,
-      :option => o101
+      :proposal => o101
     )
 
     z792 = DomainMap.create!(
       :domain => z98509,
-      :option => o101
+      :proposal => o101
     )
 
     z793 = DomainMap.create!(
       :domain => z98513,
-      :option => o101
+      :proposal => o101
     )
 
     z794 = DomainMap.create!(
       :domain => z98516,
-      :option => o101
+      :proposal => o101
     )
 
-o102 = Option.create!(
+o102 = Proposal.create!(
   :name => 'Fire Protection District No. 8 Bonds',
   :short_name => 'Fire Dist Bonds',
   :description => 'The Board of Fire Commissioners of Fire Protection
@@ -11138,10 +11138,10 @@ o102 = Option.create!(
 
     z795 = DomainMap.create!(
       :domain => z98501,
-      :option => o102
+      :proposal => o102
     )
 
-o103 = Option.create!(
+o103 = Proposal.create!(
   :name => 'Spokane Regional Animal Protection Shelter.',
   :short_name => 'Animal Shelter',
   :description => 'The Board of Spokane County Commissioners adopted
@@ -11165,270 +11165,270 @@ o103 = Option.create!(
 
     z796 = DomainMap.create!(
       :domain => z99001,
-      :option => o103
+      :proposal => o103
     )
 
     z797 = DomainMap.create!(
       :domain => z99003,
-      :option => o103
+      :proposal => o103
     )
 
     z798 = DomainMap.create!(
       :domain => z99004,
-      :option => o103
+      :proposal => o103
     )
 
     z799 = DomainMap.create!(
       :domain => z99005,
-      :option => o103
+      :proposal => o103
     )
 
     z800 = DomainMap.create!(
       :domain => z99006,
-      :option => o103
+      :proposal => o103
     )
 
     z801 = DomainMap.create!(
       :domain => z99009,
-      :option => o103
+      :proposal => o103
     )
 
     z802 = DomainMap.create!(
       :domain => z99011,
-      :option => o103
+      :proposal => o103
     )
 
     z803 = DomainMap.create!(
       :domain => z99012,
-      :option => o103
+      :proposal => o103
     )
 
     z804 = DomainMap.create!(
       :domain => z99014,
-      :option => o103
+      :proposal => o103
     )
 
     z805 = DomainMap.create!(
       :domain => z99016,
-      :option => o103
+      :proposal => o103
     )
 
     z806 = DomainMap.create!(
       :domain => z99018,
-      :option => o103
+      :proposal => o103
     )
 
     z807 = DomainMap.create!(
       :domain => z99019,
-      :option => o103
+      :proposal => o103
     )
 
     z808 = DomainMap.create!(
       :domain => z99020,
-      :option => o103
+      :proposal => o103
     )
 
     z809 = DomainMap.create!(
       :domain => z99021,
-      :option => o103
+      :proposal => o103
     )
 
     z810 = DomainMap.create!(
       :domain => z99022,
-      :option => o103
+      :proposal => o103
     )
 
     z811 = DomainMap.create!(
       :domain => z99023,
-      :option => o103
+      :proposal => o103
     )
 
     z812 = DomainMap.create!(
       :domain => z99025,
-      :option => o103
+      :proposal => o103
     )
 
     z813 = DomainMap.create!(
       :domain => z99026,
-      :option => o103
+      :proposal => o103
     )
 
     z814 = DomainMap.create!(
       :domain => z99027,
-      :option => o103
+      :proposal => o103
     )
 
     z815 = DomainMap.create!(
       :domain => z99030,
-      :option => o103
+      :proposal => o103
     )
 
     z816 = DomainMap.create!(
       :domain => z99031,
-      :option => o103
+      :proposal => o103
     )
 
     z817 = DomainMap.create!(
       :domain => z99036,
-      :option => o103
+      :proposal => o103
     )
 
     z818 = DomainMap.create!(
       :domain => z99037,
-      :option => o103
+      :proposal => o103
     )
 
     z819 = DomainMap.create!(
       :domain => z99039,
-      :option => o103
+      :proposal => o103
     )
 
     z820 = DomainMap.create!(
       :domain => z99201,
-      :option => o103
+      :proposal => o103
     )
 
     z821 = DomainMap.create!(
       :domain => z99202,
-      :option => o103
+      :proposal => o103
     )
 
     z822 = DomainMap.create!(
       :domain => z99203,
-      :option => o103
+      :proposal => o103
     )
 
     z823 = DomainMap.create!(
       :domain => z99204,
-      :option => o103
+      :proposal => o103
     )
 
     z824 = DomainMap.create!(
       :domain => z99205,
-      :option => o103
+      :proposal => o103
     )
 
     z825 = DomainMap.create!(
       :domain => z99206,
-      :option => o103
+      :proposal => o103
     )
 
     z826 = DomainMap.create!(
       :domain => z99207,
-      :option => o103
+      :proposal => o103
     )
 
     z827 = DomainMap.create!(
       :domain => z99208,
-      :option => o103
+      :proposal => o103
     )
 
     z828 = DomainMap.create!(
       :domain => z99209,
-      :option => o103
+      :proposal => o103
     )
 
     z829 = DomainMap.create!(
       :domain => z99210,
-      :option => o103
+      :proposal => o103
     )
 
     z830 = DomainMap.create!(
       :domain => z99211,
-      :option => o103
+      :proposal => o103
     )
 
     z831 = DomainMap.create!(
       :domain => z99212,
-      :option => o103
+      :proposal => o103
     )
 
     z832 = DomainMap.create!(
       :domain => z99213,
-      :option => o103
+      :proposal => o103
     )
 
     z833 = DomainMap.create!(
       :domain => z99214,
-      :option => o103
+      :proposal => o103
     )
 
     z834 = DomainMap.create!(
       :domain => z99215,
-      :option => o103
+      :proposal => o103
     )
 
     z835 = DomainMap.create!(
       :domain => z99216,
-      :option => o103
+      :proposal => o103
     )
 
     z836 = DomainMap.create!(
       :domain => z99217,
-      :option => o103
+      :proposal => o103
     )
 
     z837 = DomainMap.create!(
       :domain => z99218,
-      :option => o103
+      :proposal => o103
     )
 
     z838 = DomainMap.create!(
       :domain => z99219,
-      :option => o103
+      :proposal => o103
     )
 
     z839 = DomainMap.create!(
       :domain => z99220,
-      :option => o103
+      :proposal => o103
     )
 
     z840 = DomainMap.create!(
       :domain => z99223,
-      :option => o103
+      :proposal => o103
     )
 
     z841 = DomainMap.create!(
       :domain => z99224,
-      :option => o103
+      :proposal => o103
     )
 
     z842 = DomainMap.create!(
       :domain => z99228,
-      :option => o103
+      :proposal => o103
     )
 
     z843 = DomainMap.create!(
       :domain => z99251,
-      :option => o103
+      :proposal => o103
     )
 
     z844 = DomainMap.create!(
       :domain => z99252,
-      :option => o103
+      :proposal => o103
     )
 
     z845 = DomainMap.create!(
       :domain => z99256,
-      :option => o103
+      :proposal => o103
     )
 
     z846 = DomainMap.create!(
       :domain => z99258,
-      :option => o103
+      :proposal => o103
     )
 
     z847 = DomainMap.create!(
       :domain => z99260,
-      :option => o103
+      :proposal => o103
     )
 
     z848 = DomainMap.create!(
       :domain => z99299,
-      :option => o103
+      :proposal => o103
     )
 
-o104 = Option.create!(
+o104 = Proposal.create!(
   :name => ' Spokane County Fire Protection District No. 8 Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Board of Spokane County Fire Protection
@@ -11455,270 +11455,270 @@ o104 = Option.create!(
 
     z849 = DomainMap.create!(
       :domain => z99001,
-      :option => o104
+      :proposal => o104
     )
 
     z850 = DomainMap.create!(
       :domain => z99003,
-      :option => o104
+      :proposal => o104
     )
 
     z851 = DomainMap.create!(
       :domain => z99004,
-      :option => o104
+      :proposal => o104
     )
 
     z852 = DomainMap.create!(
       :domain => z99005,
-      :option => o104
+      :proposal => o104
     )
 
     z853 = DomainMap.create!(
       :domain => z99006,
-      :option => o104
+      :proposal => o104
     )
 
     z854 = DomainMap.create!(
       :domain => z99009,
-      :option => o104
+      :proposal => o104
     )
 
     z855 = DomainMap.create!(
       :domain => z99011,
-      :option => o104
+      :proposal => o104
     )
 
     z856 = DomainMap.create!(
       :domain => z99012,
-      :option => o104
+      :proposal => o104
     )
 
     z857 = DomainMap.create!(
       :domain => z99014,
-      :option => o104
+      :proposal => o104
     )
 
     z858 = DomainMap.create!(
       :domain => z99016,
-      :option => o104
+      :proposal => o104
     )
 
     z859 = DomainMap.create!(
       :domain => z99018,
-      :option => o104
+      :proposal => o104
     )
 
     z860 = DomainMap.create!(
       :domain => z99019,
-      :option => o104
+      :proposal => o104
     )
 
     z861 = DomainMap.create!(
       :domain => z99020,
-      :option => o104
+      :proposal => o104
     )
 
     z862 = DomainMap.create!(
       :domain => z99021,
-      :option => o104
+      :proposal => o104
     )
 
     z863 = DomainMap.create!(
       :domain => z99022,
-      :option => o104
+      :proposal => o104
     )
 
     z864 = DomainMap.create!(
       :domain => z99023,
-      :option => o104
+      :proposal => o104
     )
 
     z865 = DomainMap.create!(
       :domain => z99025,
-      :option => o104
+      :proposal => o104
     )
 
     z866 = DomainMap.create!(
       :domain => z99026,
-      :option => o104
+      :proposal => o104
     )
 
     z867 = DomainMap.create!(
       :domain => z99027,
-      :option => o104
+      :proposal => o104
     )
 
     z868 = DomainMap.create!(
       :domain => z99030,
-      :option => o104
+      :proposal => o104
     )
 
     z869 = DomainMap.create!(
       :domain => z99031,
-      :option => o104
+      :proposal => o104
     )
 
     z870 = DomainMap.create!(
       :domain => z99036,
-      :option => o104
+      :proposal => o104
     )
 
     z871 = DomainMap.create!(
       :domain => z99037,
-      :option => o104
+      :proposal => o104
     )
 
     z872 = DomainMap.create!(
       :domain => z99039,
-      :option => o104
+      :proposal => o104
     )
 
     z873 = DomainMap.create!(
       :domain => z99201,
-      :option => o104
+      :proposal => o104
     )
 
     z874 = DomainMap.create!(
       :domain => z99202,
-      :option => o104
+      :proposal => o104
     )
 
     z875 = DomainMap.create!(
       :domain => z99203,
-      :option => o104
+      :proposal => o104
     )
 
     z876 = DomainMap.create!(
       :domain => z99204,
-      :option => o104
+      :proposal => o104
     )
 
     z877 = DomainMap.create!(
       :domain => z99205,
-      :option => o104
+      :proposal => o104
     )
 
     z878 = DomainMap.create!(
       :domain => z99206,
-      :option => o104
+      :proposal => o104
     )
 
     z879 = DomainMap.create!(
       :domain => z99207,
-      :option => o104
+      :proposal => o104
     )
 
     z880 = DomainMap.create!(
       :domain => z99208,
-      :option => o104
+      :proposal => o104
     )
 
     z881 = DomainMap.create!(
       :domain => z99209,
-      :option => o104
+      :proposal => o104
     )
 
     z882 = DomainMap.create!(
       :domain => z99210,
-      :option => o104
+      :proposal => o104
     )
 
     z883 = DomainMap.create!(
       :domain => z99211,
-      :option => o104
+      :proposal => o104
     )
 
     z884 = DomainMap.create!(
       :domain => z99212,
-      :option => o104
+      :proposal => o104
     )
 
     z885 = DomainMap.create!(
       :domain => z99213,
-      :option => o104
+      :proposal => o104
     )
 
     z886 = DomainMap.create!(
       :domain => z99214,
-      :option => o104
+      :proposal => o104
     )
 
     z887 = DomainMap.create!(
       :domain => z99215,
-      :option => o104
+      :proposal => o104
     )
 
     z888 = DomainMap.create!(
       :domain => z99216,
-      :option => o104
+      :proposal => o104
     )
 
     z889 = DomainMap.create!(
       :domain => z99217,
-      :option => o104
+      :proposal => o104
     )
 
     z890 = DomainMap.create!(
       :domain => z99218,
-      :option => o104
+      :proposal => o104
     )
 
     z891 = DomainMap.create!(
       :domain => z99219,
-      :option => o104
+      :proposal => o104
     )
 
     z892 = DomainMap.create!(
       :domain => z99220,
-      :option => o104
+      :proposal => o104
     )
 
     z893 = DomainMap.create!(
       :domain => z99223,
-      :option => o104
+      :proposal => o104
     )
 
     z894 = DomainMap.create!(
       :domain => z99224,
-      :option => o104
+      :proposal => o104
     )
 
     z895 = DomainMap.create!(
       :domain => z99228,
-      :option => o104
+      :proposal => o104
     )
 
     z896 = DomainMap.create!(
       :domain => z99251,
-      :option => o104
+      :proposal => o104
     )
 
     z897 = DomainMap.create!(
       :domain => z99252,
-      :option => o104
+      :proposal => o104
     )
 
     z898 = DomainMap.create!(
       :domain => z99256,
-      :option => o104
+      :proposal => o104
     )
 
     z899 = DomainMap.create!(
       :domain => z99258,
-      :option => o104
+      :proposal => o104
     )
 
     z900 = DomainMap.create!(
       :domain => z99260,
-      :option => o104
+      :proposal => o104
     )
 
     z901 = DomainMap.create!(
       :domain => z99299,
-      :option => o104
+      :proposal => o104
     )
 
-o105 = Option.create!(
+o105 = Proposal.create!(
   :name => ' Spokane County Fire Protection District No. 13 Bonds and Levy',
   :short_name => 'Fire Dist Bonds',
   :description => 'The Board of Fire Commissioners of Fire Protection
@@ -11741,275 +11741,275 @@ o105 = Option.create!(
 
     z902 = DomainMap.create!(
       :domain => z99001,
-      :option => o105
+      :proposal => o105
     )
 
     z903 = DomainMap.create!(
       :domain => z99003,
-      :option => o105
+      :proposal => o105
     )
 
     z904 = DomainMap.create!(
       :domain => z99004,
-      :option => o105
+      :proposal => o105
     )
 
     z905 = DomainMap.create!(
       :domain => z99005,
-      :option => o105
+      :proposal => o105
     )
 
     z906 = DomainMap.create!(
       :domain => z99006,
-      :option => o105
+      :proposal => o105
     )
 
     z907 = DomainMap.create!(
       :domain => z99009,
-      :option => o105
+      :proposal => o105
     )
 
     z908 = DomainMap.create!(
       :domain => z99011,
-      :option => o105
+      :proposal => o105
     )
 
     z909 = DomainMap.create!(
       :domain => z99012,
-      :option => o105
+      :proposal => o105
     )
 
     z910 = DomainMap.create!(
       :domain => z99014,
-      :option => o105
+      :proposal => o105
     )
 
     z911 = DomainMap.create!(
       :domain => z99016,
-      :option => o105
+      :proposal => o105
     )
 
     z912 = DomainMap.create!(
       :domain => z99018,
-      :option => o105
+      :proposal => o105
     )
 
     z913 = DomainMap.create!(
       :domain => z99019,
-      :option => o105
+      :proposal => o105
     )
 
     z914 = DomainMap.create!(
       :domain => z99020,
-      :option => o105
+      :proposal => o105
     )
 
     z915 = DomainMap.create!(
       :domain => z99021,
-      :option => o105
+      :proposal => o105
     )
 
     z916 = DomainMap.create!(
       :domain => z99022,
-      :option => o105
+      :proposal => o105
     )
 
     z917 = DomainMap.create!(
       :domain => z99023,
-      :option => o105
+      :proposal => o105
     )
 
     z918 = DomainMap.create!(
       :domain => z99025,
-      :option => o105
+      :proposal => o105
     )
 
     z919 = DomainMap.create!(
       :domain => z99026,
-      :option => o105
+      :proposal => o105
     )
 
     z920 = DomainMap.create!(
       :domain => z99027,
-      :option => o105
+      :proposal => o105
     )
 
     z921 = DomainMap.create!(
       :domain => z99030,
-      :option => o105
+      :proposal => o105
     )
 
     z922 = DomainMap.create!(
       :domain => z99031,
-      :option => o105
+      :proposal => o105
     )
 
     z923 = DomainMap.create!(
       :domain => z99036,
-      :option => o105
+      :proposal => o105
     )
 
     z924 = DomainMap.create!(
       :domain => z99037,
-      :option => o105
+      :proposal => o105
     )
 
     z925 = DomainMap.create!(
       :domain => z99039,
-      :option => o105
+      :proposal => o105
     )
 
     z926 = DomainMap.create!(
       :domain => z99201,
-      :option => o105
+      :proposal => o105
     )
 
     z927 = DomainMap.create!(
       :domain => z99202,
-      :option => o105
+      :proposal => o105
     )
 
     z928 = DomainMap.create!(
       :domain => z99203,
-      :option => o105
+      :proposal => o105
     )
 
     z929 = DomainMap.create!(
       :domain => z99204,
-      :option => o105
+      :proposal => o105
     )
 
     z930 = DomainMap.create!(
       :domain => z99205,
-      :option => o105
+      :proposal => o105
     )
 
     z931 = DomainMap.create!(
       :domain => z99206,
-      :option => o105
+      :proposal => o105
     )
 
     z932 = DomainMap.create!(
       :domain => z99207,
-      :option => o105
+      :proposal => o105
     )
 
     z933 = DomainMap.create!(
       :domain => z99208,
-      :option => o105
+      :proposal => o105
     )
 
     z934 = DomainMap.create!(
       :domain => z99209,
-      :option => o105
+      :proposal => o105
     )
 
     z935 = DomainMap.create!(
       :domain => z99210,
-      :option => o105
+      :proposal => o105
     )
 
     z936 = DomainMap.create!(
       :domain => z99211,
-      :option => o105
+      :proposal => o105
     )
 
     z937 = DomainMap.create!(
       :domain => z99212,
-      :option => o105
+      :proposal => o105
     )
 
     z938 = DomainMap.create!(
       :domain => z99213,
-      :option => o105
+      :proposal => o105
     )
 
     z939 = DomainMap.create!(
       :domain => z99214,
-      :option => o105
+      :proposal => o105
     )
 
     z940 = DomainMap.create!(
       :domain => z99215,
-      :option => o105
+      :proposal => o105
     )
 
     z941 = DomainMap.create!(
       :domain => z99216,
-      :option => o105
+      :proposal => o105
     )
 
     z942 = DomainMap.create!(
       :domain => z99217,
-      :option => o105
+      :proposal => o105
     )
 
     z943 = DomainMap.create!(
       :domain => z99218,
-      :option => o105
+      :proposal => o105
     )
 
     z944 = DomainMap.create!(
       :domain => z99219,
-      :option => o105
+      :proposal => o105
     )
 
     z945 = DomainMap.create!(
       :domain => z99220,
-      :option => o105
+      :proposal => o105
     )
 
     z946 = DomainMap.create!(
       :domain => z99223,
-      :option => o105
+      :proposal => o105
     )
 
     z947 = DomainMap.create!(
       :domain => z99224,
-      :option => o105
+      :proposal => o105
     )
 
     z948 = DomainMap.create!(
       :domain => z99228,
-      :option => o105
+      :proposal => o105
     )
 
     z949 = DomainMap.create!(
       :domain => z99251,
-      :option => o105
+      :proposal => o105
     )
 
     z950 = DomainMap.create!(
       :domain => z99252,
-      :option => o105
+      :proposal => o105
     )
 
     z951 = DomainMap.create!(
       :domain => z99256,
-      :option => o105
+      :proposal => o105
     )
 
     z952 = DomainMap.create!(
       :domain => z99258,
-      :option => o105
+      :proposal => o105
     )
 
     z953 = DomainMap.create!(
       :domain => z99260,
-      :option => o105
+      :proposal => o105
     )
 
     z954 = DomainMap.create!(
       :domain => z99299,
-      :option => o105
+      :proposal => o105
     )
 
-o106 = Option.create!(
+o106 = Proposal.create!(
   :name => 'Change in Plan of Government',
   :short_name => 'Council/Manager?',
-  :description => 'Proposition No. 1 concerns the adoption of the
+  :description => 'Proposition No. 1 concerns the adproposal of the
     Council-Manager form of government within the City of Liberty
-    Lake. The adoption of this measure would not affect the
+    Lake. The adproposal of this measure would not affect the
     City&rsquo;s eligibility to be governed under Title 35A RCW, but
     would replace the present Mayor-Council form of government with
     the Council-Manager form, effectively replacing the Mayor with a
@@ -12026,15 +12026,15 @@ o106 = Option.create!(
 
     z955 = DomainMap.create!(
       :domain => z99016,
-      :option => o106
+      :proposal => o106
     )
 
     z956 = DomainMap.create!(
       :domain => z99019,
-      :option => o106
+      :proposal => o106
     )
 
-o107 = Option.create!(
+o107 = Proposal.create!(
   :name => 'Rockford Fire Protection Services Levy',
   :short_name => 'Fire Dist Levy',
   :description => 'The Rockford Town Council enacted Resolution 11-4R
@@ -12055,10 +12055,10 @@ o107 = Option.create!(
 
     z957 = DomainMap.create!(
       :domain => z99030,
-      :option => o107
+      :proposal => o107
     )
 
-o108 = Option.create!(
+o108 = Proposal.create!(
   :name => 'Spangle Fire Protection Services Levy',
   :short_name => 'Fire Levy',
   :description => 'The Spangle Town Council enacted ordinance No. 398
@@ -12079,10 +12079,10 @@ o108 = Option.create!(
 
     z958 = DomainMap.create!(
       :domain => z99031,
-      :option => o108
+      :proposal => o108
     )
 
-o109 = Option.create!(
+o109 = Proposal.create!(
   :name => 'Spangle Police Protection Services Levy',
   :short_name => 'Police Levy',
   :description => 'The Spangle Town Council enacted ordinance No. 399
@@ -12103,10 +12103,10 @@ o109 = Option.create!(
 
     z959 = DomainMap.create!(
       :domain => z99031,
-      :option => o109
+      :proposal => o109
     )
 
-o110 = Option.create!(
+o110 = Proposal.create!(
   :name => 'Spangle Cemetery District #1 Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'The Board of Directors of Spangle Cemetery District
@@ -12128,10 +12128,10 @@ o110 = Option.create!(
 
     z960 = DomainMap.create!(
       :domain => z99031,
-      :option => o110
+      :proposal => o110
     )
 
-o111 = Option.create!(
+o111 = Proposal.create!(
   :name => 'Street Bonds and Levy',
   :short_name => 'Street Levy',
   :description => 'City Council Ordinance No. 11-011 authorizes a
@@ -12152,60 +12152,60 @@ o111 = Option.create!(
 
     z961 = DomainMap.create!(
       :domain => z99016,
-      :option => o111
+      :proposal => o111
     )
 
     z962 = DomainMap.create!(
       :domain => z99027,
-      :option => o111
+      :proposal => o111
     )
 
     z963 = DomainMap.create!(
       :domain => z99037,
-      :option => o111
+      :proposal => o111
     )
 
     z964 = DomainMap.create!(
       :domain => z99206,
-      :option => o111
+      :proposal => o111
     )
 
     z965 = DomainMap.create!(
       :domain => z99211,
-      :option => o111
+      :proposal => o111
     )
 
     z966 = DomainMap.create!(
       :domain => z99212,
-      :option => o111
+      :proposal => o111
     )
 
     z967 = DomainMap.create!(
       :domain => z99213,
-      :option => o111
+      :proposal => o111
     )
 
     z968 = DomainMap.create!(
       :domain => z99214,
-      :option => o111
+      :proposal => o111
     )
 
     z969 = DomainMap.create!(
       :domain => z99215,
-      :option => o111
+      :proposal => o111
     )
 
     z970 = DomainMap.create!(
       :domain => z99216,
-      :option => o111
+      :proposal => o111
     )
 
     z971 = DomainMap.create!(
       :domain => z99223,
-      :option => o111
+      :proposal => o111
     )
 
-o112 = Option.create!(
+o112 = Proposal.create!(
   :name => 'Additional Sales and Use Tax',
   :short_name => 'Sales/Use Tax',
   :description => 'The Board of Commissioners of Stevens County,
@@ -12230,95 +12230,95 @@ o112 = Option.create!(
 
     z972 = DomainMap.create!(
       :domain => z99013,
-      :option => o112
+      :proposal => o112
     )
 
     z973 = DomainMap.create!(
       :domain => z99034,
-      :option => o112
+      :proposal => o112
     )
 
     z974 = DomainMap.create!(
       :domain => z99040,
-      :option => o112
+      :proposal => o112
     )
 
     z975 = DomainMap.create!(
       :domain => z99101,
-      :option => o112
+      :proposal => o112
     )
 
     z976 = DomainMap.create!(
       :domain => z99109,
-      :option => o112
+      :proposal => o112
     )
 
     z977 = DomainMap.create!(
       :domain => z99110,
-      :option => o112
+      :proposal => o112
     )
 
     z978 = DomainMap.create!(
       :domain => z99114,
-      :option => o112
+      :proposal => o112
     )
 
     z979 = DomainMap.create!(
       :domain => z99126,
-      :option => o112
+      :proposal => o112
     )
 
     z980 = DomainMap.create!(
       :domain => z99129,
-      :option => o112
+      :proposal => o112
     )
 
     z981 = DomainMap.create!(
       :domain => z99131,
-      :option => o112
+      :proposal => o112
     )
 
     z982 = DomainMap.create!(
       :domain => z99137,
-      :option => o112
+      :proposal => o112
     )
 
     z983 = DomainMap.create!(
       :domain => z99141,
-      :option => o112
+      :proposal => o112
     )
 
     z984 = DomainMap.create!(
       :domain => z99148,
-      :option => o112
+      :proposal => o112
     )
 
     z985 = DomainMap.create!(
       :domain => z99151,
-      :option => o112
+      :proposal => o112
     )
 
     z986 = DomainMap.create!(
       :domain => z99157,
-      :option => o112
+      :proposal => o112
     )
 
     z987 = DomainMap.create!(
       :domain => z99167,
-      :option => o112
+      :proposal => o112
     )
 
     z988 = DomainMap.create!(
       :domain => z99173,
-      :option => o112
+      :proposal => o112
     )
 
     z989 = DomainMap.create!(
       :domain => z99181,
-      :option => o112
+      :proposal => o112
     )
 
-o113 = Option.create!(
+o113 = Proposal.create!(
   :name => 'Stevens County Lake Spokane Parks and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'The commissioners of the Stevens County Lake
@@ -12344,95 +12344,95 @@ o113 = Option.create!(
 
     z990 = DomainMap.create!(
       :domain => z99013,
-      :option => o113
+      :proposal => o113
     )
 
     z991 = DomainMap.create!(
       :domain => z99034,
-      :option => o113
+      :proposal => o113
     )
 
     z992 = DomainMap.create!(
       :domain => z99040,
-      :option => o113
+      :proposal => o113
     )
 
     z993 = DomainMap.create!(
       :domain => z99101,
-      :option => o113
+      :proposal => o113
     )
 
     z994 = DomainMap.create!(
       :domain => z99109,
-      :option => o113
+      :proposal => o113
     )
 
     z995 = DomainMap.create!(
       :domain => z99110,
-      :option => o113
+      :proposal => o113
     )
 
     z996 = DomainMap.create!(
       :domain => z99114,
-      :option => o113
+      :proposal => o113
     )
 
     z997 = DomainMap.create!(
       :domain => z99126,
-      :option => o113
+      :proposal => o113
     )
 
     z998 = DomainMap.create!(
       :domain => z99129,
-      :option => o113
+      :proposal => o113
     )
 
     z999 = DomainMap.create!(
       :domain => z99131,
-      :option => o113
+      :proposal => o113
     )
 
     z1000 = DomainMap.create!(
       :domain => z99137,
-      :option => o113
+      :proposal => o113
     )
 
     z1001 = DomainMap.create!(
       :domain => z99141,
-      :option => o113
+      :proposal => o113
     )
 
     z1002 = DomainMap.create!(
       :domain => z99148,
-      :option => o113
+      :proposal => o113
     )
 
     z1003 = DomainMap.create!(
       :domain => z99151,
-      :option => o113
+      :proposal => o113
     )
 
     z1004 = DomainMap.create!(
       :domain => z99157,
-      :option => o113
+      :proposal => o113
     )
 
     z1005 = DomainMap.create!(
       :domain => z99167,
-      :option => o113
+      :proposal => o113
     )
 
     z1006 = DomainMap.create!(
       :domain => z99173,
-      :option => o113
+      :proposal => o113
     )
 
     z1007 = DomainMap.create!(
       :domain => z99181,
-      :option => o113
+      :proposal => o113
     )
 
-o114 = Option.create!(
+o114 = Proposal.create!(
   :name => 'Relocation and Expansion of the Colville Municipal Airport',
   :short_name => 'Airport',
   :description => 'The City Council of the City of Colville adopted
@@ -12456,10 +12456,10 @@ o114 = Option.create!(
 
     z1008 = DomainMap.create!(
       :domain => z99114,
-      :option => o114
+      :proposal => o114
     )
 
-o115 = Option.create!(
+o115 = Proposal.create!(
   :name => 'LaCrosse School District Levy',
   :short_name => 'School Levy',
   :description => 'LaCrosse School District #126 Joint with Adams
@@ -12485,15 +12485,15 @@ o115 = Option.create!(
 
     z1009 = DomainMap.create!(
       :domain => z99136,
-      :option => o115
+      :proposal => o115
     )
 
     z1010 = DomainMap.create!(
       :domain => z99143,
-      :option => o115
+      :proposal => o115
     )
 
-o116 = Option.create!(
+o116 = Proposal.create!(
   :name => 'Swimming Pool Levy',
   :short_name => 'Swimming Pool Levy',
   :description => 'Shall a special levy of $35,000.00 as estimated
@@ -12511,15 +12511,15 @@ o116 = Option.create!(
 
     z1011 = DomainMap.create!(
       :domain => z99136,
-      :option => o116
+      :proposal => o116
     )
 
     z1012 = DomainMap.create!(
       :domain => z99143,
-      :option => o116
+      :proposal => o116
     )
 
-o117 = Option.create!(
+o117 = Proposal.create!(
   :name => 'Sewer Upgrade and Capital  Improvements Levy',
   :short_name => 'Water/Sewer Levy',
   :description => 'Shall a special tax levy of $65,000.00, an
@@ -12538,10 +12538,10 @@ o117 = Option.create!(
 
     z1013 = DomainMap.create!(
       :domain => z99171,
-      :option => o117
+      :proposal => o117
     )
 
-o118 = Option.create!(
+o118 = Proposal.create!(
   :name => 'St. John Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Shall a special tax levy of $35,000, an estimated
@@ -12560,10 +12560,10 @@ o118 = Option.create!(
 
     z1014 = DomainMap.create!(
       :domain => z99171,
-      :option => o118
+      :proposal => o118
     )
 
-o119 = Option.create!(
+o119 = Proposal.create!(
   :name => 'St. John Street Levy',
   :short_name => 'Street Levy',
   :description => 'Shall a special tax levy of $55,000.00, an
@@ -12582,10 +12582,10 @@ o119 = Option.create!(
 
     z1015 = DomainMap.create!(
       :domain => z99171,
-      :option => o119
+      :proposal => o119
     )
 
-o120 = Option.create!(
+o120 = Proposal.create!(
   :name => 'Oakesdale Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Shall the Oakesdale Park & Recreation District #4
@@ -12604,10 +12604,10 @@ o120 = Option.create!(
 
     z1016 = DomainMap.create!(
       :domain => z99158,
-      :option => o120
+      :proposal => o120
     )
 
-o121 = Option.create!(
+o121 = Proposal.create!(
   :name => 'Oakesdale Cemetery District #1 Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'Shall a special tax levy of $45,000.00, an
@@ -12626,10 +12626,10 @@ o121 = Option.create!(
 
     z1017 = DomainMap.create!(
       :domain => z99158,
-      :option => o121
+      :proposal => o121
     )
 
-o122 = Option.create!(
+o122 = Proposal.create!(
   :name => 'Rosalia Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Shall Rosalia Park & Recreation District #5 be
@@ -12648,10 +12648,10 @@ o122 = Option.create!(
 
     z1018 = DomainMap.create!(
       :domain => z99170,
-      :option => o122
+      :proposal => o122
     )
 
-o123 = Option.create!(
+o123 = Proposal.create!(
   :name => 'Garfield Cemetery District #2 Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'Shall the Garfield Cemetery District #2, levy a
@@ -12669,10 +12669,10 @@ o123 = Option.create!(
 
     z1019 = DomainMap.create!(
       :domain => z99130,
-      :option => o123
+      :proposal => o123
     )
 
-o124 = Option.create!(
+o124 = Proposal.create!(
   :name => 'C-TRAN Sales and Use Tax Increase',
   :short_name => 'C-TRAN Sales/Use Tax',
   :description => 'C-TRAN, Clark County Public Transportation Benefit
@@ -12695,121 +12695,121 @@ o124 = Option.create!(
 
     z1020 = DomainMap.create!(
       :domain => z98601,
-      :option => o124
+      :proposal => o124
     )
 
     z1021 = DomainMap.create!(
       :domain => z98604,
-      :option => o124
+      :proposal => o124
     )
 
     z1022 = DomainMap.create!(
       :domain => z98606,
-      :option => o124
+      :proposal => o124
     )
 
     z1023 = DomainMap.create!(
       :domain => z98607,
-      :option => o124
+      :proposal => o124
     )
 
     z1024 = DomainMap.create!(
       :domain => z98622,
-      :option => o124
+      :proposal => o124
     )
 
     z1025 = DomainMap.create!(
       :domain => z98629,
-      :option => o124
+      :proposal => o124
     )
 
     z1026 = DomainMap.create!(
       :domain => z98642,
-      :option => o124
+      :proposal => o124
     )
 
     z1027 = DomainMap.create!(
       :domain => z98660,
-      :option => o124
+      :proposal => o124
     )
 
     z1028 = DomainMap.create!(
       :domain => z98661,
-      :option => o124
+      :proposal => o124
     )
 
     z1029 = DomainMap.create!(
       :domain => z98662,
-      :option => o124
+      :proposal => o124
     )
 
     z1030 = DomainMap.create!(
       :domain => z98663,
-      :option => o124
+      :proposal => o124
     )
 
     z1031 = DomainMap.create!(
       :domain => z98664,
-      :option => o124
+      :proposal => o124
     )
 
     z1032 = DomainMap.create!(
       :domain => z98665,
-      :option => o124
+      :proposal => o124
     )
 
     z1033 = DomainMap.create!(
       :domain => z98666,
-      :option => o124
+      :proposal => o124
     )
 
     z1034 = DomainMap.create!(
       :domain => z98668,
-      :option => o124
+      :proposal => o124
     )
 
     z1035 = DomainMap.create!(
       :domain => z98671,
-      :option => o124
+      :proposal => o124
     )
 
     z1036 = DomainMap.create!(
       :domain => z98675,
-      :option => o124
+      :proposal => o124
     )
 
     z1037 = DomainMap.create!(
       :domain => z98682,
-      :option => o124
+      :proposal => o124
     )
 
     z1038 = DomainMap.create!(
       :domain => z98683,
-      :option => o124
+      :proposal => o124
     )
 
     z1039 = DomainMap.create!(
       :domain => z98684,
-      :option => o124
+      :proposal => o124
     )
 
     z1040 = DomainMap.create!(
       :domain => z98685,
-      :option => o124
+      :proposal => o124
     )
 
     z1041 = DomainMap.create!(
       :domain => z98686,
-      :option => o124
+      :proposal => o124
     )
 
     z1042 = DomainMap.create!(
       :domain => z98687,
-      :option => o124
+      :proposal => o124
     )
 
 # moved from its original position to the end of the file
-o26 = Option.create!(
+o26 = Proposal.create!(
   :name => 'Tekoa Park and Recreation District Levy',
   :short_name => 'Parks Levy',
   :description => 'Shall the Tekoa Park &amp; Recreation District #6
@@ -12828,11 +12828,11 @@ o26 = Option.create!(
 
     z58 = DomainMap.create!(
       :domain => z99033,
-      :option => o26
+      :proposal => o26
     )
 
 # moved from its original position to the end of the file
-o31 = Option.create!(
+o31 = Proposal.create!(
   :name => 'Endicott Cemetery District #4 Levy',
   :short_name => 'Cemetery Dist.',
   :description => 'Shall the Endicott Cemetery District #4 be
@@ -12850,6 +12850,6 @@ o31 = Option.create!(
 
     z63 = DomainMap.create!(
       :domain => z99125,
-      :option => o31
+      :proposal => o31
     )
 

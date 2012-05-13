@@ -32,13 +32,16 @@ ConsiderIt::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.perform_deliveries = true 
   config.action_mailer.delivery_method = :smtp  
-
+  
+  eval File.read("config\\environments\\smtp_add_tls_support.rb")
+  Net::SMTP.enable_tls() 
   ActionMailer::Base.smtp_settings = {
+	:tls                  => true,
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "gmail.com",
-    :user_name            => "#{ENV['UNAMER']}@gmail.com",
-    :password             => "#{ENV['YASSER']}",
+    :user_name            => "ghconsiderit@gmail.com",
+    :password             => "EqualityInEquity",
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
