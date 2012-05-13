@@ -4,10 +4,10 @@
 
 #TODO: replace these values with settings
 admin = User.create!(
-   :username => 'ConsiderIt Admin',
-   :email => 'info@deployment.org',
-   :password   => 'password',
-   :password_confirmation => 'password'
+   :username => 'ConsiderItAdmin',
+   :email => 'kaysoky88@gmail.com',
+   :password   => 'EqualityInEquity',
+   :password_confirmation => 'EqualityInEquity'
 )
 
 # Confirm the user for Devise

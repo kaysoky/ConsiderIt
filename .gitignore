@@ -14,3 +14,6 @@ public/images/old
 public/cache/
 public/system/avatars
 *.bk
+*.class
+*.pyc
+*.pyo
