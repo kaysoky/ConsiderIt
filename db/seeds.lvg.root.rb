@@ -1,17 +1,21 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
+Account.create!(
+	:id => 7, 
+	:theme => 'default'
+)
 
 #TODO: replace these values with settings
 admin = User.create!(
    :username => 'ConsiderItAdmin',
    :email => 'ghconsiderit@gmail.com',
-   :password   => 'EqualityInEquity',
+   :password => 'EqualityInEquity',
    :password_confirmation => 'EqualityInEquity'
 )
 
 # Confirm the user for Devise
-admin.confirm! 
+admin.confirm!
 
 o1 = Proposal.create!(
   :name => 'liquor (beer, wine and spirits)',
@@ -260,8 +264,3 @@ Point.create!(
   :nutshell => 'This reduces judicial discretion in setting bail, taking away too much freedom from judges.',
   :text => ''
 )
-
-
-
-
-
