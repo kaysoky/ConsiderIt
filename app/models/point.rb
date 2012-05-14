@@ -9,6 +9,7 @@ class Point < ActiveRecord::Base
   has_many :inclusions, :dependent => :destroy
   has_many :point_listings, :dependent => :destroy
   has_many :point_links, :dependent => :destroy
+  has_many :comments, :as => :commentable, :dependent => :destroy
   
   validates :nutshell, :presence => true, :length => {:minimum => 3, :maximum => 140 }
 
@@ -191,7 +192,7 @@ class Point < ActiveRecord::Base
     message_sent_to = {}
     begin
       #email anyone who subscribes to points for the proposal
-      proposal.positions.where(:notification_point_subscriber => true).each do |pos|
+      proposal.positions.published.where(:notification_point_subscriber => true).each do |pos|
         position_taker = pos.user
         if position_taker.id != user_id && !message_sent_to.has_key?(position_taker.id)
           if position_taker.email && position_taker.email.length > 0

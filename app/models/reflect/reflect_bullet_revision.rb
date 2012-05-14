@@ -2,9 +2,9 @@ class Reflect::ReflectBulletRevision < ActiveRecord::Base
   belongs_to :comment
   belongs_to :user
 
-  belongs_to :bullet, :class_name => 'ReflectBullet', :foreign_key => 'bullet_id'  
-  has_many :highlights, :class_name => 'ReflectHighlight', :foreign_key => 'bullet_rev'
-  has_many :responses, :class_name => 'ReflectResponseRevision', :foreign_key => 'bullet_rev'
+  belongs_to :bullet, :class_name => 'ReflectBullet', :foreign_key => 'bullet_id' 
+  has_many :highlights, :class_name => 'ReflectHighlight', :foreign_key => 'bullet_rev', :dependent => :destroy
+  has_many :responses, :class_name => 'ReflectResponseRevision', :foreign_key => 'bullet_rev', :dependent => :destroy
   
   default_scope where( :active => true )
 
@@ -28,12 +28,12 @@ class Reflect::ReflectBulletRevision < ActiveRecord::Base
       commentable_type = comment.commentable_type
 
       if commentable_type == 'Point' 
-        user.positions.find(obj.position_id)
+        user.positions.published.find(obj.position_id)
       elsif commentable_type == 'Position'
         if user.id == obj.user_id
           obj
         else
-          user.positions.find(obj.id)
+          user.positions.published.find(obj.id)
         end
       end
     end  

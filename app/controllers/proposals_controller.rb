@@ -30,7 +30,7 @@ class ProposalsController < ApplicationController
     @title = "#{@proposal.short_name}"
     @keywords = "#{@proposal.domain} #{@proposal.category} #{@proposal.designator} #{@proposal.name}"
 
-    @position = current_user ? current_user.positions.where(:proposal_id => @proposal.id).first : nil
+    @position = current_user ? current_user.positions.published.where(:proposal_id => @proposal.id).first : nil
     @positions = @proposal.positions.includes(:user).published
 
     # if !@position && (!params.has_key? :redirect || params[:redirect] == 'true' )
@@ -113,6 +113,22 @@ class ProposalsController < ApplicationController
       return
     end
     raise 'Permission to update this proposal denied'  
+  end
+
+  def destroy
+    @proposal = Proposal.find_by_long_id(params[:long_id])
+    if ProposalsController.deletable(@proposal, current_user)
+      @proposal.destroy
+    end
+
+    redirect_to root_path
+  end
+
+  def self.deletable(proposal, user)
+    user.is_admin? || (user.id == proposal.user_id && \
+      (proposal.positions.published.count == 0 \
+        || (proposal.positions.published.count == 1 && proposal.positions.published.first.user_id == user.id) \
+      ))
   end
 
 end
