@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   is_reflectable
+  is_trackable
   has_paper_trail  
   
   #acts_as_nested_set :scope => [:commentable_id, :commentable_type]
@@ -11,6 +12,8 @@ class Comment < ActiveRecord::Base
 
   has_many :reflect_bullets, :class_name => 'Reflect::ReflectBullet', :dependent => :destroy
   has_many :reflect_bullet_revisions, :class_name => 'Reflect::ReflectBulletRevision', :dependent => :destroy
+
+  acts_as_tenant(:account)
 
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
@@ -96,12 +99,12 @@ class Comment < ActiveRecord::Base
     def get_position_for_user_and_obj(user,obj,commentable_type)
       begin
         if commentable_type == 'Point' 
-          user.positions.published.find(obj.position_id)
+          user.positions.published.find_by_proposal_id(obj.proposal_id)
         elsif commentable_type == 'Position'
           if user.id == obj.user_id
             obj
           else
-            user.positions.published.find(obj.id)
+            user.positions.published.find_by_proposal_id(obj.proposal_id)
           end
         end
       rescue

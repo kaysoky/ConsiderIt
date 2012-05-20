@@ -1,9 +1,10 @@
 class Reflect::ReflectResponseRevision < ActiveRecord::Base
-  belongs_to :bullet, :class_name => 'ReflectBullet', :foreign_key => 'bullet_id'
-  belongs_to :bullet_revision, :class_name => 'ReflectBulletRevision', :foreign_key => 'bullet_rev'
+  belongs_to :bullet, :class_name => 'Reflect::ReflectBullet', :foreign_key => 'bullet_id'
+  belongs_to :bullet_revision, :class_name => 'Reflect::ReflectBulletRevision', :foreign_key => 'bullet_rev'
   belongs_to :user
   
-  belongs_to :response, :class_name => 'ReflectResponse', :foreign_key => 'response_id'
+  belongs_to :response, :class_name => 'Reflect::ReflectResponse', :foreign_key => 'response_id'
+  acts_as_tenant(:account)
   
   default_scope where( :active => true )
 
@@ -25,12 +26,12 @@ class Reflect::ReflectResponseRevision < ActiveRecord::Base
     commentable_type = comment.commentable_type
 
     if commentable_type == 'Point' 
-      user.positions.published.find(obj.position_id)
+      user.positions.published.find_by_proposal_id(obj.proposal_id)
     elsif commentable_type == 'Position'
       if user.id == obj.user_id
         obj
       else
-        user.positions.published.find(obj.id)
+        user.positions.published.find_by_proposal_id(obj.proposal_id)
       end
     end
   end    

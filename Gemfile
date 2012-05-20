@@ -40,6 +40,7 @@ gem 'kaminari'
 
 # https://github.com/javan/whenever
 gem 'whenever'
+
 # https://github.com/collectiveidea/delayed_job
 gem 'delayed_job_active_record'
 gem "daemons"
@@ -58,6 +59,9 @@ gem "themes_for_rails", '0.5.0.pre'
 # https://github.com/weppos/actionmailer_with_request
 gem 'actionmailer-with-request'
 
+#https://github.com/meskyanichi/backup
+gem 'backup'
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
@@ -65,9 +69,6 @@ group :development, :test do
   # gem 'ruby-debug19', :require => 'ruby-debug'
   # gem 'heroku'
 end
-
-
-
 
 group :assets do
   gem 'sass-rails',   "~> 3.2.3"

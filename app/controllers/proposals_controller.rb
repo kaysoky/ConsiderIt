@@ -93,6 +93,7 @@ class ProposalsController < ApplicationController
     end
 
     @proposal = Proposal.create!(params[:proposal])
+    @proposal.track!
     redirect_to new_proposal_position_path(@proposal.long_id)
     
   end
@@ -125,6 +126,10 @@ class ProposalsController < ApplicationController
   end
 
   def self.deletable(proposal, user)
+    #TODO: need to let users who are not logged in but just created a poll delete
+    if user.nil?
+      return false
+    end
     user.is_admin? || (user.id == proposal.user_id && \
       (proposal.positions.published.count == 0 \
         || (proposal.positions.published.count == 1 && proposal.positions.published.first.user_id == user.id) \

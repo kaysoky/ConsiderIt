@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511052701) do
+ActiveRecord::Schema.define(:version => 20120519204439) do
 
   create_table "accounts", :force => true do |t|
     t.string   "identifier"
@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "requires_civility_pledge_on_registration", :default => false
   end
 
-  add_index "accounts", ["identifier"], :name => "index_accounts_on_identifier"
-
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
     t.string   "resource_type", :null => false
@@ -51,6 +49,35 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
+  create_table "activities", :force => true do |t|
+    t.string   "action_type", :null => false
+    t.integer  "action_id",   :null => false
+    t.integer  "account_id",  :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "activities", ["account_id"], :name => "index_activities_on_account_id"
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
@@ -64,8 +91,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
     t.boolean  "passes_moderation"
+    t.integer  "account_id"
   end
 
+  add_index "comments", ["account_id"], :name => "index_comments_on_account_id"
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
@@ -88,13 +117,18 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
   create_table "domain_maps", :force => true do |t|
     t.integer "proposal_id"
     t.integer "domain_id"
+    t.integer "account_id"
   end
+
+  add_index "domain_maps", ["account_id"], :name => "index_domain_maps_on_account_id"
 
   create_table "domains", :force => true do |t|
     t.integer "identifier"
     t.string  "name"
+    t.integer "account_id"
   end
 
+  add_index "domains", ["account_id"], :name => "index_domains_on_account_id"
   add_index "domains", ["identifier"], :name => "index_domains_on_identifier"
 
   create_table "inclusions", :force => true do |t|
@@ -106,8 +140,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "included_as_pro"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "account_id"
   end
 
+  add_index "inclusions", ["account_id"], :name => "index_inclusions_on_account_id"
   add_index "inclusions", ["point_id"], :name => "index_inclusions_on_point_id"
   add_index "inclusions", ["user_id"], :name => "index_inclusions_on_user_id"
 
@@ -120,7 +156,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "approved",    :default => true
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "account_id"
   end
+
+  add_index "point_links", ["account_id"], :name => "index_point_links_on_account_id"
 
   create_table "point_listings", :force => true do |t|
     t.integer  "proposal_id"
@@ -132,8 +171,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.integer  "context"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "account_id"
   end
 
+  add_index "point_listings", ["account_id"], :name => "index_point_listings_on_account_id"
   add_index "point_listings", ["point_id"], :name => "index_point_listings_on_point_id"
   add_index "point_listings", ["position_id"], :name => "index_point_listings_on_position_id"
 
@@ -177,6 +218,7 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.integer  "account_id"
   end
 
+  add_index "points", ["account_id"], :name => "index_points_on_account_id"
   add_index "points", ["is_pro"], :name => "index_points_on_is_pro"
   add_index "points", ["proposal_id"], :name => "index_points_on_option_id"
 
@@ -197,6 +239,7 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "notification_author",                 :default => true
   end
 
+  add_index "positions", ["account_id"], :name => "index_positions_on_account_id"
   add_index "positions", ["proposal_id"], :name => "index_positions_on_option_id"
   add_index "positions", ["published"], :name => "index_positions_on_published"
   add_index "positions", ["stance_bucket"], :name => "index_positions_on_stance_bucket"
@@ -247,6 +290,7 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.integer  "num_views"
   end
 
+  add_index "proposals", ["account_id"], :name => "index_proposals_on_account_id"
   add_index "proposals", ["admin_id"], :name => "index_proposals_on_admin_id", :unique => true
   add_index "proposals", ["long_id"], :name => "index_proposals_on_long_id", :unique => true
 
@@ -271,13 +315,19 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "active",     :default => true
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "account_id"
   end
+
+  add_index "reflect_bullet_revisions", ["account_id"], :name => "index_reflect_bullet_revisions_on_account_id"
 
   create_table "reflect_bullets", :force => true do |t|
     t.integer  "comment_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "account_id"
   end
+
+  add_index "reflect_bullets", ["account_id"], :name => "index_reflect_bullets_on_account_id"
 
   create_table "reflect_highlights", :force => true do |t|
     t.integer  "bullet_id"
@@ -285,7 +335,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.string   "element_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "account_id"
   end
+
+  add_index "reflect_highlights", ["account_id"], :name => "index_reflect_highlights_on_account_id"
 
   create_table "reflect_response_revisions", :force => true do |t|
     t.integer  "bullet_id"
@@ -297,13 +350,19 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.boolean  "active",      :default => true
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "account_id"
   end
+
+  add_index "reflect_response_revisions", ["account_id"], :name => "index_reflect_response_revisions_on_account_id"
 
   create_table "reflect_responses", :force => true do |t|
     t.integer  "bullet_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "account_id"
   end
+
+  add_index "reflect_responses", ["account_id"], :name => "index_reflect_responses_on_account_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -366,8 +425,10 @@ ActiveRecord::Schema.define(:version => 20120511052701) do
     t.string   "twitter_handle"
     t.boolean  "registration_complete",  :default => false
     t.integer  "domain_id"
+    t.integer  "account_id"
   end
 
+  add_index "users", ["account_id"], :name => "index_users_on_account_id"
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

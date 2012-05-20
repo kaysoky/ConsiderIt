@@ -1,11 +1,13 @@
 class Reflect::ReflectBulletRevision < ActiveRecord::Base
   belongs_to :comment
   belongs_to :user
+  is_trackable
+  belongs_to :bullet, :class_name => 'Reflect::ReflectBullet', :foreign_key => 'bullet_id' 
+  has_many :highlights, :class_name => 'Reflect::ReflectHighlight', :foreign_key => 'bullet_rev', :dependent => :destroy
+  has_many :responses, :class_name => 'Reflect::ReflectResponseRevision', :foreign_key => 'bullet_rev', :dependent => :destroy
 
-  belongs_to :bullet, :class_name => 'ReflectBullet', :foreign_key => 'bullet_id' 
-  has_many :highlights, :class_name => 'ReflectHighlight', :foreign_key => 'bullet_rev', :dependent => :destroy
-  has_many :responses, :class_name => 'ReflectResponseRevision', :foreign_key => 'bullet_rev', :dependent => :destroy
-  
+  acts_as_tenant(:account)
+
   default_scope where( :active => true )
 
   def notify_parties(current_tenant, options)
@@ -29,12 +31,12 @@ class Reflect::ReflectBulletRevision < ActiveRecord::Base
 
       begin
         if commentable_type == 'Point' 
-          user.positions.published.find(obj.position_id)
+          user.positions.published.find_by_proposal_id(obj.proposal_id)
         elsif commentable_type == 'Position'
           if user.id == obj.user_id
             obj
           else
-            user.positions.published.find(obj.id)
+            user.positions.published.find_by_proposal_id(obj.proposal_id)
           end
         end
       rescue
