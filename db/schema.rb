@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20120519204439) do
     t.boolean  "requires_civility_pledge_on_registration", :default => false
   end
 
+  add_index "accounts", ["identifier"], :name => "index_accounts_on_identifier"
+
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
     t.string   "resource_type", :null => false
@@ -59,24 +61,6 @@ ActiveRecord::Schema.define(:version => 20120519204439) do
   end
 
   add_index "activities", ["account_id"], :name => "index_activities_on_account_id"
-
-  create_table "admin_users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-  end
-
-  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
-  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
@@ -218,7 +202,6 @@ ActiveRecord::Schema.define(:version => 20120519204439) do
     t.integer  "account_id"
   end
 
-  add_index "points", ["account_id"], :name => "index_points_on_account_id"
   add_index "points", ["is_pro"], :name => "index_points_on_is_pro"
   add_index "points", ["proposal_id"], :name => "index_points_on_option_id"
 
@@ -239,7 +222,6 @@ ActiveRecord::Schema.define(:version => 20120519204439) do
     t.boolean  "notification_author",                 :default => true
   end
 
-  add_index "positions", ["account_id"], :name => "index_positions_on_account_id"
   add_index "positions", ["proposal_id"], :name => "index_positions_on_option_id"
   add_index "positions", ["published"], :name => "index_positions_on_published"
   add_index "positions", ["stance_bucket"], :name => "index_positions_on_stance_bucket"
@@ -290,7 +272,6 @@ ActiveRecord::Schema.define(:version => 20120519204439) do
     t.integer  "num_views"
   end
 
-  add_index "proposals", ["account_id"], :name => "index_proposals_on_account_id"
   add_index "proposals", ["admin_id"], :name => "index_proposals_on_admin_id", :unique => true
   add_index "proposals", ["long_id"], :name => "index_proposals_on_long_id", :unique => true
 
