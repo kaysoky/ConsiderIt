@@ -6,8 +6,12 @@ class HomeController < ApplicationController
     #redirect_to Proposal.find(1)
 
     @user = current_user
-    @keywords = "Washington Voters Guide 2011 Election Ballot Measures Initiatives"
-    @description = "A guide to the Washington State 2011 election, written by citizens like you. Think through the pros and cons of state and local ballot measures and initiatives. Discover what other voters think."
+    @keywords = "Global Health University of Washington Discussion"
+    @description = "A discussion on various topics of public health and income inequality, written by people like you. Think through the pros and cons health statistics and policy effects. Discover what other people think."
+	
+	# work around not needing zip codes
+	params[:domain] = "00001"
+	set_domain
   end
 
   def show
@@ -24,7 +28,8 @@ class HomeController < ApplicationController
       end
     end
     
-    redirect_to request.referrer
+	# work around not needing zip codes
+    # redirect_to request.referrer
   end
 
   def study

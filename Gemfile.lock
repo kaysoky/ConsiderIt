@@ -63,6 +63,7 @@ GEM
     arel (3.0.2)
     bbenezech-nested_form (0.0.5)
     bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.0.1)
     bourbon (1.4.0)
       sass (>= 3.1)
@@ -124,9 +125,10 @@ GEM
     mongrel (1.2.0.pre2)
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
+    mongrel (1.2.0.pre2-x86-mingw32)
+      gem_plugin (~> 0.2.3)
     multi_json (1.1.0)
     multipart-post (1.1.5)
-    mysql2 (0.3.11)
     oauth (0.4.5)
     oauth2 (0.5.2)
       faraday (~> 0.7)
@@ -153,6 +155,8 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.13.2)
+    pg (0.13.2-x86-mingw32)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -229,6 +233,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   activeadmin
@@ -239,13 +244,13 @@ DEPENDENCIES
   jquery-rails
   meta_search (>= 1.1.0.pre)
   mongrel (= 1.2.0.pre2)
-  mysql2
   omniauth
   omniauth-facebook
   omniauth-oauth
   omniauth-openid
   omniauth-twitter
   paperclip
+  pg
   rails (= 3.2.1)
   rails3_acts_as_paranoid
   rails_admin!

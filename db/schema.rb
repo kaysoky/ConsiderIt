@@ -11,22 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311010113) do
+ActiveRecord::Schema.define(:version => 20120308024208) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "commentable_id",    :default => 0
-    t.string   "commentable_type",  :default => ""
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.string   "title",             :default => ""
-    t.text     "body"
+    t.text     "body",              :default => ""
     t.string   "subject",           :default => ""
     t.integer  "user_id",           :default => 0,  :null => false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "point_id"
-    t.integer  "option_id"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.boolean  "passes_moderation"
   end
 
@@ -45,22 +43,6 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
 
   add_index "domains", ["identifier"], :name => "index_domains_on_identifier"
 
-  create_table "inclusion_versions", :force => true do |t|
-    t.integer  "inclusion_id"
-    t.integer  "version"
-    t.integer  "option_id"
-    t.integer  "position_id"
-    t.integer  "point_id"
-    t.integer  "user_id"
-    t.integer  "session_id"
-    t.boolean  "included_as_pro"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "deleted_at"
-  end
-
-  add_index "inclusion_versions", ["inclusion_id"], :name => "index_inclusion_versions_on_inclusion_id"
-
   create_table "inclusions", :force => true do |t|
     t.integer  "proposal_id"
     t.integer  "position_id"
@@ -68,10 +50,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.integer  "user_id"
     t.integer  "session_id"
     t.boolean  "included_as_pro"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "deleted_at"
-    t.integer  "version"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "inclusions", ["point_id"], :name => "index_inclusions_on_point_id"
@@ -84,8 +64,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.string   "url"
     t.string   "description"
     t.boolean  "approved",    :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "point_listings", :force => true do |t|
@@ -96,8 +76,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.integer  "inclusion_id"
     t.integer  "session_id"
     t.integer  "context"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "point_listings", ["point_id"], :name => "index_point_listings_on_point_id"
@@ -109,43 +89,9 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.integer  "proposal_id"
     t.integer  "user_id"
     t.integer  "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  create_table "point_versions", :force => true do |t|
-    t.integer  "point_id"
-    t.integer  "version"
-    t.integer  "option_id"
-    t.integer  "position_id"
-    t.integer  "user_id"
-    t.integer  "session_id"
-    t.text     "nutshell"
-    t.text     "text"
-    t.boolean  "is_pro"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "num_inclusions"
-    t.integer  "unique_listings"
-    t.float    "score"
-    t.float    "attention"
-    t.float    "persuasiveness"
-    t.float    "appeal"
-    t.float    "score_stance_group_0"
-    t.float    "score_stance_group_1"
-    t.float    "score_stance_group_2"
-    t.float    "score_stance_group_3"
-    t.float    "score_stance_group_4"
-    t.float    "score_stance_group_5"
-    t.float    "score_stance_group_6"
-    t.datetime "deleted_at"
-    t.boolean  "published",            :default => true
-    t.boolean  "hide_name",            :default => false
-    t.boolean  "share",                :default => true
-    t.boolean  "passes_moderation"
-  end
-
-  add_index "point_versions", ["point_id"], :name => "index_point_versions_on_point_id"
 
   create_table "points", :force => true do |t|
     t.integer  "proposal_id"
@@ -155,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.text     "nutshell"
     t.text     "text"
     t.boolean  "is_pro"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.integer  "num_inclusions"
     t.integer  "unique_listings"
     t.float    "score"
@@ -170,8 +116,6 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.float    "score_stance_group_4"
     t.float    "score_stance_group_5"
     t.float    "score_stance_group_6"
-    t.datetime "deleted_at"
-    t.integer  "version"
     t.boolean  "published",            :default => true
     t.boolean  "hide_name",            :default => false
     t.boolean  "share",                :default => true
@@ -181,26 +125,6 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
   add_index "points", ["is_pro"], :name => "index_points_on_is_pro"
   add_index "points", ["proposal_id"], :name => "index_points_on_option_id"
 
-  create_table "position_versions", :force => true do |t|
-    t.integer  "position_id"
-    t.integer  "version"
-    t.integer  "option_id"
-    t.integer  "user_id"
-    t.integer  "session_id"
-    t.text     "explanation"
-    t.float    "stance"
-    t.integer  "stance_bucket"
-    t.boolean  "published",                         :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "deleted_at"
-    t.boolean  "notification_includer"
-    t.boolean  "notification_proposal_subscriber"
-    t.boolean  "notification_statement_subscriber"
-  end
-
-  add_index "position_versions", ["position_id"], :name => "index_position_versions_on_position_id"
-
   create_table "positions", :force => true do |t|
     t.integer  "proposal_id"
     t.integer  "user_id"
@@ -209,10 +133,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.float    "stance"
     t.integer  "stance_bucket"
     t.boolean  "published",                         :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "deleted_at"
-    t.integer  "version"
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.boolean  "notification_includer"
     t.boolean  "notification_proposal_subscriber"
     t.boolean  "notification_statement_subscriber"
@@ -231,12 +153,12 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.text     "description"
     t.string   "image"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "domain"
     t.string   "domain_short"
-    t.text     "long_description",          :limit => 2147483647
-    t.text     "additional_details",        :limit => 2147483647
+    t.text     "long_description"
+    t.text     "additional_details"
     t.string   "poles"
     t.string   "slider_prompt"
     t.string   "considerations_prompt"
@@ -254,8 +176,8 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.string   "table"
     t.integer  "month",      :limit => 2
     t.integer  "year",       :limit => 8
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_histories_on_item_and_table_and_month_and_year"
@@ -266,22 +188,22 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.text     "text"
     t.integer  "user_id"
     t.boolean  "active",     :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "reflect_bullets", :force => true do |t|
     t.integer  "comment_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "reflect_highlights", :force => true do |t|
     t.integer  "bullet_id"
     t.integer  "bullet_rev"
     t.string   "element_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "reflect_response_revisions", :force => true do |t|
@@ -292,21 +214,21 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.integer  "user_id"
     t.integer  "signal"
     t.boolean  "active",      :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "reflect_responses", :force => true do |t|
     t.integer  "bullet_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
@@ -324,16 +246,17 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.integer  "ival"
     t.float    "fval"
     t.boolean  "bval"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => ""
-    t.string   "encrypted_password",     :limit => 128, :default => ""
+    t.string   "email"
+    t.string   "encrypted_password"
     t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -341,10 +264,11 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "unconfirmed_email"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.text     "sessions"
-    t.boolean  "admin",                                 :default => false
+    t.boolean  "admin",                  :default => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -359,14 +283,12 @@ ActiveRecord::Schema.define(:version => 20120311010113) do
     t.string   "openid_uid"
     t.string   "twitter_uid"
     t.string   "twitter_handle"
-    t.boolean  "registration_complete",                 :default => false
+    t.boolean  "registration_complete",  :default => false
     t.integer  "domain_id"
-    t.boolean  "notification_commenter",                :default => true
-    t.boolean  "notification_author",                   :default => true
-    t.boolean  "notification_reflector",                :default => true
-    t.boolean  "notification_responder",                :default => true
-    t.string   "unconfirmed_email"
-    t.datetime "reset_password_sent_at"
+    t.boolean  "notification_commenter", :default => true
+    t.boolean  "notification_author",    :default => true
+    t.boolean  "notification_reflector", :default => true
+    t.boolean  "notification_responder", :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

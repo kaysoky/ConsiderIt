@@ -10,17 +10,3 @@
 =f.submit "Save!", :class => "submit important"
 = link_to skip_text, proposal_position_path(@proposal, @position, :redirect => 'false'), :method => :delete, :class => "skip_save"
 //= link_to "discard your #{@position.published ? 'changes' : 'position'}", proposal_position_path(@proposal, @position), :method => :delete
-
-%ul
-  %li
-    = f.check_box :notification_proposal_subscriber
-    = f.label :notification_proposal_subscriber, 'Email me if a new pro or con is added'
-
-  - if @proposal.enable_position_statement
-    %li
-      = f.check_box :notification_statement_subscriber
-      = f.label :notification_statement_subscriber, 'Email me if a new review is added'
-
-  %li
-    = f.check_box :notification_includer
-    = f.label :notification_includer, 'Email me about a new comment on a point in my list'

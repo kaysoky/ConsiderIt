@@ -1,37 +1,37 @@
 development: 
   app_name: 
-    short: lvg
-    long: Living Voters Guide
+    short: HPEP
+    long: Health E Public
   
   theme: lvg
   
   meta:
-    title: The Living Voters Guide
-    subtitle: Help write a voters' guide for the 2010 WA State Ballot Measures
+    title: Health E Public
+    subtitle: Increase awareness of the role of socio-economic status in public health
     
   perform_authentication: true
   send_email: false
   
-  default_from_email: info@livingvotersguide.org
-  email_head: Living Voters Guide
+  default_from_email: ghconsiderit@gmail.com
+  email_head: Health E Public
     
   home:
-    call: A guide to the 2010 Washington State Ballot Measures
-    subcall: written by people like you 
+    call: A discussion on public health
+    subcall: powered by everyone
     values:
       - lead: Organize your thoughts...
-        follow: Write a pro/con list for each measure.
-      - lead: Cut through the campaign fog...
-        follow: Hear what other Washingtonians think. 
+        follow: Write a pro/con list for each idea.
+      - lead: Cut through the preconceptions...
+        follow: Hear what other people think. 
       - lead: Take the initiative...
-        follow: Add your own voice to the guide.
+        follow: Add your own voice to the discussion.
   
   socmedia:
     facebook:
-      include_follow: true
+      include_follow: false
       facebook_page: "http://www.facebook.com/pages/Living-Voters-Guide/157151824312366"
     twitter:
-      include_follow: true
+      include_follow: false
       twitter_page: "http://www.twitter.com/LVGuide"
   
   decisions:
@@ -42,34 +42,18 @@ development:
   footer:
     has_custom_resources: true
     resources:
-      - title: WA State Voter Guides
+      - title: Health E Public
         items:
-          - anchor: League of Women Voters of Gr. Seattle
-            link: http://sites.google.com/site/wavoter/ballot
-            title: Voters Guide by the League of Women Voters
-          - anchor: Progressive Voters Guide
-            link: http://waballotguide.com/
-            title: Voters Guide by Fuse
-          - anchor: Washington Policy Center
-            link: http://www.washingtonpolicy.org/research/ballot-measures/new
-            title: Voters Guide by the Washington Policy Center
-          - anchor: Washington Secretary of State
-            link: http://wei.secstate.wa.gov/osos/en/Pages/OnlineVotersGuide.aspx
-            title: Voters Guide by the Secretary of State
-          - anchor: TVW Video Voters Guide
-            link: http://www.tvw.org/elections/2010videovotersguide.cfm
-            title: A video Voters Guide by TVW
+          - anchor: Population Health Forum by UW
+            link: http://depts.washington.edu/eqhlth/
+            title: Population Health Forum by UW
       
          
   
 test: 
   default_to: development
-  perform_authentication: true
-  send_email: true
 
 
 production:
   default_to: development
-  perform_authentication: true
-  send_email: true
 
