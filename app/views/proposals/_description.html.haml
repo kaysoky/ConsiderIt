@@ -34,7 +34,7 @@
     - if @proposal.additional_details && @proposal.additional_details.strip != ''
       .additional
         .prompt
-          Fiscal impact statement
+          Additional Information
           %a.hidden
             show
         .full.hide
@@ -43,6 +43,6 @@
     - if @proposal.url && @proposal.url.strip != ''
       #full_desc_block
         #{'...'}or read the 
-        =link_to "official measure", @proposal.url, :title => "Visit the official listing on the state's website", :target => '_blank'
+        =link_to "official measure", @proposal.url, :title => "Read a relevant publication", :target => '_blank'
 
   .clear
